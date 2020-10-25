@@ -31,25 +31,25 @@ initial begin
     reset_L<=1;
     @(posedge clk);
 
-    fifo_data_in<=6'h01;
+    fifo_data_in<=6'h0A;
     @(posedge clk);
-    fifo_data_in<=6'h02;
+    fifo_data_in<=6'h0B;
     @(posedge clk);
-    fifo_data_in<=6'h03;
+    fifo_data_in<=6'h0C;
     @(posedge clk);
-    fifo_data_in<=6'h04;
+    fifo_data_in<=6'h0D;
     @(posedge clk);
-    fifo_data_in<=6'h05;
+    fifo_data_in<=6'h0E;
     @(posedge clk);
-    fifo_data_in<=6'h06;
+    fifo_data_in<=6'h0F;
     @(posedge clk);
-    fifo_data_in<=6'h07;
+    fifo_data_in<=6'h09;
     @(posedge clk);
     fifo_data_in<=6'h00;
     @(posedge clk);
 
     fifo_rd<=1;
-    repeat (6) begin
+    repeat (7) begin
     @(posedge clk);
     end
     fifo_rd <=0;
