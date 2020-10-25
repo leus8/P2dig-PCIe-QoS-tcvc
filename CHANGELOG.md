@@ -2,7 +2,7 @@
 
 ## v1.0.0 - Oct. 24, 2020
 
-Lanzamiento inicial
+Lanzamiento inicial y creación del repositiorio en GitHub.
 
 **Se agrega:**
 - Leonardo Agüero:
