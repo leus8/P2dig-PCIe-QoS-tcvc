@@ -16,6 +16,6 @@ Desarrollo de FIFO y dual-port memory. Se debe debatir aspectos que aunque no da
 
 **Se agrega:**
 - Leonardo Agüero:
-  - Memoria FIFO conductual.
-  - Memoria FIFO estructural.
- 
+  - Memoria FIFO conductual (fifo.v).
+  - Memoria FIFO estructural (fifo_estr.v).
+  - Probador que interactúa con la señal fifo_full de la memoria FIFO (probador.v).
