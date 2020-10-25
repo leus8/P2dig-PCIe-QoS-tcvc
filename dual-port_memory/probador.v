@@ -5,7 +5,7 @@ module probador (
     output reg fifo_rd,
     output reg [(BW-1):0] fifo_data_in,
     input [(BW-1):0] fifo_data_out,
-    //input [(BW-1):0] fifo_data_out_estr,
+    input [(BW-1):0] fifo_data_out_estr,
     input error_output,
     input error_output_estr,
     input fifo_full,
