@@ -5,7 +5,7 @@
 * Leonardo Agüero Villagra [B70103]
 * Daniel Vargas Díaz
 
-# Tabla de contenidos:
+## Tabla de contenidos:
 1. [Descripción](#descripcion)
 2. [Plan de Pruebas](#planPruebas)
 
