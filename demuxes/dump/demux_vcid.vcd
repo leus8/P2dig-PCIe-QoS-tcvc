@@ -1,0 +1,157 @@
+$date
+	Tue Nov  3 16:56:14 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module testbench $end
+$var wire 1 ! valid_in_vc1 $end
+$var wire 1 " valid_in_vc0 $end
+$var wire 1 # valid_in_estr $end
+$var wire 1 $ valid_in $end
+$var wire 1 % reset_L $end
+$var wire 6 & data_in_vc1 [5:0] $end
+$var wire 6 ' data_in_vc0 [5:0] $end
+$var wire 32 ( data_in_estr [31:0] $end
+$var wire 6 ) data_in [5:0] $end
+$var wire 1 * clk $end
+$scope module d_vc_id $end
+$var wire 1 $ valid_in $end
+$var wire 1 + selector $end
+$var wire 1 % reset_L $end
+$var wire 6 , data_in [5:0] $end
+$var wire 1 * clk $end
+$var reg 6 - data_in_vc0 [5:0] $end
+$var reg 6 . data_in_vc1 [5:0] $end
+$var reg 6 / data_recordar0 [5:0] $end
+$var reg 6 0 data_recordar1 [5:0] $end
+$var reg 1 " valid_in_vc0 $end
+$var reg 1 ! valid_in_vc1 $end
+$var reg 1 1 valid_recordar0 $end
+$var reg 1 2 valid_recordar1 $end
+$upscope $end
+$scope module prb $end
+$var reg 1 * clk $end
+$var reg 6 3 data_in [5:0] $end
+$var reg 32 4 data_in_estr [31:0] $end
+$var reg 1 % reset_L $end
+$var reg 1 $ valid_in $end
+$var reg 1 # valid_in_estr $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx 4
+b0 3
+02
+01
+b0 0
+b0 /
+bx .
+bx -
+b0 ,
+0+
+0*
+b0 )
+bx (
+bx '
+bx &
+0%
+0$
+x#
+x"
+x!
+$end
+#20
+0!
+0"
+b0 &
+b0 .
+b0 '
+b0 -
+1*
+#40
+0*
+#60
+11
+b10001 /
+1$
+1%
+b10001 )
+b10001 ,
+b10001 3
+1*
+#80
+0*
+#100
+12
+01
+b110010 0
+1+
+b0 /
+1"
+b10001 '
+b10001 -
+b110010 )
+b110010 ,
+b110010 3
+1*
+#120
+0*
+#140
+b110011 0
+b110011 )
+b110011 ,
+b110011 3
+0"
+1!
+b110010 &
+b110010 .
+1*
+#160
+0*
+#180
+02
+11
+b10100 /
+0+
+b0 0
+b110011 &
+b110011 .
+b10100 )
+b10100 ,
+b10100 3
+1*
+#200
+0*
+#220
+01
+b0 /
+0$
+b0 )
+b0 ,
+b0 3
+0!
+1"
+b10100 '
+b10100 -
+1*
+#240
+0*
+#260
+0"
+b0 '
+b0 -
+1*
+#280
+0*
+#300
+1*
+#320
+0*
+#340
+1*
