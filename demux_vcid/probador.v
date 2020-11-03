@@ -10,10 +10,11 @@ module probador(
 
     // -------------> Estructural <---------------------
 
-    output reg [31:0] data_in_estr, // entrada de datos
+    output reg [5:0] data_in_estr, // entrada de datos
 
 
     output reg valid_in_estr // valid de entrada
+
     
     );
 
@@ -23,28 +24,37 @@ module probador(
     $dumpvars;
 
     data_in <= 0;
+    data_in_estr <= 0;
     valid_in <= 0;
+    valid_in_estr <= 0;
     reset_L <= 0;
 
     @(posedge clk);
     @(posedge clk);
 
     data_in <= 6'b01_0001;
+    data_in_estr <= 6'b01_0001;
     reset_L <= 1;
     valid_in <= 1;
+    valid_in_estr <= 1;
     @(posedge clk);
 
     data_in <= 6'b11_0010;
+    data_in_estr <= 6'b11_0010;
     @(posedge clk);
 
     data_in <= 6'b11_0011;
+    data_in_estr <= 6'b11_0011;
     @(posedge clk);
 
     data_in <= 6'b01_0100;
+    data_in_estr <= 6'b01_0100;
     @(posedge clk);
 
     data_in <= 0;
+    data_in_estr <= 0;
     valid_in <= 0;
+    valid_in_estr <= 0;
     @(posedge clk);
 
 

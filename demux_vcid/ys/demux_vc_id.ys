@@ -1,0 +1,15 @@
+read_verilog demux_vc_id.v
+
+hierarchy -check -top demux_vc_id
+
+proc; opt; fsm; opt; memory; opt
+
+techmap; opt
+
+dfflibmap -liberty ./lib/cmos_cells.lib
+
+abc -liberty ./lib/cmos_cells.lib
+
+clean
+
+write_verilog ./demux_vc_id_estr.v
