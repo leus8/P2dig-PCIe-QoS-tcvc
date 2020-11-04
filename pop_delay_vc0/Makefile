@@ -11,7 +11,7 @@ OUTFILE=output
 # Compiler options and flags
 iFLAGS=
 
-all: build run wave
+all: yosys sed build run wave
 
 build:
 	mkdir -p dump
