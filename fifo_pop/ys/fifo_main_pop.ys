@@ -1,0 +1,15 @@
+read_verilog fifo_main_pop.v
+
+hierarchy -check -top fifo_main_pop
+
+proc; opt; fsm; opt; memory; opt
+
+techmap; opt
+
+dfflibmap -liberty ./lib/cmos_cells.lib
+
+abc -liberty ./lib/cmos_cells.lib
+
+clean
+
+write_verilog ./fifo_main_pop_estr.v

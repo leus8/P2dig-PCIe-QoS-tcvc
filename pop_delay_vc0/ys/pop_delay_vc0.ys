@@ -1,0 +1,15 @@
+read_verilog pop_delay_vc0.v
+
+hierarchy -check -top pop_delay_vc0
+
+proc; opt; fsm; opt; memory; opt
+
+techmap; opt
+
+dfflibmap -liberty ./lib/cmos_cells.lib
+
+abc -liberty ./lib/cmos_cells.lib
+
+clean
+
+write_verilog ./pop_delay_vc0_estr.v
