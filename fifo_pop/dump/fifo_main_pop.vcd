@@ -1,0 +1,134 @@
+$date
+	Tue Nov  3 20:12:13 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module testbench $end
+$var wire 1 ! vc1_full $end
+$var wire 1 " vc0_full $end
+$var wire 1 # valid_in $end
+$var wire 1 $ reset_L $end
+$var wire 1 % fifo_rd $end
+$var wire 1 & fifo_main_empty $end
+$var wire 6 ' data_out [5:0] $end
+$var wire 6 ( data_in [5:0] $end
+$var wire 1 ) clk $end
+$scope module pop $end
+$var wire 1 ! vc1_full $end
+$var wire 1 " vc0_full $end
+$var wire 1 $ reset_L $end
+$var wire 1 & fifo_main_empty $end
+$var wire 6 * data_in [5:0] $end
+$var wire 1 ) clk $end
+$var reg 6 + data_out [5:0] $end
+$var reg 6 , data_out_recordar [5:0] $end
+$var reg 1 % fifo_rd $end
+$var reg 1 - fifo_rd_recordar $end
+$var reg 1 # valid_in $end
+$var reg 1 . valid_in_recordar $end
+$upscope $end
+$scope module prb $end
+$var reg 1 ) clk $end
+$var reg 6 / data_in [5:0] $end
+$var reg 1 & fifo_main_empty $end
+$var reg 1 $ reset_L $end
+$var reg 1 " vc0_full $end
+$var reg 1 ! vc1_full $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 /
+1.
+1-
+b0 ,
+bx +
+b0 *
+0)
+b0 (
+bx '
+0&
+x%
+0$
+x#
+0"
+0!
+$end
+#20
+b1 ,
+0%
+0#
+b0 '
+b0 +
+1$
+b1 (
+b1 *
+b1 /
+1)
+#40
+0)
+#60
+0-
+0.
+b0 ,
+1&
+b10 (
+b10 *
+b10 /
+1%
+1#
+b1 '
+b1 +
+1)
+#80
+0)
+#100
+0%
+0#
+b0 '
+b0 +
+0&
+1!
+1"
+b11 (
+b11 *
+b11 /
+1)
+#120
+0)
+#140
+1&
+b10100 (
+b10100 *
+b10100 /
+1)
+#160
+0)
+#180
+1-
+1.
+b101 ,
+0&
+0!
+0"
+b101 (
+b101 *
+b101 /
+1)
+#200
+0)
+#220
+1%
+1#
+b101 '
+b101 +
+1)
+#240
+0)
+#260
+1)
