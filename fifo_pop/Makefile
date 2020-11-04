@@ -11,7 +11,7 @@ OUTFILE=output
 # Compiler options and flags
 iFLAGS=
 
-all: build run wave
+all: yosys sed build run wave
 
 build:
 	mkdir -p dump
@@ -31,10 +31,10 @@ wave:
 
 yosys:
 
-	yosys -s ./ys/demux_vc_id.ys
+	yosys -s ./ys/fifo_main_pop.ys
 	
 sed:
-	sed -i 's/module demux_vc_id/module demux_vc_id_estr/' demux_vc_id_estr.v
+	sed -i 's/module fifo_main_pop/module fifo_main_pop_estr/' fifo_main_pop_estr.v
 
 autoinst:
 # To use autoinst call make target autoinst as follows:

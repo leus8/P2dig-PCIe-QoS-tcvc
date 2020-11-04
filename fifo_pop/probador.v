@@ -10,8 +10,18 @@ module probador(
 
     output reg vc1_full,
 
-    output reg fifo_main_empty
-    
+    output reg fifo_main_empty,
+
+    // -------> Estructurales --------->
+
+    output reg [5:0] data_in_estr,
+
+    output reg vc0_full_estr,
+
+    output reg vc1_full_estr,
+
+    output reg fifo_main_empty_estr
+
     );
 
     initial begin
@@ -19,19 +29,31 @@ module probador(
     $dumpfile("./dump/fifo_main_pop.vcd");
     $dumpvars;
 
-    data_in <= 0;
     reset_L <= 0;
+
+    data_in <= 0;
     vc0_full <= 0;
     vc1_full <= 0;
     fifo_main_empty <= 0;
+
+    data_in_estr <= 0;
+    vc0_full_estr <= 0;
+    vc1_full_estr <= 0;
+    fifo_main_empty_estr <= 0;
     @(posedge clk);
 
     // pop
-    data_in <= 6'b00_0001;
     reset_L <= 1;
+
+    data_in <= 6'b00_0001;
     vc0_full <= 0;
     vc1_full <= 0;
     fifo_main_empty <= 0;
+
+    data_in_estr <= 6'b00_0001;
+    vc0_full_estr <= 0;
+    vc1_full_estr <= 0;
+    fifo_main_empty_estr <= 0;
     @(posedge clk);
 
     // no pop
@@ -39,6 +61,11 @@ module probador(
     vc0_full <= 0;
     vc1_full <= 0;
     fifo_main_empty <= 1;
+
+    data_in_estr <= 6'b00_0010;
+    vc0_full_estr <= 0;
+    vc1_full_estr <= 0;
+    fifo_main_empty_estr <= 1;
     @(posedge clk);
 
     // no pop
@@ -46,6 +73,11 @@ module probador(
     vc0_full <= 1;
     vc1_full <= 1;
     fifo_main_empty <= 0;
+
+    data_in_estr <= 6'b00_0011;
+    vc0_full_estr <= 1;
+    vc1_full_estr <= 1;
+    fifo_main_empty_estr <= 0;
     @(posedge clk);
 
     // no pop
@@ -53,6 +85,11 @@ module probador(
     vc0_full <= 1;
     vc1_full <= 1;
     fifo_main_empty <= 1;
+
+    data_in_estr <= 6'b01_0100;
+    vc0_full_estr <= 1;
+    vc1_full_estr <= 1;
+    fifo_main_empty_estr <= 1;
     @(posedge clk);
 
     // pop
@@ -60,6 +97,11 @@ module probador(
     vc0_full <= 0;
     vc1_full <= 0;
     fifo_main_empty <= 0;
+
+    data_in_estr <= 6'b00_0101;
+    vc0_full_estr <= 0;
+    vc1_full_estr <= 0;
+    fifo_main_empty_estr <= 0;
     @(posedge clk);
 
     @(posedge clk);
