@@ -1,0 +1,134 @@
+$date
+	Wed Nov  4 14:41:22 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module testbench $end
+$var wire 1 ! vc1_read $end
+$var wire 1 " vc1_empty $end
+$var wire 1 # vc0_read $end
+$var wire 1 $ vc0_empty $end
+$var wire 1 % vc0_delay $end
+$var wire 1 & reset_L $end
+$var wire 1 ' d1_full $end
+$var wire 1 ( d0_full $end
+$var wire 1 ) clk $end
+$scope module pop_vc0 $end
+$var wire 1 " vc1_empty $end
+$var wire 1 $ vc0_empty $end
+$var wire 1 & reset_L $end
+$var wire 1 ' d1_full $end
+$var wire 1 ( d0_full $end
+$var wire 1 ) clk $end
+$var reg 1 * and_d0d1 $end
+$var reg 1 + and_vc0_0 $end
+$var reg 1 , and_vc0_1 $end
+$var reg 1 % vc0_delay $end
+$var reg 1 - vc0_delay_recordar $end
+$var reg 1 # vc0_read $end
+$var reg 1 . vc0_read_recordar $end
+$var reg 1 ! vc1_read $end
+$var reg 1 / vc1_read_recordar $end
+$upscope $end
+$scope module prb $end
+$var reg 1 ) clk $end
+$var reg 1 ( d0_full $end
+$var reg 1 ' d1_full $end
+$var reg 1 & reset_L $end
+$var reg 1 $ vc0_empty $end
+$var reg 1 " vc1_empty $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0/
+0.
+0-
+0,
+0+
+0*
+0)
+0(
+0'
+0&
+x%
+1$
+x#
+1"
+x!
+$end
+#20
+1.
+1+
+0!
+0#
+0%
+0"
+0$
+1&
+1)
+#40
+0)
+#60
+0.
+0+
+1*
+1'
+1(
+1#
+1)
+#80
+0)
+#100
+0*
+0#
+1"
+1$
+0'
+0(
+1)
+#120
+0)
+#140
+1*
+1'
+1(
+1)
+#160
+0)
+#180
+1.
+1+
+0*
+0"
+0$
+0'
+0(
+1)
+#200
+0)
+#220
+1/
+0.
+1-
+1,
+0+
+1$
+1#
+1)
+#240
+0)
+#260
+1!
+0#
+1%
+1)
+#280
+0)
+#300
+1)
