@@ -16,7 +16,7 @@ module probador (
     input fifo_almost_empty,
     input fifo_almost_full_estr,
     input fifo_almost_empty_estr);
-    parameter	BW=4;	// Byte/data width
+    parameter BW=16;
 
 initial begin
     $dumpfile("./dump/memory.vcd");

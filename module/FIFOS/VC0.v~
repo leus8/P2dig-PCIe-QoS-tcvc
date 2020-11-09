@@ -1,0 +1,21 @@
+`include "fifo.v"
+module VC0 #(
+parameter		BW=16,	// Byte/data width
+parameter [3:0]	LEN=6,
+parameter TOL = 1)
+    (
+	input	wire			clk, reset_L,
+	input	wire			vc0_wr,
+	input	wire [(BW-1):0]	vc0_data_in,
+	input	wire			vc0_rd,
+	output	reg [(BW-1):0]	vc0_data_out,
+	output  reg 			error_output,
+	output   				vc0_full,
+	output   				vc0_empty,
+	output   				vc0_almost_full,
+	output   				vc0_almost_empty);
+)
+
+fifo VC0(/*AUTOINST*/);
+
+endmodule
