@@ -95,8 +95,9 @@ module maquina_estados_estr(clk, init, UmbralesMFs, UmbralesVCs, UmbralesDs, res
   wire _089_;
   wire _090_;
   wire _091_;
-  wire [4:0] _092_;
-  wire _093_;
+  wire _092_;
+  wire [4:0] _093_;
+  wire _094_;
   (* src = "maquina_estados_estr.v:9" *)
   input [4:0] FIFO_EMPTIES;
   (* src = "maquina_estados_estr.v:10" *)
@@ -143,697 +144,702 @@ module maquina_estados_estr(clk, init, UmbralesMFs, UmbralesVCs, UmbralesDs, res
   input init;
   (* src = "maquina_estados_estr.v:8" *)
   input reset;
-  NOT _094_ (
+  NOT _095_ (
     .A(FIFO_ERRORS[2]),
     .Y(_000_)
   );
-  NOT _095_ (
+  NOT _096_ (
     .A(FIFO_ERRORS[3]),
     .Y(_001_)
   );
-  NAND _096_ (
+  NAND _097_ (
     .A(_001_),
     .B(_000_),
     .Y(_002_)
   );
-  NOT _097_ (
+  NOT _098_ (
     .A(FIFO_ERRORS[1]),
     .Y(_003_)
   );
-  NOR _098_ (
+  NOR _099_ (
     .A(FIFO_ERRORS[0]),
     .B(FIFO_ERRORS[4]),
     .Y(_004_)
   );
-  NAND _099_ (
+  NAND _100_ (
     .A(_004_),
     .B(_003_),
     .Y(_005_)
   );
-  NOR _100_ (
+  NOR _101_ (
     .A(_005_),
     .B(_002_),
     .Y(_006_)
   );
-  NOT _101_ (
+  NOT _102_ (
     .A(FIFO_EMPTIES[0]),
     .Y(_007_)
   );
-  NOT _102_ (
+  NOT _103_ (
     .A(FIFO_EMPTIES[1]),
     .Y(_008_)
   );
-  NAND _103_ (
+  NAND _104_ (
     .A(_008_),
     .B(_007_),
     .Y(_009_)
   );
-  NOT _104_ (
+  NOT _105_ (
     .A(FIFO_EMPTIES[4]),
     .Y(_010_)
   );
-  NOR _105_ (
+  NOR _106_ (
     .A(FIFO_EMPTIES[3]),
     .B(FIFO_EMPTIES[2]),
     .Y(_011_)
   );
-  NAND _106_ (
+  NAND _107_ (
     .A(_011_),
     .B(_010_),
     .Y(_012_)
   );
-  NOR _107_ (
+  NOR _108_ (
     .A(_012_),
     .B(_009_),
     .Y(_013_)
   );
-  NOT _108_ (
+  NOT _109_ (
     .A(_013_),
     .Y(_014_)
   );
-  NAND _109_ (
+  NAND _110_ (
     .A(_014_),
     .B(_006_),
     .Y(_015_)
   );
-  NOT _110_ (
-    .A(reset),
-    .Y(_093_)
-  );
   NOT _111_ (
+    .A(reset),
+    .Y(_094_)
+  );
+  NOT _112_ (
     .A(estado[2]),
     .Y(_016_)
   );
-  NOR _112_ (
+  NOR _113_ (
     .A(_016_),
-    .B(_093_),
+    .B(_094_),
     .Y(_017_)
   );
-  NOT _113_ (
+  NOT _114_ (
     .A(estado[4]),
     .Y(_018_)
   );
-  NOR _114_ (
-    .A(_093_),
+  NOR _115_ (
+    .A(_094_),
     .B(init),
     .Y(_019_)
   );
-  NOT _115_ (
+  NOT _116_ (
     .A(_019_),
     .Y(_020_)
   );
-  NOR _116_ (
+  NOR _117_ (
     .A(_020_),
     .B(_018_),
     .Y(_021_)
   );
-  NOR _117_ (
+  NOR _118_ (
     .A(_021_),
     .B(_017_),
     .Y(_022_)
   );
-  NOR _118_ (
+  NOR _119_ (
     .A(_022_),
     .B(_015_),
-    .Y(_092_[4])
+    .Y(_093_[4])
   );
-  NOT _119_ (
+  NOT _120_ (
     .A(estado[0]),
     .Y(_023_)
   );
-  NOT _120_ (
+  NOT _121_ (
     .A(estado[3]),
     .Y(_024_)
   );
-  NAND _121_ (
+  NAND _122_ (
     .A(_024_),
     .B(_018_),
     .Y(_025_)
   );
-  NAND _122_ (
+  NAND _123_ (
     .A(_025_),
     .B(init),
     .Y(_026_)
   );
-  NAND _123_ (
+  NAND _124_ (
     .A(_026_),
     .B(_023_),
     .Y(_027_)
   );
-  NAND _124_ (
+  NAND _125_ (
     .A(_027_),
     .B(reset),
     .Y(_028_)
   );
-  NOR _125_ (
+  NOR _126_ (
     .A(FIFO_ERRORS[1]),
     .B(FIFO_ERRORS[4]),
     .Y(_029_)
   );
-  NOR _126_ (
+  NOR _127_ (
     .A(_002_),
     .B(FIFO_ERRORS[0]),
     .Y(_030_)
   );
-  NAND _127_ (
+  NAND _128_ (
     .A(_030_),
     .B(_029_),
     .Y(_031_)
   );
-  NOR _128_ (
+  NOR _129_ (
     .A(_013_),
     .B(_031_),
     .Y(_032_)
   );
-  NOR _129_ (
+  NOR _130_ (
     .A(_020_),
     .B(_024_),
     .Y(_033_)
   );
-  NAND _130_ (
+  NAND _131_ (
     .A(_033_),
     .B(_032_),
     .Y(_034_)
   );
-  NAND _131_ (
+  NAND _132_ (
     .A(_034_),
     .B(_028_),
-    .Y(_092_[3])
+    .Y(_093_[3])
   );
-  NAND _132_ (
+  NAND _133_ (
     .A(_006_),
     .B(reset),
     .Y(_035_)
   );
-  NOT _133_ (
+  NOT _134_ (
     .A(init),
     .Y(_036_)
   );
-  NAND _134_ (
+  NAND _135_ (
     .A(_025_),
     .B(_036_),
     .Y(_037_)
   );
-  NAND _135_ (
+  NAND _136_ (
     .A(_037_),
     .B(_016_),
     .Y(_038_)
   );
-  NAND _136_ (
+  NAND _137_ (
     .A(_038_),
     .B(_013_),
     .Y(_039_)
   );
-  NOR _137_ (
+  NOR _138_ (
     .A(_039_),
     .B(_035_),
-    .Y(_092_[2])
+    .Y(_093_[2])
   );
-  NAND _138_ (
+  NAND _139_ (
     .A(estado[1]),
     .B(reset),
     .Y(_040_)
   );
-  NOT _139_ (
+  NOT _140_ (
     .A(_017_),
     .Y(_041_)
   );
-  NAND _140_ (
+  NAND _141_ (
     .A(_025_),
     .B(_019_),
     .Y(_042_)
   );
-  NAND _141_ (
+  NAND _142_ (
     .A(_042_),
     .B(_041_),
     .Y(_043_)
   );
-  NAND _142_ (
+  NAND _143_ (
     .A(_043_),
     .B(_031_),
     .Y(_044_)
   );
-  NAND _143_ (
+  NAND _144_ (
     .A(_044_),
     .B(_040_),
-    .Y(_092_[1])
+    .Y(_093_[1])
   );
-  NOT _144_ (
-    .A(UmbralesMFs[0]),
+  NOT _145_ (
+    .A(FIFO_ERRORS[0]),
     .Y(_045_)
   );
-  NOR _145_ (
-    .A(_093_),
-    .B(_045_),
-    .Y(UmbralMF_estr[0])
-  );
   NOT _146_ (
-    .A(UmbralesMFs[1]),
+    .A(estado[1]),
     .Y(_046_)
   );
   NOR _147_ (
     .A(_046_),
-    .B(_093_),
-    .Y(UmbralMF_estr[1])
-  );
-  NOT _148_ (
-    .A(UmbralesMFs[2]),
-    .Y(_047_)
-  );
-  NOR _149_ (
-    .A(_047_),
-    .B(_093_),
-    .Y(UmbralMF_estr[2])
-  );
-  NOT _150_ (
-    .A(UmbralesMFs[3]),
-    .Y(_048_)
-  );
-  NOR _151_ (
-    .A(_048_),
-    .B(_093_),
-    .Y(UmbralMF_estr[3])
-  );
-  NOT _152_ (
-    .A(UmbralesVCs[16]),
-    .Y(_049_)
-  );
-  NOR _153_ (
-    .A(_049_),
-    .B(_093_),
-    .Y(UmbralV0_estr[0])
-  );
-  NOT _154_ (
-    .A(UmbralesVCs[17]),
-    .Y(_050_)
-  );
-  NOR _155_ (
-    .A(_050_),
-    .B(_093_),
-    .Y(UmbralV0_estr[1])
-  );
-  NOT _156_ (
-    .A(UmbralesVCs[18]),
-    .Y(_051_)
-  );
-  NOR _157_ (
-    .A(_051_),
-    .B(_093_),
-    .Y(UmbralV0_estr[2])
-  );
-  NOT _158_ (
-    .A(UmbralesVCs[19]),
-    .Y(_052_)
-  );
-  NOR _159_ (
-    .A(_052_),
-    .B(_093_),
-    .Y(UmbralV0_estr[3])
-  );
-  NOT _160_ (
-    .A(UmbralesVCs[20]),
-    .Y(_053_)
-  );
-  NOR _161_ (
-    .A(_053_),
-    .B(_093_),
-    .Y(UmbralV0_estr[4])
-  );
-  NOT _162_ (
-    .A(UmbralesVCs[21]),
-    .Y(_054_)
-  );
-  NOR _163_ (
-    .A(_054_),
-    .B(_093_),
-    .Y(UmbralV0_estr[5])
-  );
-  NOT _164_ (
-    .A(UmbralesVCs[22]),
-    .Y(_055_)
-  );
-  NOR _165_ (
-    .A(_055_),
-    .B(_093_),
-    .Y(UmbralV0_estr[6])
-  );
-  NOT _166_ (
-    .A(UmbralesVCs[23]),
-    .Y(_056_)
-  );
-  NOR _167_ (
-    .A(_056_),
-    .B(_093_),
-    .Y(UmbralV0_estr[7])
-  );
-  NOT _168_ (
-    .A(UmbralesVCs[24]),
-    .Y(_057_)
-  );
-  NOR _169_ (
-    .A(_057_),
-    .B(_093_),
-    .Y(UmbralV0_estr[8])
-  );
-  NOT _170_ (
-    .A(UmbralesVCs[25]),
-    .Y(_058_)
-  );
-  NOR _171_ (
-    .A(_058_),
-    .B(_093_),
-    .Y(UmbralV0_estr[9])
-  );
-  NOT _172_ (
-    .A(UmbralesVCs[26]),
-    .Y(_059_)
-  );
-  NOR _173_ (
-    .A(_059_),
-    .B(_093_),
-    .Y(UmbralV0_estr[10])
-  );
-  NOT _174_ (
-    .A(UmbralesVCs[27]),
-    .Y(_060_)
-  );
-  NOR _175_ (
-    .A(_060_),
-    .B(_093_),
-    .Y(UmbralV0_estr[11])
-  );
-  NOT _176_ (
-    .A(UmbralesVCs[28]),
-    .Y(_061_)
-  );
-  NOR _177_ (
-    .A(_061_),
-    .B(_093_),
-    .Y(UmbralV0_estr[12])
-  );
-  NOT _178_ (
-    .A(UmbralesVCs[29]),
-    .Y(_062_)
-  );
-  NOR _179_ (
-    .A(_062_),
-    .B(_093_),
-    .Y(UmbralV0_estr[13])
-  );
-  NOT _180_ (
-    .A(UmbralesVCs[30]),
-    .Y(_063_)
-  );
-  NOR _181_ (
-    .A(_063_),
-    .B(_093_),
-    .Y(UmbralV0_estr[14])
-  );
-  NOT _182_ (
-    .A(UmbralesVCs[31]),
-    .Y(_064_)
-  );
-  NOR _183_ (
-    .A(_064_),
-    .B(_093_),
-    .Y(UmbralV0_estr[15])
-  );
-  NOT _184_ (
-    .A(UmbralesVCs[0]),
-    .Y(_065_)
-  );
-  NOR _185_ (
-    .A(_065_),
-    .B(_093_),
-    .Y(UmbralV1_estr[0])
-  );
-  NOT _186_ (
-    .A(UmbralesVCs[1]),
-    .Y(_066_)
-  );
-  NOR _187_ (
-    .A(_066_),
-    .B(_093_),
-    .Y(UmbralV1_estr[1])
-  );
-  NOT _188_ (
-    .A(UmbralesVCs[2]),
-    .Y(_067_)
-  );
-  NOR _189_ (
-    .A(_067_),
-    .B(_093_),
-    .Y(UmbralV1_estr[2])
-  );
-  NOT _190_ (
-    .A(UmbralesVCs[3]),
-    .Y(_068_)
-  );
-  NOR _191_ (
-    .A(_068_),
-    .B(_093_),
-    .Y(UmbralV1_estr[3])
-  );
-  NOT _192_ (
-    .A(UmbralesVCs[4]),
-    .Y(_069_)
-  );
-  NOR _193_ (
-    .A(_069_),
-    .B(_093_),
-    .Y(UmbralV1_estr[4])
-  );
-  NOT _194_ (
-    .A(UmbralesVCs[5]),
-    .Y(_070_)
-  );
-  NOR _195_ (
-    .A(_070_),
-    .B(_093_),
-    .Y(UmbralV1_estr[5])
-  );
-  NOT _196_ (
-    .A(UmbralesVCs[6]),
-    .Y(_071_)
-  );
-  NOR _197_ (
-    .A(_071_),
-    .B(_093_),
-    .Y(UmbralV1_estr[6])
-  );
-  NOT _198_ (
-    .A(UmbralesVCs[7]),
-    .Y(_072_)
-  );
-  NOR _199_ (
-    .A(_072_),
-    .B(_093_),
-    .Y(UmbralV1_estr[7])
-  );
-  NOT _200_ (
-    .A(UmbralesVCs[8]),
-    .Y(_073_)
-  );
-  NOR _201_ (
-    .A(_073_),
-    .B(_093_),
-    .Y(UmbralV1_estr[8])
-  );
-  NOT _202_ (
-    .A(UmbralesVCs[9]),
-    .Y(_074_)
-  );
-  NOR _203_ (
-    .A(_074_),
-    .B(_093_),
-    .Y(UmbralV1_estr[9])
-  );
-  NOT _204_ (
-    .A(UmbralesVCs[10]),
-    .Y(_075_)
-  );
-  NOR _205_ (
-    .A(_075_),
-    .B(_093_),
-    .Y(UmbralV1_estr[10])
-  );
-  NOT _206_ (
-    .A(UmbralesVCs[11]),
-    .Y(_076_)
-  );
-  NOR _207_ (
-    .A(_076_),
-    .B(_093_),
-    .Y(UmbralV1_estr[11])
-  );
-  NOT _208_ (
-    .A(UmbralesVCs[12]),
-    .Y(_077_)
-  );
-  NOR _209_ (
-    .A(_077_),
-    .B(_093_),
-    .Y(UmbralV1_estr[12])
-  );
-  NOT _210_ (
-    .A(UmbralesVCs[13]),
-    .Y(_078_)
-  );
-  NOR _211_ (
-    .A(_078_),
-    .B(_093_),
-    .Y(UmbralV1_estr[13])
-  );
-  NOT _212_ (
-    .A(UmbralesVCs[14]),
-    .Y(_079_)
-  );
-  NOR _213_ (
-    .A(_079_),
-    .B(_093_),
-    .Y(UmbralV1_estr[14])
-  );
-  NOT _214_ (
-    .A(UmbralesVCs[15]),
-    .Y(_080_)
-  );
-  NOR _215_ (
-    .A(_080_),
-    .B(_093_),
-    .Y(UmbralV1_estr[15])
-  );
-  NOT _216_ (
-    .A(UmbralesDs[4]),
-    .Y(_081_)
-  );
-  NOR _217_ (
-    .A(_081_),
-    .B(_093_),
-    .Y(UmbralD0_estr[0])
-  );
-  NOT _218_ (
-    .A(UmbralesDs[5]),
-    .Y(_082_)
-  );
-  NOR _219_ (
-    .A(_082_),
-    .B(_093_),
-    .Y(UmbralD0_estr[1])
-  );
-  NOT _220_ (
-    .A(UmbralesDs[6]),
-    .Y(_083_)
-  );
-  NOR _221_ (
-    .A(_083_),
-    .B(_093_),
-    .Y(UmbralD0_estr[2])
-  );
-  NOT _222_ (
-    .A(UmbralesDs[7]),
-    .Y(_084_)
-  );
-  NOR _223_ (
-    .A(_084_),
-    .B(_093_),
-    .Y(UmbralD0_estr[3])
-  );
-  NOT _224_ (
-    .A(UmbralesDs[0]),
-    .Y(_085_)
-  );
-  NOR _225_ (
-    .A(_085_),
-    .B(_093_),
-    .Y(UmbralD1_estr[0])
-  );
-  NOT _226_ (
-    .A(UmbralesDs[1]),
-    .Y(_086_)
-  );
-  NOR _227_ (
-    .A(_086_),
-    .B(_093_),
-    .Y(UmbralD1_estr[1])
-  );
-  NOT _228_ (
-    .A(UmbralesDs[2]),
-    .Y(_087_)
-  );
-  NOR _229_ (
-    .A(_087_),
-    .B(_093_),
-    .Y(UmbralD1_estr[2])
-  );
-  NOT _230_ (
-    .A(UmbralesDs[3]),
-    .Y(_088_)
-  );
-  NOR _231_ (
-    .A(_088_),
-    .B(_093_),
-    .Y(UmbralD1_estr[3])
-  );
-  NOT _232_ (
-    .A(FIFO_ERRORS[0]),
-    .Y(_089_)
-  );
-  NOT _233_ (
-    .A(estado[1]),
-    .Y(_090_)
-  );
-  NOR _234_ (
-    .A(_090_),
-    .B(_089_),
+    .B(_045_),
     .Y(error_full_estr[0])
   );
-  NOR _235_ (
+  NOR _148_ (
     .A(_003_),
-    .B(_090_),
+    .B(_046_),
     .Y(error_full_estr[1])
   );
-  NOR _236_ (
-    .A(_090_),
+  NOR _149_ (
+    .A(_046_),
     .B(_000_),
     .Y(error_full_estr[2])
   );
-  NOR _237_ (
-    .A(_090_),
+  NOR _150_ (
+    .A(_046_),
     .B(_001_),
     .Y(error_full_estr[3])
   );
-  NOT _238_ (
+  NOT _151_ (
     .A(FIFO_ERRORS[4]),
+    .Y(_047_)
+  );
+  NOR _152_ (
+    .A(_046_),
+    .B(_047_),
+    .Y(error_full_estr[4])
+  );
+  NOT _153_ (
+    .A(UmbralesMFs[0]),
+    .Y(_048_)
+  );
+  NAND _154_ (
+    .A(_023_),
+    .B(reset),
+    .Y(_049_)
+  );
+  NOR _155_ (
+    .A(_049_),
+    .B(_048_),
+    .Y(UmbralMF_estr[0])
+  );
+  NOT _156_ (
+    .A(UmbralesMFs[1]),
+    .Y(_050_)
+  );
+  NOR _157_ (
+    .A(_049_),
+    .B(_050_),
+    .Y(UmbralMF_estr[1])
+  );
+  NOT _158_ (
+    .A(UmbralesMFs[2]),
+    .Y(_051_)
+  );
+  NOR _159_ (
+    .A(_049_),
+    .B(_051_),
+    .Y(UmbralMF_estr[2])
+  );
+  NOT _160_ (
+    .A(UmbralesMFs[3]),
+    .Y(_052_)
+  );
+  NOR _161_ (
+    .A(_049_),
+    .B(_052_),
+    .Y(UmbralMF_estr[3])
+  );
+  NOT _162_ (
+    .A(UmbralesVCs[16]),
+    .Y(_053_)
+  );
+  NOR _163_ (
+    .A(_049_),
+    .B(_053_),
+    .Y(UmbralV0_estr[0])
+  );
+  NOT _164_ (
+    .A(UmbralesVCs[17]),
+    .Y(_054_)
+  );
+  NOR _165_ (
+    .A(_049_),
+    .B(_054_),
+    .Y(UmbralV0_estr[1])
+  );
+  NOT _166_ (
+    .A(UmbralesVCs[18]),
+    .Y(_055_)
+  );
+  NOR _167_ (
+    .A(_049_),
+    .B(_055_),
+    .Y(UmbralV0_estr[2])
+  );
+  NOT _168_ (
+    .A(UmbralesVCs[19]),
+    .Y(_056_)
+  );
+  NOR _169_ (
+    .A(_049_),
+    .B(_056_),
+    .Y(UmbralV0_estr[3])
+  );
+  NOT _170_ (
+    .A(UmbralesVCs[20]),
+    .Y(_057_)
+  );
+  NOR _171_ (
+    .A(_049_),
+    .B(_057_),
+    .Y(UmbralV0_estr[4])
+  );
+  NOT _172_ (
+    .A(UmbralesVCs[21]),
+    .Y(_058_)
+  );
+  NOR _173_ (
+    .A(_049_),
+    .B(_058_),
+    .Y(UmbralV0_estr[5])
+  );
+  NOT _174_ (
+    .A(UmbralesVCs[22]),
+    .Y(_059_)
+  );
+  NOR _175_ (
+    .A(_049_),
+    .B(_059_),
+    .Y(UmbralV0_estr[6])
+  );
+  NOT _176_ (
+    .A(UmbralesVCs[23]),
+    .Y(_060_)
+  );
+  NOR _177_ (
+    .A(_049_),
+    .B(_060_),
+    .Y(UmbralV0_estr[7])
+  );
+  NOT _178_ (
+    .A(UmbralesVCs[24]),
+    .Y(_061_)
+  );
+  NOR _179_ (
+    .A(_049_),
+    .B(_061_),
+    .Y(UmbralV0_estr[8])
+  );
+  NOT _180_ (
+    .A(UmbralesVCs[25]),
+    .Y(_062_)
+  );
+  NOR _181_ (
+    .A(_049_),
+    .B(_062_),
+    .Y(UmbralV0_estr[9])
+  );
+  NOT _182_ (
+    .A(UmbralesVCs[26]),
+    .Y(_063_)
+  );
+  NOR _183_ (
+    .A(_049_),
+    .B(_063_),
+    .Y(UmbralV0_estr[10])
+  );
+  NOT _184_ (
+    .A(UmbralesVCs[27]),
+    .Y(_064_)
+  );
+  NOR _185_ (
+    .A(_049_),
+    .B(_064_),
+    .Y(UmbralV0_estr[11])
+  );
+  NOT _186_ (
+    .A(UmbralesVCs[28]),
+    .Y(_065_)
+  );
+  NOR _187_ (
+    .A(_049_),
+    .B(_065_),
+    .Y(UmbralV0_estr[12])
+  );
+  NOT _188_ (
+    .A(UmbralesVCs[29]),
+    .Y(_066_)
+  );
+  NOR _189_ (
+    .A(_049_),
+    .B(_066_),
+    .Y(UmbralV0_estr[13])
+  );
+  NOT _190_ (
+    .A(UmbralesVCs[30]),
+    .Y(_067_)
+  );
+  NOR _191_ (
+    .A(_049_),
+    .B(_067_),
+    .Y(UmbralV0_estr[14])
+  );
+  NOT _192_ (
+    .A(UmbralesVCs[31]),
+    .Y(_068_)
+  );
+  NOR _193_ (
+    .A(_049_),
+    .B(_068_),
+    .Y(UmbralV0_estr[15])
+  );
+  NOT _194_ (
+    .A(UmbralesVCs[0]),
+    .Y(_069_)
+  );
+  NOR _195_ (
+    .A(_049_),
+    .B(_069_),
+    .Y(UmbralV1_estr[0])
+  );
+  NOT _196_ (
+    .A(UmbralesVCs[1]),
+    .Y(_070_)
+  );
+  NOR _197_ (
+    .A(_049_),
+    .B(_070_),
+    .Y(UmbralV1_estr[1])
+  );
+  NOT _198_ (
+    .A(UmbralesVCs[2]),
+    .Y(_071_)
+  );
+  NOR _199_ (
+    .A(_049_),
+    .B(_071_),
+    .Y(UmbralV1_estr[2])
+  );
+  NOT _200_ (
+    .A(UmbralesVCs[3]),
+    .Y(_072_)
+  );
+  NOR _201_ (
+    .A(_049_),
+    .B(_072_),
+    .Y(UmbralV1_estr[3])
+  );
+  NOT _202_ (
+    .A(UmbralesVCs[4]),
+    .Y(_073_)
+  );
+  NOR _203_ (
+    .A(_049_),
+    .B(_073_),
+    .Y(UmbralV1_estr[4])
+  );
+  NOT _204_ (
+    .A(UmbralesVCs[5]),
+    .Y(_074_)
+  );
+  NOR _205_ (
+    .A(_049_),
+    .B(_074_),
+    .Y(UmbralV1_estr[5])
+  );
+  NOT _206_ (
+    .A(UmbralesVCs[6]),
+    .Y(_075_)
+  );
+  NOR _207_ (
+    .A(_049_),
+    .B(_075_),
+    .Y(UmbralV1_estr[6])
+  );
+  NOT _208_ (
+    .A(UmbralesVCs[7]),
+    .Y(_076_)
+  );
+  NOR _209_ (
+    .A(_049_),
+    .B(_076_),
+    .Y(UmbralV1_estr[7])
+  );
+  NOT _210_ (
+    .A(UmbralesVCs[8]),
+    .Y(_077_)
+  );
+  NOR _211_ (
+    .A(_049_),
+    .B(_077_),
+    .Y(UmbralV1_estr[8])
+  );
+  NOT _212_ (
+    .A(UmbralesVCs[9]),
+    .Y(_078_)
+  );
+  NOR _213_ (
+    .A(_049_),
+    .B(_078_),
+    .Y(UmbralV1_estr[9])
+  );
+  NOT _214_ (
+    .A(UmbralesVCs[10]),
+    .Y(_079_)
+  );
+  NOR _215_ (
+    .A(_049_),
+    .B(_079_),
+    .Y(UmbralV1_estr[10])
+  );
+  NOT _216_ (
+    .A(UmbralesVCs[11]),
+    .Y(_080_)
+  );
+  NOR _217_ (
+    .A(_049_),
+    .B(_080_),
+    .Y(UmbralV1_estr[11])
+  );
+  NOT _218_ (
+    .A(UmbralesVCs[12]),
+    .Y(_081_)
+  );
+  NOR _219_ (
+    .A(_049_),
+    .B(_081_),
+    .Y(UmbralV1_estr[12])
+  );
+  NOT _220_ (
+    .A(UmbralesVCs[13]),
+    .Y(_082_)
+  );
+  NOR _221_ (
+    .A(_049_),
+    .B(_082_),
+    .Y(UmbralV1_estr[13])
+  );
+  NOT _222_ (
+    .A(UmbralesVCs[14]),
+    .Y(_083_)
+  );
+  NOR _223_ (
+    .A(_049_),
+    .B(_083_),
+    .Y(UmbralV1_estr[14])
+  );
+  NOT _224_ (
+    .A(UmbralesVCs[15]),
+    .Y(_084_)
+  );
+  NOR _225_ (
+    .A(_049_),
+    .B(_084_),
+    .Y(UmbralV1_estr[15])
+  );
+  NOT _226_ (
+    .A(UmbralesDs[4]),
+    .Y(_085_)
+  );
+  NOR _227_ (
+    .A(_049_),
+    .B(_085_),
+    .Y(UmbralD0_estr[0])
+  );
+  NOT _228_ (
+    .A(UmbralesDs[5]),
+    .Y(_086_)
+  );
+  NOR _229_ (
+    .A(_049_),
+    .B(_086_),
+    .Y(UmbralD0_estr[1])
+  );
+  NOT _230_ (
+    .A(UmbralesDs[6]),
+    .Y(_087_)
+  );
+  NOR _231_ (
+    .A(_049_),
+    .B(_087_),
+    .Y(UmbralD0_estr[2])
+  );
+  NOT _232_ (
+    .A(UmbralesDs[7]),
+    .Y(_088_)
+  );
+  NOR _233_ (
+    .A(_049_),
+    .B(_088_),
+    .Y(UmbralD0_estr[3])
+  );
+  NOT _234_ (
+    .A(UmbralesDs[0]),
+    .Y(_089_)
+  );
+  NOR _235_ (
+    .A(_049_),
+    .B(_089_),
+    .Y(UmbralD1_estr[0])
+  );
+  NOT _236_ (
+    .A(UmbralesDs[1]),
+    .Y(_090_)
+  );
+  NOR _237_ (
+    .A(_049_),
+    .B(_090_),
+    .Y(UmbralD1_estr[1])
+  );
+  NOT _238_ (
+    .A(UmbralesDs[2]),
     .Y(_091_)
   );
   NOR _239_ (
-    .A(_090_),
+    .A(_049_),
     .B(_091_),
-    .Y(error_full_estr[4])
+    .Y(UmbralD1_estr[2])
   );
-  DFF _240_ (
-    .C(clk),
-    .D(_093_),
-    .Q(estado[0])
+  NOT _240_ (
+    .A(UmbralesDs[3]),
+    .Y(_092_)
   );
-  DFF _241_ (
-    .C(clk),
-    .D(_092_[1]),
-    .Q(estado[1])
+  NOR _241_ (
+    .A(_049_),
+    .B(_092_),
+    .Y(UmbralD1_estr[3])
   );
   DFF _242_ (
     .C(clk),
-    .D(_092_[2]),
-    .Q(estado[2])
+    .D(_094_),
+    .Q(estado[0])
   );
   DFF _243_ (
     .C(clk),
-    .D(_092_[3]),
-    .Q(estado[3])
+    .D(_093_[1]),
+    .Q(estado[1])
   );
   DFF _244_ (
     .C(clk),
-    .D(_092_[4]),
+    .D(_093_[2]),
+    .Q(estado[2])
+  );
+  DFF _245_ (
+    .C(clk),
+    .D(_093_[3]),
+    .Q(estado[3])
+  );
+  DFF _246_ (
+    .C(clk),
+    .D(_093_[4]),
     .Q(estado[4])
   );
   assign UmbralD0 = UmbralesDs[7:4];

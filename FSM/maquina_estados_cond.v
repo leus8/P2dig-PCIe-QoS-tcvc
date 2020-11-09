@@ -66,9 +66,9 @@ always @(*) begin
     UmbralD0=UmbralesDs[7:4];
     UmbralD1=UmbralesDs[3:0];
     if(reset==0)begin
-    UmbralMF_cond=4'b0;
-    UmbralV0_cond=16'b0;
-    UmbralV1_cond=16'b0;
+    UmbralMF_cond=0;
+    UmbralV0_cond=0;
+    UmbralV1_cond=0;
     UmbralD0_cond=0;
     UmbralD1_cond=0;
     end else begin
@@ -84,6 +84,11 @@ always @(*) begin
             error_out_cond=0;
             idle_out_cond=0;
             error_full_cond=0;
+            UmbralMF_cond=0;
+            UmbralV0_cond=0;
+            UmbralV1_cond=0;
+            UmbralD0_cond=0;
+            UmbralD1_cond=0;
             if(reset==0)begin
                 if(init==1)
                 estado_prox=INIT;
