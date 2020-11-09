@@ -1,126 +1,57 @@
-module probador(
-
-    output reg clk,
-
+module probador 
+(   output reg clk,
     output reg reset_L,
+    output reg [3:0] dataA,
+    output reg [3:0] dataB,
+    output reg [3:0] idx,
+    input [3:0] sum30_dd,
+    input [3:0] idx_dd);
 
-    output reg d0_full,
-
-    output reg d1_full,
-
-    output reg vc0_empty,
-
-    output reg vc1_empty,
-
-    // -------> Estructurales --------->
-    output reg d0_full_estr,
-
-    output reg d1_full_estr,
-
-    output reg vc0_empty_estr,
-
-    output reg vc1_empty_estr
-
-    );
-
-    initial begin
-
-    $dumpfile("./dump/pop_delay_vc0.vcd");
+initial begin
+    $dumpfile("./dump/sum_pipe.vcd");
     $dumpvars;
-
-    reset_L <= 0;
-
-    d0_full <= 0;
-    d1_full <= 0;
-    vc0_empty <= 1;
-    vc1_empty <= 1;
-
-    d0_full_estr <= 0;
-    d1_full_estr <= 0;
-    vc0_empty_estr <= 1;
-    vc1_empty_estr <= 1;
-    @(posedge clk);
-
-    // pop vc0
-    reset_L <= 1;
-
-    d0_full <= 0;
-    d1_full <= 0;
-    vc0_empty <= 0;
-    vc1_empty <= 0;
-
-    d0_full_estr <= 0;
-    d1_full_estr <= 0;
-    vc0_empty_estr <= 0;
-    vc1_empty_estr <= 0;
-    @(posedge clk);
-
-    // no pop vc0
-    d0_full <= 1;
-    d1_full <= 1;
-    vc0_empty <= 0;
-    vc1_empty <= 0;
-
-    d0_full_estr <= 1;
-    d1_full_estr <= 1;
-    vc0_empty_estr <= 0;
-    vc1_empty_estr <= 0;
-    @(posedge clk);
-
-    // no pop vc0
-    d0_full <= 0;
-    d1_full <= 0;
-    vc0_empty <= 1;
-    vc1_empty <= 1;
-
-    d0_full_estr <= 0;
-    d1_full_estr <= 0;
-    vc0_empty_estr <= 1;
-    vc1_empty_estr <= 1;
-    @(posedge clk);
-
-    // no pop vc0
-    d0_full <= 1;
-    d1_full <= 1;
-    vc0_empty <= 1;
-    vc1_empty <= 1;
-
-    d0_full_estr <= 1;
-    d1_full_estr <= 1;
-    vc0_empty_estr <= 1;
-    vc1_empty_estr <= 1;
-    @(posedge clk);
-
-    // pop vc0
-    d0_full <= 0;
-    d1_full <= 0;
-    vc0_empty <= 0;
-    vc1_empty <= 0;
-
-    d0_full_estr <= 0;
-    d1_full_estr <= 0;
-    vc0_empty_estr <= 0;
-    vc1_empty_estr <= 0;
-    @(posedge clk);
-
-    // no pop vc0 - pop vc1
-    d0_full <= 0;
-    d1_full <= 0;
-    vc0_empty <= 1;
-    vc1_empty <= 0;
-
-    d0_full_estr <= 0;
-    d1_full_estr <= 0;
-    vc0_empty_estr <= 1;
-    vc1_empty_estr <= 0;
+    reset_L<=0;
+    dataA<=4'b0001;
+    dataB<=4'b0010;
+    idx<=4'b0001;
     @(posedge clk);
     @(posedge clk);
-
+    reset_L<=1;
+    @(posedge clk);
+    dataA<=4'b0100;
+    dataB<=4'b0110;
+    idx<=4'b0010;
+    @(posedge clk);
+    dataA<=4'b0011;
+    dataB<=4'b0011;
+    idx<=4'b0011;
+    @(posedge clk);
+    dataA<=4'b0011;
+    dataB<=4'b1110;
+    idx<=4'b0100;
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
     $finish;
     end
 
-    initial clk <= 0;
-    always #2 clk <= ~clk;
 
+    
+
+initial clk <= 0; 
+always #2 clk <= ~clk;
 
 endmodule
+
+
+
+
