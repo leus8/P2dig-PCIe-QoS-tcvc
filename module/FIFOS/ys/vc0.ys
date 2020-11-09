@@ -1,0 +1,15 @@
+read_verilog VC0.v
+
+hierarchy -check -top VC0
+
+proc; opt; fsm; opt; memory; opt
+
+techmap; opt
+
+dfflibmap -liberty ./lib/cmos_cells.lib
+
+abc -liberty ./lib/cmos_cells.lib
+
+clean
+
+write_verilog ./VC0_estr.v
