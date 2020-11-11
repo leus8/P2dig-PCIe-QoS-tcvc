@@ -1,0 +1,45 @@
+`include "Main.v"
+`include "VC0.v"
+`include "VC1.v"
+`include "D0.v"
+`include "D1.v"
+`include "fifo_main_pop.v"
+`include "pop_delay_vc0.v"
+`include "demux_dest.v"
+`include "demux_vc_id.v"
+`include "mux.v"
+`include "fifo.v"
+`include "fifo16.v"
+`include "maquina_estados_cond"
+`include "interconnect"
+
+module Module (    
+    input clk,
+    input reset_L,
+    input Main_wr,
+    input [(BW-1):0] Main_data_in,
+    input D0_rd,
+    input D1_rd,
+    output [(BW-1):0] D0_data_out,
+    output [(BW-1):0] D1_data_out,
+    input init,
+    //MF
+    input [3:0] UmbralesMFs_HIGH,
+    input [3:0] UmbralesMFs_LOW,
+    //VF
+    input [31:0] UmbralesVCs_HIGH,
+    input [31:0] UmbralesVCs_LOW,
+    //DF
+    input [7:0] UmbralesDs_HIGH,
+    input [7:0] UmbralesDs_LOW,
+    output reg error_out_cond,
+    output reg active_out_cond,
+    output reg idle_out_cond,
+    output reg [4:0] error_full_cond);
+
+interconnect intern0(/*AUTOINST*/);
+
+maquina_estados_cond maquina(/*AUTOINST*/);
+
+
+endmodule
