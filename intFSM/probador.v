@@ -19,16 +19,10 @@ module probador (
     output reg [7:0] UmbralesDs_LOW,
     // FIFO: Main
     input Main_full,
-    input Main_empty,
-    input Main_error_output,
 
     // FIFO: VC0
     input VC0_empty,
     input VC0_error_output,
-
-    // FIFO: VC1
-    input VC1_empty,
-    input VC1_error_output,
 
     // FIFO: D0
     input D0_empty,

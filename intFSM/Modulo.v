@@ -35,6 +35,11 @@ module Modulo (
     output error_out_cond,
     output active_out_cond,
     output idle_out_cond,
+	output D0_empty,
+	output D0_error_output,
+	output D1_empty,
+	output D1_error_output,
+	output Main_full,
     output [4:0] error_full_cond);
     
     parameter BW=6;
@@ -53,6 +58,12 @@ module Modulo (
 	wire [(LEN4-1):0] UmbralD0_LOW_cond;
 	wire [(LEN4-1):0] UmbralD1_HIGH_cond;
 	wire [(LEN4-1):0] UmbralD1_LOW_cond;
+
+	wire D0_empty;
+	wire D0_error_wire;
+	wire D1_empty;
+	wire D1_error_wire;
+	wire Main_full;
 	
 
 interconnect intern0(

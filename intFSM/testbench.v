@@ -14,10 +14,15 @@ module testbench;
 	/*AUTOWIRE*/
 	// Beginning of automatic wires (for undeclared instantiated-module outputs)
 	wire [(BW-1):0]	D0_data_out;		// From md of Modulo.v
+	wire		D0_empty;		// From md of Modulo.v
+	wire		D0_error_output;	// From md of Modulo.v
 	wire		D0_rd;			// From prb of probador.v
 	wire [(BW-1):0]	D1_data_out;		// From md of Modulo.v
+	wire		D1_empty;		// From md of Modulo.v
+	wire		D1_error_output;	// From md of Modulo.v
 	wire		D1_rd;			// From prb of probador.v
 	wire [(BW-1):0]	Main_data_in;		// From prb of probador.v
+	wire		Main_full;		// From md of Modulo.v
 	wire		Main_wr;		// From prb of probador.v
 	wire [7:0]	UmbralesDs_HIGH;	// From prb of probador.v
 	wire [7:0]	UmbralesDs_LOW;		// From prb of probador.v
@@ -41,6 +46,11 @@ module testbench;
 	       .error_out_cond		(error_out_cond),
 	       .active_out_cond		(active_out_cond),
 	       .idle_out_cond		(idle_out_cond),
+	       .D0_empty		(D0_empty),
+	       .D0_error_output		(D0_error_output),
+	       .D1_empty		(D1_empty),
+	       .D1_error_output		(D1_error_output),
+	       .Main_full		(Main_full),
 	       .error_full_cond		(error_full_cond[4:0]),
 	       // Inputs
 	       .clk			(clk),
@@ -74,12 +84,8 @@ module testbench;
 		 .UmbralesDs_LOW	(UmbralesDs_LOW[7:0]),
 		 // Inputs
 		 .Main_full		(Main_full),
-		 .Main_empty		(Main_empty),
-		 .Main_error_output	(Main_error_output),
 		 .VC0_empty		(VC0_empty),
 		 .VC0_error_output	(VC0_error_output),
-		 .VC1_empty		(VC1_empty),
-		 .VC1_error_output	(VC1_error_output),
 		 .D0_empty		(D0_empty),
 		 .D0_error_output	(D0_error_output),
 		 .D1_empty		(D1_empty),

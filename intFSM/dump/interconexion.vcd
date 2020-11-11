@@ -1,5 +1,5 @@
 $date
-	Tue Nov 10 23:15:25 2020
+	Tue Nov 10 23:47:03 2020
 $end
 $version
 	Icarus Verilog
@@ -8,707 +8,674 @@ $timescale
 	100ps
 $end
 $scope module testbench $end
-$var wire 6 ! D0_data_out [5:0] $end
-$var wire 1 " D0_empty $end
-$var wire 1 # D0_error_output $end
-$var wire 1 $ D0_rd $end
-$var wire 6 % D1_data_out [5:0] $end
-$var wire 1 & D1_empty $end
-$var wire 1 ' D1_error_output $end
-$var wire 1 ( D1_rd $end
-$var wire 6 ) Main_data_in [5:0] $end
-$var wire 1 * Main_empty $end
-$var wire 1 + Main_error_output $end
-$var wire 1 , Main_full $end
-$var wire 1 - Main_wr $end
-$var wire 8 . UmbralesDs_HIGH [7:0] $end
-$var wire 8 / UmbralesDs_LOW [7:0] $end
-$var wire 4 0 UmbralesMFs_HIGH [3:0] $end
-$var wire 4 1 UmbralesMFs_LOW [3:0] $end
-$var wire 32 2 UmbralesVCs_HIGH [31:0] $end
-$var wire 32 3 UmbralesVCs_LOW [31:0] $end
-$var wire 1 4 VC0_empty $end
-$var wire 1 5 VC0_error_output $end
-$var wire 1 6 VC1_empty $end
-$var wire 1 7 VC1_error_output $end
-$var wire 1 8 active_out_cond $end
-$var wire 1 9 clk $end
-$var wire 5 : error_full_cond [4:0] $end
-$var wire 1 ; error_out_cond $end
-$var wire 1 < idle_out_cond $end
-$var wire 1 = init $end
-$var wire 1 > reset_L $end
+$var wire 1 ! D0_empty $end
+$var wire 1 " D0_error_output $end
+$var wire 1 # D1_empty $end
+$var wire 1 $ D1_error_output $end
+$var wire 1 % VC0_empty $end
+$var wire 1 & VC0_error_output $end
+$var wire 1 ' reset_L $end
+$var wire 1 ( init $end
+$var wire 1 ) idle_out_cond $end
+$var wire 1 * error_out_cond $end
+$var wire 5 + error_full_cond [4:0] $end
+$var wire 1 , clk $end
+$var wire 1 - active_out_cond $end
+$var wire 32 . UmbralesVCs_LOW [31:0] $end
+$var wire 32 / UmbralesVCs_HIGH [31:0] $end
+$var wire 4 0 UmbralesMFs_LOW [3:0] $end
+$var wire 4 1 UmbralesMFs_HIGH [3:0] $end
+$var wire 8 2 UmbralesDs_LOW [7:0] $end
+$var wire 8 3 UmbralesDs_HIGH [7:0] $end
+$var wire 1 4 Main_wr $end
+$var wire 1 5 Main_full $end
+$var wire 6 6 Main_data_in [5:0] $end
+$var wire 1 7 D1_rd $end
+$var wire 6 8 D1_data_out [5:0] $end
+$var wire 1 9 D0_rd $end
+$var wire 6 : D0_data_out [5:0] $end
 $scope module md $end
-$var wire 6 ? D0_data_out [5:0] $end
-$var wire 1 $ D0_rd $end
-$var wire 6 @ D1_data_out [5:0] $end
-$var wire 1 ( D1_rd $end
-$var wire 5 A FIFO_EMPTIES [4:0] $end
-$var wire 5 B FIFO_ERRORS [4:0] $end
-$var wire 6 C Main_data_in [5:0] $end
-$var wire 1 D Main_full $end
-$var wire 1 - Main_wr $end
-$var wire 4 E UmbralD0_HIGH_cond [3:0] $end
-$var wire 4 F UmbralD0_LOW_cond [3:0] $end
-$var wire 4 G UmbralD1_HIGH_cond [3:0] $end
+$var wire 1 ! D0_empty $end
+$var wire 1 " D0_error_output $end
+$var wire 1 # D1_empty $end
+$var wire 1 $ D1_error_output $end
+$var wire 1 ' reset_L $end
+$var wire 1 ( init $end
+$var wire 1 ) idle_out_cond $end
+$var wire 1 * error_out_cond $end
+$var wire 5 ; error_full_cond [4:0] $end
+$var wire 1 , clk $end
+$var wire 1 - active_out_cond $end
+$var wire 32 < UmbralesVCs_LOW [31:0] $end
+$var wire 32 = UmbralesVCs_HIGH [31:0] $end
+$var wire 4 > UmbralesMFs_LOW [3:0] $end
+$var wire 4 ? UmbralesMFs_HIGH [3:0] $end
+$var wire 8 @ UmbralesDs_LOW [7:0] $end
+$var wire 8 A UmbralesDs_HIGH [7:0] $end
+$var wire 16 B UmbralV1_LOW_cond [15:0] $end
+$var wire 16 C UmbralV1_HIGH_cond [15:0] $end
+$var wire 16 D UmbralV0_LOW_cond [15:0] $end
+$var wire 16 E UmbralV0_HIGH_cond [15:0] $end
+$var wire 4 F UmbralMF_LOW_cond [3:0] $end
+$var wire 4 G UmbralMF_HIGH_cond [3:0] $end
 $var wire 4 H UmbralD1_LOW_cond [3:0] $end
-$var wire 4 I UmbralMF_HIGH_cond [3:0] $end
-$var wire 4 J UmbralMF_LOW_cond [3:0] $end
-$var wire 16 K UmbralV0_HIGH_cond [15:0] $end
-$var wire 16 L UmbralV0_LOW_cond [15:0] $end
-$var wire 16 M UmbralV1_HIGH_cond [15:0] $end
-$var wire 16 N UmbralV1_LOW_cond [15:0] $end
-$var wire 8 O UmbralesDs_HIGH [7:0] $end
-$var wire 8 P UmbralesDs_LOW [7:0] $end
-$var wire 4 Q UmbralesMFs_HIGH [3:0] $end
-$var wire 4 R UmbralesMFs_LOW [3:0] $end
-$var wire 32 S UmbralesVCs_HIGH [31:0] $end
-$var wire 32 T UmbralesVCs_LOW [31:0] $end
-$var wire 1 8 active_out_cond $end
-$var wire 1 9 clk $end
-$var wire 5 U error_full_cond [4:0] $end
-$var wire 1 ; error_out_cond $end
-$var wire 1 < idle_out_cond $end
-$var wire 1 = init $end
-$var wire 1 > reset_L $end
+$var wire 4 I UmbralD1_HIGH_cond [3:0] $end
+$var wire 4 J UmbralD0_LOW_cond [3:0] $end
+$var wire 4 K UmbralD0_HIGH_cond [3:0] $end
+$var wire 1 4 Main_wr $end
+$var wire 1 5 Main_full $end
+$var wire 6 L Main_data_in [5:0] $end
+$var wire 5 M FIFO_ERRORS [4:0] $end
+$var wire 5 N FIFO_EMPTIES [4:0] $end
+$var wire 1 7 D1_rd $end
+$var wire 6 O D1_data_out [5:0] $end
+$var wire 1 9 D0_rd $end
+$var wire 6 P D0_data_out [5:0] $end
 $scope module intern0 $end
-$var wire 1 V D0_almost_empty $end
-$var wire 1 W D0_almost_full $end
-$var wire 6 X D0_data_in [5:0] $end
-$var wire 6 Y D0_data_out [5:0] $end
-$var wire 1 Z D0_empty $end
-$var wire 1 [ D0_error_output $end
-$var wire 1 \ D0_full $end
-$var wire 1 $ D0_rd $end
-$var wire 1 ] D0_wr $end
-$var wire 1 ^ D1_almost_empty $end
-$var wire 1 _ D1_almost_full $end
-$var wire 6 ` D1_data_in [5:0] $end
-$var wire 6 a D1_data_out [5:0] $end
-$var wire 1 b D1_empty $end
-$var wire 1 c D1_error_output $end
-$var wire 1 d D1_full $end
-$var wire 1 ( D1_rd $end
-$var wire 1 e D1_wr $end
-$var wire 1 f Main_almost_empty $end
-$var wire 1 g Main_almost_full $end
-$var wire 6 h Main_data_in [5:0] $end
-$var wire 6 i Main_data_out [5:0] $end
-$var wire 1 j Main_empty $end
-$var wire 1 k Main_error_output $end
-$var wire 1 D Main_full $end
-$var wire 1 l Main_rd $end
-$var wire 1 - Main_wr $end
-$var wire 4 m UmbralD0_HIGH_cond [3:0] $end
-$var wire 4 n UmbralD0_LOW_cond [3:0] $end
+$var wire 1 Q vc0_delay $end
+$var wire 1 R valid_in_vc1 $end
+$var wire 1 S valid_in_vc0 $end
+$var wire 1 ' reset_L $end
+$var wire 1 T demux_vcid_valid_in $end
+$var wire 6 U demux_vcid_in [5:0] $end
+$var wire 1 V demux_dest_valid_in $end
+$var wire 6 W demux_dest_data_in [5:0] $end
+$var wire 6 X data_in_vc1 [5:0] $end
+$var wire 6 Y data_in_vc0 [5:0] $end
+$var wire 1 , clk $end
+$var wire 1 Z VC1_rd $end
+$var wire 1 [ VC1_full $end
+$var wire 1 \ VC1_error_output $end
+$var wire 1 ] VC1_empty $end
+$var wire 6 ^ VC1_data_out [5:0] $end
+$var wire 1 _ VC1_almost_full $end
+$var wire 1 ` VC1_almost_empty $end
+$var wire 1 a VC0_rd $end
+$var wire 1 b VC0_full $end
+$var wire 1 c VC0_error_output $end
+$var wire 1 d VC0_empty $end
+$var wire 6 e VC0_data_out [5:0] $end
+$var wire 1 f VC0_almost_full $end
+$var wire 1 g VC0_almost_empty $end
+$var wire 16 h UmbralV1_LOW_cond [15:0] $end
+$var wire 16 i UmbralV1_HIGH_cond [15:0] $end
+$var wire 16 j UmbralV0_LOW_cond [15:0] $end
+$var wire 16 k UmbralV0_HIGH_cond [15:0] $end
+$var wire 4 l UmbralMF_LOW_cond [3:0] $end
+$var wire 4 m UmbralMF_HIGH_cond [3:0] $end
+$var wire 4 n UmbralD1_LOW_cond [3:0] $end
 $var wire 4 o UmbralD1_HIGH_cond [3:0] $end
-$var wire 4 p UmbralD1_LOW_cond [3:0] $end
-$var wire 4 q UmbralMF_HIGH_cond [3:0] $end
-$var wire 4 r UmbralMF_LOW_cond [3:0] $end
-$var wire 16 s UmbralV0_HIGH_cond [15:0] $end
-$var wire 16 t UmbralV0_LOW_cond [15:0] $end
-$var wire 16 u UmbralV1_HIGH_cond [15:0] $end
-$var wire 16 v UmbralV1_LOW_cond [15:0] $end
-$var wire 1 w VC0_almost_empty $end
-$var wire 1 x VC0_almost_full $end
-$var wire 6 y VC0_data_out [5:0] $end
-$var wire 1 z VC0_empty $end
-$var wire 1 { VC0_error_output $end
-$var wire 1 | VC0_full $end
-$var wire 1 } VC0_rd $end
-$var wire 1 ~ VC1_almost_empty $end
-$var wire 1 !" VC1_almost_full $end
-$var wire 6 "" VC1_data_out [5:0] $end
-$var wire 1 #" VC1_empty $end
-$var wire 1 $" VC1_error_output $end
-$var wire 1 %" VC1_full $end
-$var wire 1 &" VC1_rd $end
-$var wire 1 9 clk $end
-$var wire 6 '" data_in_vc0 [5:0] $end
-$var wire 6 (" data_in_vc1 [5:0] $end
-$var wire 6 )" demux_dest_data_in [5:0] $end
-$var wire 1 *" demux_dest_valid_in $end
-$var wire 6 +" demux_vcid_in [5:0] $end
-$var wire 1 ," demux_vcid_valid_in $end
-$var wire 1 > reset_L $end
-$var wire 1 -" valid_in_vc0 $end
-$var wire 1 ." valid_in_vc1 $end
-$var wire 1 /" vc0_delay $end
-$scope module f_main $end
-$var wire 1 f Main_almost_empty $end
-$var wire 1 g Main_almost_full $end
-$var wire 6 0" Main_data_in [5:0] $end
-$var wire 6 1" Main_data_out [5:0] $end
-$var wire 1 j Main_empty $end
-$var wire 1 k Main_error_output $end
-$var wire 1 D Main_full $end
-$var wire 1 l Main_rd $end
-$var wire 1 - Main_wr $end
-$var wire 4 2" UmbralMF_HIGH_cond [3:0] $end
-$var wire 4 3" UmbralMF_LOW_cond [3:0] $end
-$var wire 1 9 clk $end
-$var wire 1 > reset_L $end
-$scope module Main $end
-$var wire 1 9 clk $end
-$var wire 1 4" empty $end
-$var wire 1 f fifo_almost_empty $end
-$var wire 1 g fifo_almost_full $end
-$var wire 6 5" fifo_data_in [5:0] $end
-$var wire 1 j fifo_empty $end
-$var wire 1 D fifo_full $end
-$var wire 1 l fifo_rd $end
-$var wire 1 - fifo_wr $end
-$var wire 1 6" full $end
-$var wire 4 7" nxtaddr [3:0] $end
-$var wire 1 > reset_L $end
-$var wire 4 8" umbral_alto [3:0] $end
-$var wire 4 9" umbral_bajo [3:0] $end
-$var reg 1 :" error_output $end
-$var reg 6 ;" fifo_data_out [5:0] $end
-$var reg 4 <" o_fill [3:0] $end
-$var reg 1 =" overrun $end
-$var reg 4 >" rdaddr [3:0] $end
-$var reg 1 ?" underrun $end
-$var reg 4 @" wraddr [3:0] $end
-$upscope $end
-$upscope $end
-$scope module pop_main $end
-$var wire 6 A" Main_data_out [5:0] $end
-$var wire 1 j Main_empty $end
-$var wire 1 x VC0_almost_full $end
-$var wire 1 !" VC1_almost_full $end
-$var wire 1 9 clk $end
-$var wire 1 > reset_L $end
-$var reg 1 B" Main_rd $end
-$var reg 6 C" data_out_recordar [5:0] $end
-$var reg 6 D" demux_vcid_in [5:0] $end
-$var reg 1 E" demux_vcid_valid_in $end
-$var reg 1 F" demux_vcid_valid_in_recordar $end
+$var wire 4 p UmbralD0_LOW_cond [3:0] $end
+$var wire 4 q UmbralD0_HIGH_cond [3:0] $end
+$var wire 1 4 Main_wr $end
+$var wire 1 r Main_rd $end
+$var wire 1 5 Main_full $end
+$var wire 1 s Main_error_output $end
+$var wire 1 t Main_empty $end
+$var wire 6 u Main_data_out [5:0] $end
+$var wire 6 v Main_data_in [5:0] $end
+$var wire 1 w Main_almost_full $end
+$var wire 1 x Main_almost_empty $end
+$var wire 1 y D1_wr $end
+$var wire 1 7 D1_rd $end
+$var wire 1 z D1_full $end
+$var wire 1 { D1_error_output $end
+$var wire 1 | D1_empty $end
+$var wire 6 } D1_data_out [5:0] $end
+$var wire 6 ~ D1_data_in [5:0] $end
+$var wire 1 !" D1_almost_full $end
+$var wire 1 "" D1_almost_empty $end
+$var wire 1 #" D0_wr $end
+$var wire 1 9 D0_rd $end
+$var wire 1 $" D0_full $end
+$var wire 1 %" D0_error_output $end
+$var wire 1 &" D0_empty $end
+$var wire 6 '" D0_data_out [5:0] $end
+$var wire 6 (" D0_data_in [5:0] $end
+$var wire 1 )" D0_almost_full $end
+$var wire 1 *" D0_almost_empty $end
+$scope module d_dest $end
+$var wire 1 +" selector $end
+$var wire 1 ' reset_L $end
+$var wire 1 V demux_dest_valid_in $end
+$var wire 6 ," demux_dest_data_in [5:0] $end
+$var wire 1 , clk $end
+$var reg 6 -" D0_data_in [5:0] $end
+$var reg 1 #" D0_wr $end
+$var reg 6 ." D1_data_in [5:0] $end
+$var reg 1 y D1_wr $end
+$var reg 6 /" data_recordar0 [5:0] $end
+$var reg 6 0" data_recordar1 [5:0] $end
+$var reg 1 1" valid_recordar0 $end
+$var reg 1 2" valid_recordar1 $end
 $upscope $end
 $scope module d_vcid $end
-$var wire 1 9 clk $end
-$var wire 6 G" demux_vcid_in [5:0] $end
-$var wire 1 ," demux_vcid_valid_in $end
-$var wire 1 > reset_L $end
-$var wire 1 H" selector $end
-$var reg 6 I" data_in_vc0 [5:0] $end
-$var reg 6 J" data_in_vc1 [5:0] $end
-$var reg 6 K" data_recordar0 [5:0] $end
-$var reg 6 L" data_recordar1 [5:0] $end
-$var reg 1 M" valid_in_vc0 $end
-$var reg 1 N" valid_in_vc1 $end
-$var reg 1 O" valid_recordar0 $end
-$var reg 1 P" valid_recordar1 $end
-$upscope $end
-$scope module f_vc0 $end
-$var wire 16 Q" UmbralV0_HIGH_cond [15:0] $end
-$var wire 16 R" UmbralV0_LOW_cond [15:0] $end
-$var wire 1 w VC0_almost_empty $end
-$var wire 1 x VC0_almost_full $end
-$var wire 6 S" VC0_data_out [5:0] $end
-$var wire 1 z VC0_empty $end
-$var wire 1 { VC0_error_output $end
-$var wire 1 | VC0_full $end
-$var wire 1 } VC0_rd $end
-$var wire 1 9 clk $end
-$var wire 6 T" data_in_vc0 [5:0] $end
-$var wire 1 > reset_L $end
-$var wire 1 -" valid_in_vc0 $end
-$scope module VC0 $end
-$var wire 1 9 clk $end
-$var wire 1 U" empty $end
-$var wire 1 w fifo_almost_empty $end
-$var wire 1 x fifo_almost_full $end
-$var wire 6 V" fifo_data_in [5:0] $end
-$var wire 1 z fifo_empty $end
-$var wire 1 | fifo_full $end
-$var wire 1 } fifo_rd $end
-$var wire 1 -" fifo_wr $end
-$var wire 1 W" full $end
-$var wire 16 X" nxtaddr [15:0] $end
-$var wire 1 > reset_L $end
-$var wire 16 Y" umbral_alto [15:0] $end
-$var wire 16 Z" umbral_bajo [15:0] $end
-$var reg 1 [" error_output $end
-$var reg 6 \" fifo_data_out [5:0] $end
-$var reg 16 ]" o_fill [15:0] $end
-$var reg 1 ^" overrun $end
-$var reg 16 _" rdaddr [15:0] $end
-$var reg 1 `" underrun $end
-$var reg 16 a" wraddr [15:0] $end
-$upscope $end
-$upscope $end
-$scope module f_vc1 $end
-$var wire 16 b" UmbralV1_HIGH_cond [15:0] $end
-$var wire 16 c" UmbralV1_LOW_cond [15:0] $end
-$var wire 1 ~ VC1_almost_empty $end
-$var wire 1 !" VC1_almost_full $end
-$var wire 6 d" VC1_data_out [5:0] $end
-$var wire 1 #" VC1_empty $end
-$var wire 1 $" VC1_error_output $end
-$var wire 1 %" VC1_full $end
-$var wire 1 &" VC1_rd $end
-$var wire 1 9 clk $end
-$var wire 6 e" data_in_vc1 [5:0] $end
-$var wire 1 > reset_L $end
-$var wire 1 ." valid_in_vc1 $end
-$scope module VC1 $end
-$var wire 1 9 clk $end
-$var wire 1 f" empty $end
-$var wire 1 ~ fifo_almost_empty $end
-$var wire 1 !" fifo_almost_full $end
-$var wire 6 g" fifo_data_in [5:0] $end
-$var wire 1 #" fifo_empty $end
-$var wire 1 %" fifo_full $end
-$var wire 1 &" fifo_rd $end
-$var wire 1 ." fifo_wr $end
-$var wire 1 h" full $end
-$var wire 16 i" nxtaddr [15:0] $end
-$var wire 1 > reset_L $end
-$var wire 16 j" umbral_alto [15:0] $end
-$var wire 16 k" umbral_bajo [15:0] $end
-$var reg 1 l" error_output $end
-$var reg 6 m" fifo_data_out [5:0] $end
-$var reg 16 n" o_fill [15:0] $end
-$var reg 1 o" overrun $end
-$var reg 16 p" rdaddr [15:0] $end
-$var reg 1 q" underrun $end
-$var reg 16 r" wraddr [15:0] $end
-$upscope $end
-$upscope $end
-$scope module pop_vc0 $end
-$var wire 1 \ D0_full $end
-$var wire 1 d D1_full $end
-$var wire 1 z VC0_empty $end
-$var wire 1 #" VC1_empty $end
-$var wire 1 9 clk $end
-$var wire 1 > reset_L $end
-$var reg 1 s" VC0_rd $end
-$var reg 1 t" VC1_rd $end
-$var reg 1 u" and_d0d1 $end
-$var reg 1 v" and_vc0_0 $end
-$var reg 1 w" and_vc0_1 $end
-$var reg 1 x" vc0_delay $end
-$upscope $end
-$scope module mux1 $end
-$var wire 6 y" VC0_data_out [5:0] $end
-$var wire 1 } VC0_rd $end
-$var wire 6 z" VC1_data_out [5:0] $end
-$var wire 1 &" VC1_rd $end
-$var wire 1 9 clk $end
-$var wire 1 > reset_L $end
-$var wire 1 /" vc0_delay $end
-$var reg 6 {" data_out_recordar [5:0] $end
-$var reg 6 |" demux_dest_data_in [5:0] $end
-$var reg 1 }" demux_dest_valid_in $end
-$var reg 1 ~" valid_in_recordar $end
-$upscope $end
-$scope module d_dest $end
-$var wire 1 9 clk $end
-$var wire 6 !# demux_dest_data_in [5:0] $end
-$var wire 1 *" demux_dest_valid_in $end
-$var wire 1 > reset_L $end
-$var wire 1 "# selector $end
-$var reg 6 ## D0_data_in [5:0] $end
-$var reg 1 $# D0_wr $end
-$var reg 6 %# D1_data_in [5:0] $end
-$var reg 1 &# D1_wr $end
-$var reg 6 '# data_recordar0 [5:0] $end
-$var reg 6 (# data_recordar1 [5:0] $end
-$var reg 1 )# valid_recordar0 $end
-$var reg 1 *# valid_recordar1 $end
+$var wire 1 3" selector $end
+$var wire 1 ' reset_L $end
+$var wire 1 T demux_vcid_valid_in $end
+$var wire 6 4" demux_vcid_in [5:0] $end
+$var wire 1 , clk $end
+$var reg 6 5" data_in_vc0 [5:0] $end
+$var reg 6 6" data_in_vc1 [5:0] $end
+$var reg 6 7" data_recordar0 [5:0] $end
+$var reg 6 8" data_recordar1 [5:0] $end
+$var reg 1 S valid_in_vc0 $end
+$var reg 1 R valid_in_vc1 $end
+$var reg 1 9" valid_recordar0 $end
+$var reg 1 :" valid_recordar1 $end
 $upscope $end
 $scope module f_d0 $end
-$var wire 1 V D0_almost_empty $end
-$var wire 1 W D0_almost_full $end
-$var wire 6 +# D0_data_in [5:0] $end
-$var wire 6 ,# D0_data_out [5:0] $end
-$var wire 1 Z D0_empty $end
-$var wire 1 [ D0_error_output $end
-$var wire 1 \ D0_full $end
-$var wire 1 $ D0_rd $end
-$var wire 1 ] D0_wr $end
-$var wire 4 -# UmbralD0_HIGH_cond [3:0] $end
-$var wire 4 .# UmbralD0_LOW_cond [3:0] $end
-$var wire 1 9 clk $end
-$var wire 1 > reset_L $end
+$var wire 6 ;" D0_data_in [5:0] $end
+$var wire 1 #" D0_wr $end
+$var wire 1 ' reset_L $end
+$var wire 1 , clk $end
+$var wire 4 <" UmbralD0_LOW_cond [3:0] $end
+$var wire 4 =" UmbralD0_HIGH_cond [3:0] $end
+$var wire 1 9 D0_rd $end
+$var wire 1 $" D0_full $end
+$var wire 1 %" D0_error_output $end
+$var wire 1 &" D0_empty $end
+$var wire 6 >" D0_data_out [5:0] $end
+$var wire 1 )" D0_almost_full $end
+$var wire 1 *" D0_almost_empty $end
 $scope module D0 $end
-$var wire 1 9 clk $end
-$var wire 1 /# empty $end
-$var wire 1 V fifo_almost_empty $end
-$var wire 1 W fifo_almost_full $end
-$var wire 6 0# fifo_data_in [5:0] $end
-$var wire 1 Z fifo_empty $end
-$var wire 1 \ fifo_full $end
-$var wire 1 $ fifo_rd $end
-$var wire 1 ] fifo_wr $end
-$var wire 1 1# full $end
-$var wire 4 2# nxtaddr [3:0] $end
-$var wire 1 > reset_L $end
-$var wire 4 3# umbral_alto [3:0] $end
-$var wire 4 4# umbral_bajo [3:0] $end
-$var reg 1 5# error_output $end
-$var reg 6 6# fifo_data_out [5:0] $end
-$var reg 4 7# o_fill [3:0] $end
-$var reg 1 8# overrun $end
-$var reg 4 9# rdaddr [3:0] $end
-$var reg 1 :# underrun $end
-$var reg 4 ;# wraddr [3:0] $end
+$var wire 6 ?" fifo_data_in [5:0] $end
+$var wire 1 &" fifo_empty $end
+$var wire 1 $" fifo_full $end
+$var wire 1 #" fifo_wr $end
+$var wire 4 @" umbral_bajo [3:0] $end
+$var wire 4 A" umbral_alto [3:0] $end
+$var wire 1 ' reset_L $end
+$var wire 4 B" nxtaddr [3:0] $end
+$var wire 1 C" full $end
+$var wire 1 9 fifo_rd $end
+$var wire 1 )" fifo_almost_full $end
+$var wire 1 *" fifo_almost_empty $end
+$var wire 1 D" empty $end
+$var wire 1 , clk $end
+$var reg 1 %" error_output $end
+$var reg 6 E" fifo_data_out [5:0] $end
+$var reg 4 F" o_fill [3:0] $end
+$var reg 1 G" overrun $end
+$var reg 4 H" rdaddr [3:0] $end
+$var reg 1 I" underrun $end
+$var reg 4 J" wraddr [3:0] $end
 $upscope $end
 $upscope $end
 $scope module f_d1 $end
-$var wire 1 ^ D1_almost_empty $end
-$var wire 1 _ D1_almost_full $end
-$var wire 6 <# D1_data_in [5:0] $end
-$var wire 6 =# D1_data_out [5:0] $end
-$var wire 1 b D1_empty $end
-$var wire 1 c D1_error_output $end
-$var wire 1 d D1_full $end
-$var wire 1 ( D1_rd $end
-$var wire 1 e D1_wr $end
-$var wire 4 ># UmbralD1_HIGH_cond [3:0] $end
-$var wire 4 ?# UmbralD1_LOW_cond [3:0] $end
-$var wire 1 9 clk $end
-$var wire 1 > reset_L $end
+$var wire 6 K" D1_data_in [5:0] $end
+$var wire 1 y D1_wr $end
+$var wire 1 ' reset_L $end
+$var wire 1 , clk $end
+$var wire 4 L" UmbralD1_LOW_cond [3:0] $end
+$var wire 4 M" UmbralD1_HIGH_cond [3:0] $end
+$var wire 1 7 D1_rd $end
+$var wire 1 z D1_full $end
+$var wire 1 { D1_error_output $end
+$var wire 1 | D1_empty $end
+$var wire 6 N" D1_data_out [5:0] $end
+$var wire 1 !" D1_almost_full $end
+$var wire 1 "" D1_almost_empty $end
 $scope module D1 $end
-$var wire 1 9 clk $end
-$var wire 1 @# empty $end
-$var wire 1 ^ fifo_almost_empty $end
-$var wire 1 _ fifo_almost_full $end
-$var wire 6 A# fifo_data_in [5:0] $end
-$var wire 1 b fifo_empty $end
-$var wire 1 d fifo_full $end
-$var wire 1 ( fifo_rd $end
-$var wire 1 e fifo_wr $end
-$var wire 1 B# full $end
-$var wire 4 C# nxtaddr [3:0] $end
-$var wire 1 > reset_L $end
-$var wire 4 D# umbral_alto [3:0] $end
-$var wire 4 E# umbral_bajo [3:0] $end
-$var reg 1 F# error_output $end
-$var reg 6 G# fifo_data_out [5:0] $end
-$var reg 4 H# o_fill [3:0] $end
-$var reg 1 I# overrun $end
-$var reg 4 J# rdaddr [3:0] $end
-$var reg 1 K# underrun $end
-$var reg 4 L# wraddr [3:0] $end
+$var wire 6 O" fifo_data_in [5:0] $end
+$var wire 1 | fifo_empty $end
+$var wire 1 z fifo_full $end
+$var wire 1 y fifo_wr $end
+$var wire 4 P" umbral_bajo [3:0] $end
+$var wire 4 Q" umbral_alto [3:0] $end
+$var wire 1 ' reset_L $end
+$var wire 4 R" nxtaddr [3:0] $end
+$var wire 1 S" full $end
+$var wire 1 7 fifo_rd $end
+$var wire 1 !" fifo_almost_full $end
+$var wire 1 "" fifo_almost_empty $end
+$var wire 1 T" empty $end
+$var wire 1 , clk $end
+$var reg 1 { error_output $end
+$var reg 6 U" fifo_data_out [5:0] $end
+$var reg 4 V" o_fill [3:0] $end
+$var reg 1 W" overrun $end
+$var reg 4 X" rdaddr [3:0] $end
+$var reg 1 Y" underrun $end
+$var reg 4 Z" wraddr [3:0] $end
 $upscope $end
+$upscope $end
+$scope module f_main $end
+$var wire 1 ' reset_L $end
+$var wire 1 , clk $end
+$var wire 4 [" UmbralMF_LOW_cond [3:0] $end
+$var wire 4 \" UmbralMF_HIGH_cond [3:0] $end
+$var wire 1 4 Main_wr $end
+$var wire 1 r Main_rd $end
+$var wire 1 5 Main_full $end
+$var wire 1 s Main_error_output $end
+$var wire 1 t Main_empty $end
+$var wire 6 ]" Main_data_out [5:0] $end
+$var wire 6 ^" Main_data_in [5:0] $end
+$var wire 1 w Main_almost_full $end
+$var wire 1 x Main_almost_empty $end
+$scope module Main $end
+$var wire 1 t fifo_empty $end
+$var wire 1 5 fifo_full $end
+$var wire 4 _" umbral_bajo [3:0] $end
+$var wire 4 `" umbral_alto [3:0] $end
+$var wire 1 ' reset_L $end
+$var wire 4 a" nxtaddr [3:0] $end
+$var wire 1 b" full $end
+$var wire 1 4 fifo_wr $end
+$var wire 1 r fifo_rd $end
+$var wire 6 c" fifo_data_in [5:0] $end
+$var wire 1 w fifo_almost_full $end
+$var wire 1 x fifo_almost_empty $end
+$var wire 1 d" empty $end
+$var wire 1 , clk $end
+$var reg 1 s error_output $end
+$var reg 6 e" fifo_data_out [5:0] $end
+$var reg 4 f" o_fill [3:0] $end
+$var reg 1 g" overrun $end
+$var reg 4 h" rdaddr [3:0] $end
+$var reg 1 i" underrun $end
+$var reg 4 j" wraddr [3:0] $end
+$upscope $end
+$upscope $end
+$scope module f_vc0 $end
+$var wire 6 k" data_in_vc0 [5:0] $end
+$var wire 1 S valid_in_vc0 $end
+$var wire 1 ' reset_L $end
+$var wire 1 , clk $end
+$var wire 1 a VC0_rd $end
+$var wire 1 b VC0_full $end
+$var wire 1 c VC0_error_output $end
+$var wire 1 d VC0_empty $end
+$var wire 6 l" VC0_data_out [5:0] $end
+$var wire 1 f VC0_almost_full $end
+$var wire 1 g VC0_almost_empty $end
+$var wire 16 m" UmbralV0_LOW_cond [15:0] $end
+$var wire 16 n" UmbralV0_HIGH_cond [15:0] $end
+$scope module VC0 $end
+$var wire 6 o" fifo_data_in [5:0] $end
+$var wire 1 d fifo_empty $end
+$var wire 1 b fifo_full $end
+$var wire 1 S fifo_wr $end
+$var wire 16 p" umbral_bajo [15:0] $end
+$var wire 16 q" umbral_alto [15:0] $end
+$var wire 1 ' reset_L $end
+$var wire 16 r" nxtaddr [15:0] $end
+$var wire 1 s" full $end
+$var wire 1 a fifo_rd $end
+$var wire 1 f fifo_almost_full $end
+$var wire 1 g fifo_almost_empty $end
+$var wire 1 t" empty $end
+$var wire 1 , clk $end
+$var reg 1 c error_output $end
+$var reg 6 u" fifo_data_out [5:0] $end
+$var reg 16 v" o_fill [15:0] $end
+$var reg 1 w" overrun $end
+$var reg 16 x" rdaddr [15:0] $end
+$var reg 1 y" underrun $end
+$var reg 16 z" wraddr [15:0] $end
+$upscope $end
+$upscope $end
+$scope module f_vc1 $end
+$var wire 6 {" data_in_vc1 [5:0] $end
+$var wire 1 R valid_in_vc1 $end
+$var wire 1 ' reset_L $end
+$var wire 1 , clk $end
+$var wire 1 Z VC1_rd $end
+$var wire 1 [ VC1_full $end
+$var wire 1 \ VC1_error_output $end
+$var wire 1 ] VC1_empty $end
+$var wire 6 |" VC1_data_out [5:0] $end
+$var wire 1 _ VC1_almost_full $end
+$var wire 1 ` VC1_almost_empty $end
+$var wire 16 }" UmbralV1_LOW_cond [15:0] $end
+$var wire 16 ~" UmbralV1_HIGH_cond [15:0] $end
+$scope module VC1 $end
+$var wire 6 !# fifo_data_in [5:0] $end
+$var wire 1 ] fifo_empty $end
+$var wire 1 [ fifo_full $end
+$var wire 1 R fifo_wr $end
+$var wire 16 "# umbral_bajo [15:0] $end
+$var wire 16 ## umbral_alto [15:0] $end
+$var wire 1 ' reset_L $end
+$var wire 16 $# nxtaddr [15:0] $end
+$var wire 1 %# full $end
+$var wire 1 Z fifo_rd $end
+$var wire 1 _ fifo_almost_full $end
+$var wire 1 ` fifo_almost_empty $end
+$var wire 1 &# empty $end
+$var wire 1 , clk $end
+$var reg 1 \ error_output $end
+$var reg 6 '# fifo_data_out [5:0] $end
+$var reg 16 (# o_fill [15:0] $end
+$var reg 1 )# overrun $end
+$var reg 16 *# rdaddr [15:0] $end
+$var reg 1 +# underrun $end
+$var reg 16 ,# wraddr [15:0] $end
+$upscope $end
+$upscope $end
+$scope module mux1 $end
+$var wire 6 -# VC0_data_out [5:0] $end
+$var wire 6 .# VC1_data_out [5:0] $end
+$var wire 1 Q vc0_delay $end
+$var wire 1 ' reset_L $end
+$var wire 1 , clk $end
+$var wire 1 Z VC1_rd $end
+$var wire 1 a VC0_rd $end
+$var reg 6 /# data_out_recordar [5:0] $end
+$var reg 6 0# demux_dest_data_in [5:0] $end
+$var reg 1 V demux_dest_valid_in $end
+$var reg 1 1# valid_in_recordar $end
+$upscope $end
+$scope module pop_main $end
+$var wire 6 2# Main_data_out [5:0] $end
+$var wire 1 t Main_empty $end
+$var wire 1 f VC0_almost_full $end
+$var wire 1 _ VC1_almost_full $end
+$var wire 1 ' reset_L $end
+$var wire 1 , clk $end
+$var reg 1 r Main_rd $end
+$var reg 6 3# data_out_recordar [5:0] $end
+$var reg 6 4# demux_vcid_in [5:0] $end
+$var reg 1 T demux_vcid_valid_in $end
+$var reg 1 5# demux_vcid_valid_in_recordar $end
+$upscope $end
+$scope module pop_vc0 $end
+$var wire 1 $" D0_full $end
+$var wire 1 z D1_full $end
+$var wire 1 d VC0_empty $end
+$var wire 1 ] VC1_empty $end
+$var wire 1 ' reset_L $end
+$var wire 1 , clk $end
+$var reg 1 a VC0_rd $end
+$var reg 1 Z VC1_rd $end
+$var reg 1 6# and_d0d1 $end
+$var reg 1 7# and_vc0_0 $end
+$var reg 1 8# and_vc0_1 $end
+$var reg 1 Q vc0_delay $end
 $upscope $end
 $upscope $end
 $scope module maquina $end
-$var wire 5 M# FIFO_EMPTIES [4:0] $end
-$var wire 5 N# FIFO_ERRORS [4:0] $end
-$var wire 8 O# UmbralesDs_HIGH [7:0] $end
-$var wire 8 P# UmbralesDs_LOW [7:0] $end
-$var wire 4 Q# UmbralesMFs_HIGH [3:0] $end
-$var wire 4 R# UmbralesMFs_LOW [3:0] $end
-$var wire 32 S# UmbralesVCs_HIGH [31:0] $end
-$var wire 32 T# UmbralesVCs_LOW [31:0] $end
-$var wire 1 9 clk $end
-$var wire 1 = init $end
-$var wire 1 > reset_L $end
-$var reg 4 U# UmbralD0_HIGH [3:0] $end
-$var reg 4 V# UmbralD0_HIGH_cond [3:0] $end
-$var reg 4 W# UmbralD0_LOW [3:0] $end
-$var reg 4 X# UmbralD0_LOW_cond [3:0] $end
-$var reg 4 Y# UmbralD1_HIGH [3:0] $end
-$var reg 4 Z# UmbralD1_HIGH_cond [3:0] $end
-$var reg 4 [# UmbralD1_LOW [3:0] $end
-$var reg 4 \# UmbralD1_LOW_cond [3:0] $end
-$var reg 4 ]# UmbralMF_HIGH [3:0] $end
-$var reg 4 ^# UmbralMF_HIGH_cond [3:0] $end
-$var reg 4 _# UmbralMF_LOW [3:0] $end
-$var reg 4 `# UmbralMF_LOW_cond [3:0] $end
-$var reg 16 a# UmbralV0_HIGH [15:0] $end
-$var reg 16 b# UmbralV0_HIGH_cond [15:0] $end
-$var reg 16 c# UmbralV0_LOW [15:0] $end
-$var reg 16 d# UmbralV0_LOW_cond [15:0] $end
-$var reg 16 e# UmbralV1_HIGH [15:0] $end
-$var reg 16 f# UmbralV1_HIGH_cond [15:0] $end
-$var reg 16 g# UmbralV1_LOW [15:0] $end
-$var reg 16 h# UmbralV1_LOW_cond [15:0] $end
-$var reg 1 i# active_out_cond $end
-$var reg 5 j# error_full_cond [4:0] $end
-$var reg 1 k# error_out_cond $end
-$var reg 3 l# estado [2:0] $end
-$var reg 3 m# estado_prox [2:0] $end
-$var reg 1 n# idle_out_cond $end
+$var wire 5 9# FIFO_EMPTIES [4:0] $end
+$var wire 5 :# FIFO_ERRORS [4:0] $end
+$var wire 1 ' reset_L $end
+$var wire 1 ( init $end
+$var wire 1 , clk $end
+$var wire 32 ;# UmbralesVCs_LOW [31:0] $end
+$var wire 32 <# UmbralesVCs_HIGH [31:0] $end
+$var wire 4 =# UmbralesMFs_LOW [3:0] $end
+$var wire 4 ># UmbralesMFs_HIGH [3:0] $end
+$var wire 8 ?# UmbralesDs_LOW [7:0] $end
+$var wire 8 @# UmbralesDs_HIGH [7:0] $end
+$var reg 4 A# UmbralD0_HIGH [3:0] $end
+$var reg 4 B# UmbralD0_HIGH_cond [3:0] $end
+$var reg 4 C# UmbralD0_LOW [3:0] $end
+$var reg 4 D# UmbralD0_LOW_cond [3:0] $end
+$var reg 4 E# UmbralD1_HIGH [3:0] $end
+$var reg 4 F# UmbralD1_HIGH_cond [3:0] $end
+$var reg 4 G# UmbralD1_LOW [3:0] $end
+$var reg 4 H# UmbralD1_LOW_cond [3:0] $end
+$var reg 4 I# UmbralMF_HIGH [3:0] $end
+$var reg 4 J# UmbralMF_HIGH_cond [3:0] $end
+$var reg 4 K# UmbralMF_LOW [3:0] $end
+$var reg 4 L# UmbralMF_LOW_cond [3:0] $end
+$var reg 16 M# UmbralV0_HIGH [15:0] $end
+$var reg 16 N# UmbralV0_HIGH_cond [15:0] $end
+$var reg 16 O# UmbralV0_LOW [15:0] $end
+$var reg 16 P# UmbralV0_LOW_cond [15:0] $end
+$var reg 16 Q# UmbralV1_HIGH [15:0] $end
+$var reg 16 R# UmbralV1_HIGH_cond [15:0] $end
+$var reg 16 S# UmbralV1_LOW [15:0] $end
+$var reg 16 T# UmbralV1_LOW_cond [15:0] $end
+$var reg 1 - active_out_cond $end
+$var reg 5 U# error_full_cond [4:0] $end
+$var reg 1 * error_out_cond $end
+$var reg 3 V# estado [2:0] $end
+$var reg 3 W# estado_prox [2:0] $end
+$var reg 1 ) idle_out_cond $end
 $upscope $end
 $upscope $end
 $scope module prb $end
-$var wire 6 o# D0_data_out [5:0] $end
-$var wire 1 " D0_empty $end
-$var wire 1 # D0_error_output $end
-$var wire 6 p# D1_data_out [5:0] $end
-$var wire 1 & D1_empty $end
-$var wire 1 ' D1_error_output $end
-$var wire 1 * Main_empty $end
-$var wire 1 + Main_error_output $end
-$var wire 1 , Main_full $end
-$var wire 1 4 VC0_empty $end
-$var wire 1 5 VC0_error_output $end
-$var wire 1 6 VC1_empty $end
-$var wire 1 7 VC1_error_output $end
-$var wire 1 8 active_out_cond $end
-$var wire 5 q# error_full_cond [4:0] $end
-$var wire 1 ; error_out_cond $end
-$var wire 1 < idle_out_cond $end
-$var reg 1 r# D0_rd $end
-$var reg 1 s# D1_rd $end
-$var reg 6 t# Main_data_in [5:0] $end
-$var reg 1 u# Main_wr $end
-$var reg 8 v# UmbralesDs_HIGH [7:0] $end
-$var reg 8 w# UmbralesDs_LOW [7:0] $end
-$var reg 4 x# UmbralesMFs_HIGH [3:0] $end
-$var reg 4 y# UmbralesMFs_LOW [3:0] $end
-$var reg 32 z# UmbralesVCs_HIGH [31:0] $end
-$var reg 32 {# UmbralesVCs_LOW [31:0] $end
-$var reg 1 |# clk $end
-$var reg 1 }# init $end
-$var reg 1 ~# reset_L $end
+$var wire 6 X# D0_data_out [5:0] $end
+$var wire 1 ! D0_empty $end
+$var wire 1 " D0_error_output $end
+$var wire 6 Y# D1_data_out [5:0] $end
+$var wire 1 # D1_empty $end
+$var wire 1 $ D1_error_output $end
+$var wire 1 5 Main_full $end
+$var wire 1 % VC0_empty $end
+$var wire 1 & VC0_error_output $end
+$var wire 1 - active_out_cond $end
+$var wire 5 Z# error_full_cond [4:0] $end
+$var wire 1 * error_out_cond $end
+$var wire 1 ) idle_out_cond $end
+$var reg 1 9 D0_rd $end
+$var reg 1 7 D1_rd $end
+$var reg 6 [# Main_data_in [5:0] $end
+$var reg 1 4 Main_wr $end
+$var reg 8 \# UmbralesDs_HIGH [7:0] $end
+$var reg 8 ]# UmbralesDs_LOW [7:0] $end
+$var reg 4 ^# UmbralesMFs_HIGH [3:0] $end
+$var reg 4 _# UmbralesMFs_LOW [3:0] $end
+$var reg 32 `# UmbralesVCs_HIGH [31:0] $end
+$var reg 32 a# UmbralesVCs_LOW [31:0] $end
+$var reg 1 , clk $end
+$var reg 1 ( init $end
+$var reg 1 ' reset_L $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-0~#
-x}#
-0|#
-b1 {#
-b11111111111111111111111111111111 z#
-b1 y#
-b11 x#
-b1 w#
-b11111111 v#
-0u#
-b0 t#
-0s#
-0r#
-b0 q#
-b0 p#
-b0 o#
-0n#
-bx m#
-bx l#
-0k#
-b0 j#
-0i#
-b0 h#
-b1 g#
-b0 f#
-b1111111111111111 e#
-b0 d#
-b0 c#
-b0 b#
-b1111111111111111 a#
-b0 `#
+b1 a#
+b11111111111111111111111111111111 `#
 b1 _#
-b0 ^#
-b11 ]#
-b0 \#
-b1 [#
+b11 ^#
+b1 ]#
+b11111111 \#
+b0 [#
 b0 Z#
-b1111 Y#
+b0 Y#
 b0 X#
-b0 W#
-b0 V#
-b1111 U#
-b1 T#
-b11111111111111111111111111111111 S#
-b1 R#
-b11 Q#
-b1 P#
-b11111111 O#
-bx N#
-bx M#
-bx L#
-xK#
-bx J#
-xI#
-bx H#
-b0 G#
-xF#
-b0 E#
+bx W#
+bx V#
+b0 U#
+b0 T#
+b1 S#
+b0 R#
+b1111111111111111 Q#
+b0 P#
+b0 O#
+b0 N#
+b1111111111111111 M#
+b0 L#
+b1 K#
+b0 J#
+b11 I#
+b0 H#
+b1 G#
+b0 F#
+b1111 E#
 b0 D#
-bx C#
-xB#
-bx A#
-x@#
-b0 ?#
-b0 >#
-b0 =#
-bx <#
-bx ;#
-x:#
+b0 C#
+b0 B#
+b1111 A#
+b11111111 @#
+b1 ?#
+b11 >#
+b1 =#
+b11111111111111111111111111111111 <#
+b1 ;#
+bx :#
 bx 9#
 x8#
-bx 7#
-b0 6#
+x7#
+x6#
 x5#
-b0 4#
-b0 3#
+bx 4#
+bx 3#
 bx 2#
 x1#
 bx 0#
-x/#
-b0 .#
-b0 -#
-b0 ,#
-bx +#
-0*#
-0)#
-b0 (#
-b0 '#
+bx /#
+bx .#
+bx -#
+bx ,#
+x+#
+bx *#
+x)#
+bx (#
+bx '#
 x&#
-bx %#
-x$#
-bx ##
-x"#
+x%#
+bx $#
+b0 ##
+b0 "#
 bx !#
-x~"
-x}"
+b0 ~"
+b0 }"
 bx |"
 bx {"
 bx z"
-bx y"
-xx"
+xy"
+bx x"
 xw"
-xv"
-xu"
+bx v"
+bx u"
 xt"
 xs"
 bx r"
-xq"
-bx p"
-xo"
-bx n"
-bx m"
-xl"
-b0 k"
-b0 j"
-bx i"
-xh"
-bx g"
-xf"
+b0 q"
+b0 p"
+bx o"
+b0 n"
+b0 m"
+bx l"
+bx k"
+bx j"
+xi"
+bx h"
+xg"
+bx f"
 bx e"
-bx d"
+xd"
 b0 c"
-b0 b"
+xb"
 bx a"
-x`"
-bx _"
-x^"
+b0 `"
+b0 _"
+b0 ^"
 bx ]"
-bx \"
-x["
-b0 Z"
-b0 Y"
+b0 \"
+b0 ["
+bx Z"
+xY"
 bx X"
 xW"
 bx V"
-xU"
-bx T"
-bx S"
-b0 R"
+b0 U"
+xT"
+xS"
+bx R"
 b0 Q"
-0P"
-0O"
-xN"
-xM"
+b0 P"
+bx O"
+b0 N"
+b0 M"
 b0 L"
-b0 K"
+bx K"
 bx J"
-bx I"
-xH"
-bx G"
-xF"
-xE"
-bx D"
-bx C"
-xB"
-bx A"
-bx @"
-x?"
-bx >"
-x="
-bx <"
+xI"
+bx H"
+xG"
+bx F"
+b0 E"
+xD"
+xC"
+bx B"
+b0 A"
+b0 @"
+bx ?"
+b0 >"
+b0 ="
+b0 <"
 bx ;"
 x:"
-b0 9"
-b0 8"
+x9"
+bx 8"
 bx 7"
-x6"
-b0 5"
-x4"
-b0 3"
-b0 2"
-bx 1"
-b0 0"
-x/"
-x."
-x-"
-x,"
-bx +"
+bx 6"
+bx 5"
+bx 4"
+x3"
+x2"
+x1"
+bx 0"
+bx /"
+bx ."
+bx -"
+bx ,"
+x+"
 x*"
-bx )"
+x)"
 bx ("
-bx '"
+b0 '"
 x&"
 x%"
 x$"
 x#"
-bx ""
+x""
 x!"
-x~
-x}
+bx ~
+b0 }
 x|
 x{
 xz
-bx y
+xy
 xx
 xw
 b0 v
-b0 u
-b0 t
-b0 s
-b0 r
+bx u
+xt
+xs
+xr
 b0 q
 b0 p
 b0 o
 b0 n
 b0 m
-xl
-xk
-xj
-bx i
+b0 l
+b0 k
+b0 j
+b0 i
 b0 h
 xg
 xf
-xe
+bx e
 xd
 xc
 xb
-b0 a
-bx `
+xa
+x`
 x_
-x^
+bx ^
 x]
 x\
 x[
 xZ
-b0 Y
+bx Y
 bx X
-xW
+bx W
 xV
-b0 U
-b1 T
-b11111111111111111111111111111111 S
-b1 R
-b11 Q
-b1 P
-b11111111 O
-b0 N
-b0 M
+bx U
+xT
+xS
+xR
+xQ
+b0 P
+b0 O
+bx N
+bx M
 b0 L
 b0 K
 b0 J
@@ -717,477 +684,1054 @@ b0 H
 b0 G
 b0 F
 b0 E
-xD
+b0 D
 b0 C
-bx B
-bx A
-b0 @
-b0 ?
-0>
-x=
-0<
-0;
+b0 B
+b11111111 A
+b1 @
+b11 ?
+b1 >
+b11111111111111111111111111111111 =
+b1 <
+b0 ;
 b0 :
 09
-08
-z7
-z6
-z5
-z4
-b1 3
-b11111111111111111111111111111111 2
-b1 1
-b11 0
-b1 /
-b11111111 .
+b0 8
+07
+b0 6
+x5
+04
+b11111111 3
+b1 2
+b11 1
+b1 0
+b11111111111111111111111111111111 /
+b1 .
 0-
-z,
-z+
-z*
-b0 )
+0,
+b0 +
+0*
+0)
 0(
-z'
+0'
 z&
-b0 %
-0$
+z%
+z$
 z#
 z"
-b0 !
+z!
 $end
 #80
-b0 {"
-0~"
-0t"
-0&"
-0s"
-0}
-0x"
-0/"
-0:"
-0k
-b0 ;"
-b0 i
-b0 1"
-b0 A"
-0H"
-0["
-0{
-b0 \"
-b0 y
-b0 S"
-b0 y"
-0v"
-0l"
-0$"
-b0 m"
-b0 ""
-b0 d"
-b0 z"
-0w"
-0B"
-0l
-0F"
-b0 C"
-0"#
-05#
-0[
-0F#
-0c
-b0 B
-b0 N#
-0u"
-b0 \#
-b0 H
-b0 p
-b0 ?#
-b0 E#
-b0 Z#
-b0 G
-b0 o
-b0 >#
-b0 D#
-b0 V#
-b0 E
-b0 m
-b0 -#
-b0 3#
-b0 h#
-b0 N
-b0 v
-b0 c"
-b0 k"
-b0 f#
-b0 M
-b0 u
-b0 b"
-b0 j"
-b0 b#
-b0 K
-b0 s
-b0 Q"
-b0 Y"
-b0 `#
-b0 J
-b0 r
-b0 3"
-b0 9"
-b0 ^#
-b0 I
-b0 q
-b0 2"
-b0 8"
-b1 m#
-0="
-b0 @"
-b1 7"
-0?"
-b0 >"
-b0 <"
-06"
-0D
-14"
-1j
-1f
-1g
-0E"
-0,"
-b0 D"
-b0 +"
-b0 G"
-0N"
-0."
-0M"
-0-"
-b0 J"
-b0 ("
-b0 e"
-b0 g"
-b0 I"
-b0 '"
-b0 T"
-b0 V"
-0^"
-b0 a"
-b1 X"
-0`"
-b0 _"
-b0 ]"
-0W"
-0|
-1U"
-1z
-1w
-1x
-0o"
-b0 r"
-b1 i"
-0q"
-b0 p"
-b0 n"
-0h"
-0%"
-1f"
-1#"
-1~
-1!"
-0}"
-0*"
-b0 |"
-b0 )"
-b0 !#
-0&#
-0e
-0$#
-0]
-b0 %#
-b0 `
-b0 <#
-b0 A#
-b0 ##
-b0 X
-b0 +#
-b0 0#
-08#
-b0 ;#
-b1 2#
-0:#
-b0 9#
-b0 7#
+b0 /#
 01#
+0Z
+0a
+0Q
+0s
+b0 u
+b0 ]"
+b0 e"
+b0 2#
+03"
+0:"
+09"
+b0 8"
+b0 7"
+0c
+b0 e
+b0 l"
+b0 u"
+b0 -#
+07#
 0\
-1/#
-1Z
-1V
-1W
-0I#
-b0 L#
-b1 C#
-0K#
-b0 J#
+b0 ^
+b0 |"
+b0 '#
+b0 .#
+08#
+0r
+05#
+b0 3#
+0+"
+02"
+01"
+b0 0"
+b0 /"
+0%"
+b0 M
+b0 :#
+0{
+06#
+14
+b0 H
+b0 n
+b0 L"
+b0 P"
 b0 H#
-0B#
-0d
-1@#
-1b
-b11111 A
-b11111 M#
-1^
+b0 I
+b0 o
+b0 M"
+b0 Q"
+b0 F#
+b0 K
+b0 q
+b0 ="
+b0 A"
+b0 B#
+b0 B
+b0 h
+b0 }"
+b0 "#
+b0 T#
+b0 C
+b0 i
+b0 ~"
+b0 ##
+b0 R#
+b0 E
+b0 k
+b0 n"
+b0 q"
+b0 N#
+b0 F
+b0 l
+b0 ["
+b0 _"
+b0 L#
+b0 G
+b0 m
+b0 \"
+b0 `"
+b0 J#
+b1 W#
+0g"
+b1 a"
+b0 j"
+0i"
+b0 h"
+05
+0b"
+1t
+1d"
+1x
+1w
+b0 f"
+0T
+b0 U
+b0 4"
+b0 4#
+0R
+0S
+b0 X
+b0 6"
+b0 {"
+b0 !#
+b0 Y
+b0 5"
+b0 k"
+b0 o"
+0w"
+b1 r"
+b0 z"
+0y"
+b0 x"
+0b
+0s"
+1d
+1t"
+1g
+1f
+b0 v"
+0)#
+b1 $#
+b0 ,#
+0+#
+b0 *#
+0[
+0%#
+1]
+1&#
+1`
 1_
-b0 l#
-b101 t#
-b101 )
-b101 C
-b101 h
-b101 0"
-b101 5"
-1~#
-1>
-1|#
-19
+b0 (#
+0V
+b0 W
+b0 ,"
+b0 0#
+0y
+0#"
+b0 ~
+b0 ."
+b0 K"
+b0 O"
+b0 ("
+b0 -"
+b0 ;"
+b0 ?"
+0G"
+b1 B"
+b0 J"
+0I"
+b0 H"
+0$"
+0C"
+1&"
+1D"
+1*"
+1)"
+b0 F"
+0W"
+b1 R"
+b0 Z"
+0Y"
+b0 X"
+0z
+0S"
+b11111 N
+b11111 9#
+1|
+1T"
+1""
+1!"
+b0 V"
+b0 V#
+b101 6
+b101 L
+b101 v
+b101 ^"
+b101 c"
+b101 [#
+1'
+1(
+1,
 #160
-0|#
-09
+0,
 #240
-b1 \#
-0^
+b101 3#
+b101 u
+b101 ]"
+b101 e"
+b101 2#
+1r
+15#
+0""
 b1 H
-b1 p
-b1 ?#
-b1 E#
-b1111 Z#
-0_
-b1111 G
-b1111 o
-b1111 >#
-b1111 D#
-b1111 V#
-0W
-b1111 E
-b1111 m
-b1111 -#
-b1111 3#
-b1 h#
-0~
-b1 N
-b1 v
-b1 c"
-b1 k"
-b1111111111111111 f#
+b1 n
+b1 L"
+b1 P"
+b1 H#
 0!"
-b1111111111111111 M
-b1111111111111111 u
-b1111111111111111 b"
-b1111111111111111 j"
-b1111111111111111 b#
-0x
-b1111111111111111 K
-b1111111111111111 s
-b1111111111111111 Q"
-b1111111111111111 Y"
-b1 `#
-0f
-b1 J
-b1 r
-b1 3"
-b1 9"
-b11 ^#
-0g
-b11 I
-b11 q
-b11 2"
-b11 8"
-b10111 t#
-b10111 )
-b10111 C
-b10111 h
-b10111 0"
-b10111 5"
-b1 l#
-1|#
-19
-#320
-0|#
-09
-#400
-b11100 t#
-b11100 )
-b11100 C
-b11100 h
-b11100 0"
-b11100 5"
-1|#
-19
-#480
-0|#
-09
-#560
-b1 t#
-b1 )
-b1 C
+b1111 I
+b1111 o
+b1111 M"
+b1111 Q"
+b1111 F#
+0)"
+b1111 K
+b1111 q
+b1111 ="
+b1111 A"
+b1111 B#
+0`
+b1 B
 b1 h
-b1 0"
-b1 5"
-1|#
-19
+b1 }"
+b1 "#
+b1 T#
+0_
+b1111111111111111 C
+b1111111111111111 i
+b1111111111111111 ~"
+b1111111111111111 ##
+b1111111111111111 R#
+0f
+b1111111111111111 E
+b1111111111111111 k
+b1111111111111111 n"
+b1111111111111111 q"
+b1111111111111111 N#
+b1 F
+b1 l
+b1 ["
+b1 _"
+b1 L#
+b11 G
+b11 m
+b11 \"
+b11 `"
+b11 J#
+b10111 6
+b10111 L
+b10111 v
+b10111 ^"
+b10111 c"
+b10111 [#
+b1 V#
+b11110 N
+b11110 9#
+0t
+0d"
+1x
+0w
+b1 f"
+b10 a"
+b1 j"
+1,
+#320
+0,
+#400
+b10111 3#
+b10111 u
+b10111 ]"
+b10111 e"
+b10111 2#
+19"
+b101 7"
+b11 a"
+b10 j"
+b1 h"
+1T
+b101 U
+b101 4"
+b101 4#
+b11100 6
+b11100 L
+b11100 v
+b11100 ^"
+b11100 c"
+b11100 [#
+1,
+#480
+0,
+#560
+b11100 3#
+b10111 7"
+b11100 u
+b11100 ]"
+b11100 e"
+b11100 2#
+b1 6
+b1 L
+b1 v
+b1 ^"
+b1 c"
+b1 [#
+1S
+b101 Y
+b101 5"
+b101 k"
+b101 o"
+b10111 U
+b10111 4"
+b10111 4#
+b10 h"
+b100 a"
+b11 j"
+1,
 #640
-0|#
-09
+0,
 #720
-b100110 t#
-b100110 )
-b100110 C
-b100110 h
-b100110 0"
-b100110 5"
-1|#
-19
+b101 /#
+b101 e
+b101 l"
+b101 u"
+b101 -#
+11#
+b1 3#
+1a
+b1 u
+b1 ]"
+b1 e"
+b1 2#
+b11100 7"
+17#
+b1 a"
+b0 j"
+b11 h"
+b11100 U
+b11100 4"
+b11100 4#
+b10111 Y
+b10111 5"
+b10111 k"
+b10111 o"
+b10 r"
+b1 z"
+b11100 N
+b11100 9#
+0d
+0t"
+0g
+b1 v"
+b100110 6
+b100110 L
+b100110 v
+b100110 ^"
+b100110 c"
+b100110 [#
+1,
 #800
-0|#
-09
+0,
 #880
-b10100 t#
-b10100 )
-b10100 C
-b10100 h
-b10100 0"
-b10100 5"
-1|#
-19
+b10111 /#
+b100110 3#
+11"
+b101 /"
+b10111 e
+b10111 l"
+b10111 u"
+b10111 -#
+b1 7"
+b100110 u
+b100110 ]"
+b100110 e"
+b100110 2#
+b10100 6
+b10100 L
+b10100 v
+b10100 ^"
+b10100 c"
+b10100 [#
+b101 W
+b101 ,"
+b101 0#
+1V
+b1 x"
+b11 r"
+b10 z"
+b11100 Y
+b11100 5"
+b11100 k"
+b11100 o"
+b1 U
+b1 4"
+b1 4#
+b0 h"
+b10 a"
+b1 j"
+1,
 #960
-0|#
-09
+0,
 #1040
-b101000 t#
-b101000 )
-b101000 C
-b101000 h
-b101000 0"
-b101000 5"
-1|#
-19
+b10100 3#
+1:"
+09"
+b100110 8"
+b11100 /#
+12"
+01"
+b10111 0"
+b10100 u
+b10100 ]"
+b10100 e"
+b10100 2#
+13"
+b0 7"
+b11100 e
+b11100 l"
+b11100 u"
+b11100 -#
+1+"
+b0 /"
+b11 a"
+b10 j"
+b1 h"
+b100110 U
+b100110 4"
+b100110 4#
+b1 Y
+b1 5"
+b1 k"
+b1 o"
+b100 r"
+b11 z"
+b10 x"
+b10111 W
+b10111 ,"
+b10111 0#
+1#"
+b101 ("
+b101 -"
+b101 ;"
+b101 ?"
+b101000 6
+b101000 L
+b101000 v
+b101000 ^"
+b101000 c"
+b101000 [#
+1,
 #1120
-0|#
-09
+0,
 #1200
-1|#
-19
+b1 /#
+0:"
+19"
+b10100 7"
+b101000 3#
+b11100 0"
+b1 e
+b1 l"
+b1 u"
+b1 -#
+03"
+b0 8"
+b101000 u
+b101000 ]"
+b101000 e"
+b101000 2#
+b10100 N
+b10100 9#
+0&"
+0D"
+0*"
+b1 F"
+b10 B"
+b1 J"
+0#"
+1y
+b10111 ~
+b10111 ."
+b10111 K"
+b10111 O"
+b11100 W
+b11100 ,"
+b11100 0#
+b11 x"
+b101 r"
+b100 z"
+0S
+1R
+b100110 X
+b100110 6"
+b100110 {"
+b100110 !#
+b10100 U
+b10100 4"
+b10100 4#
+b10 h"
+b100 a"
+b11 j"
+1,
 #1280
-0|#
-09
+0,
 #1360
-1|#
-19
+b100110 ^
+b100110 |"
+b100110 '#
+b100110 .#
+1:"
+09"
+b101000 8"
+b100110 /#
+1Z
+0a
+1Q
+02"
+11"
+b1 /"
+b101000 u
+b101000 ]"
+b101000 e"
+b101000 2#
+13"
+b0 7"
+b0 e
+b0 l"
+b0 u"
+b0 -#
+07#
+18#
+0+"
+b0 0"
+b1 a"
+b0 j"
+b11 h"
+b101000 U
+b101000 4"
+b101000 4#
+0R
+1S
+b10100 Y
+b10100 5"
+b10100 k"
+b10100 o"
+b100 x"
+1d
+1t"
+1g
+b0 v"
+b10 $#
+b1 ,#
+0]
+0&#
+1`
+b1 (#
+b1 W
+b1 ,"
+b1 0#
+b11100 ~
+b11100 ."
+b11100 K"
+b11100 O"
+b10 R"
+b1 Z"
+b10 N
+b10 9#
+0|
+0T"
+1""
+b1 V"
+1,
 #1440
-0|#
-09
+0,
 #1520
-1|#
-19
+b10100 e
+b10100 l"
+b10100 u"
+b10100 -#
+b10100 /#
+0Z
+1a
+0Q
+b100110 /"
+b0 ^
+b0 |"
+b0 '#
+b0 .#
+08#
+17#
+b101000 u
+b101000 ]"
+b101000 e"
+b101000 2#
+0""
+b10 V"
+b11 R"
+b10 Z"
+0y
+1#"
+b1 ("
+b1 -"
+b1 ;"
+b1 ?"
+b100110 W
+b100110 ,"
+b100110 0#
+1]
+1&#
+0`
+b0 (#
+b1 *#
+b100 N
+b100 9#
+0d
+0t"
+0g
+b1 v"
+b110 r"
+b101 z"
+0S
+1R
+b101000 X
+b101000 6"
+b101000 {"
+b101000 !#
+b0 h"
+b10 a"
+b1 j"
+1,
 #1600
-0|#
-09
+0,
 #1680
-1|#
-19
+b101000 ^
+b101000 |"
+b101000 '#
+b101000 .#
+b101000 /#
+1Z
+0a
+1Q
+12"
+01"
+b10100 0"
+b101000 u
+b101000 ]"
+b101000 e"
+b101000 2#
+b0 e
+b0 l"
+b0 u"
+b0 -#
+07#
+18#
+1+"
+b0 /"
+b11 a"
+b10 j"
+b1 h"
+b101 x"
+1d
+1t"
+1g
+b0 v"
+b11 $#
+b10 ,#
+b10 N
+b10 9#
+0]
+0&#
+1`
+b1 (#
+b10100 W
+b10100 ,"
+b10100 0#
+b100110 ("
+b100110 -"
+b100110 ;"
+b100110 ?"
+b11 B"
+b10 J"
+b10 F"
+1,
 #1760
-0|#
-09
+0,
 #1840
-1|#
-19
+02"
+11"
+b101000 /"
+0+"
+b0 0"
+b101000 ^
+b101000 |"
+b101000 '#
+b101000 .#
+b101000 u
+b101000 ]"
+b101000 e"
+b101000 2#
+b11 F"
+b100 B"
+b11 J"
+0#"
+1y
+b10100 ~
+b10100 ."
+b10100 K"
+b10100 O"
+b101000 W
+b101000 ,"
+b101000 0#
+b10 *#
+b100 $#
+b11 ,#
+b10 h"
+b100 a"
+b11 j"
+1,
 #1920
-0|#
-09
+0,
 #2000
-1|#
-19
+b101000 u
+b101000 ]"
+b101000 e"
+b101000 2#
+b101000 ^
+b101000 |"
+b101000 '#
+b101000 .#
+b1 a"
+b0 j"
+b11 h"
+b101 $#
+b100 ,#
+b11 *#
+0y
+1#"
+b101000 ("
+b101000 -"
+b101000 ;"
+b101000 ?"
+b100 R"
+b11 Z"
+b11 V"
+1,
 #2080
-0|#
-09
+0,
 #2160
-1|#
-19
+b101000 ^
+b101000 |"
+b101000 '#
+b101000 .#
+b101000 u
+b101000 ]"
+b101000 e"
+b101000 2#
+1$"
+1C"
+b100 F"
+b1 B"
+b0 J"
+b100 *#
+b110 $#
+b101 ,#
+b0 h"
+b10 a"
+b1 j"
+1,
 #2240
-0|#
-09
+0,
 #2320
-1|#
-19
+b101000 u
+b101000 ]"
+b101000 e"
+b101000 2#
+b101000 ^
+b101000 |"
+b101000 '#
+b101000 .#
+b1000 M
+b1000 :#
+1%"
+b11 a"
+b10 j"
+b1 h"
+b111 $#
+b110 ,#
+b101 *#
+1G"
+1,
 #2400
-0|#
-09
+0,
 #2480
-1|#
-19
+b101000 ^
+b101000 |"
+b101000 '#
+b101000 .#
+b101000 u
+b101000 ]"
+b101000 e"
+b101000 2#
+b110 *#
+b1000 $#
+b111 ,#
+b10 h"
+b100 a"
+b11 j"
+1,
 #2560
-0|#
-09
+0,
 #2640
-1|#
-19
+b101000 u
+b101000 ]"
+b101000 e"
+b101000 2#
+b101000 ^
+b101000 |"
+b101000 '#
+b101000 .#
+b1 a"
+b0 j"
+b11 h"
+b1001 $#
+b1000 ,#
+b111 *#
+1,
 #2720
-0|#
-09
+0,
 #2800
-1|#
-19
+b101000 ^
+b101000 |"
+b101000 '#
+b101000 .#
+b101000 u
+b101000 ]"
+b101000 e"
+b101000 2#
+b1000 *#
+b1010 $#
+b1001 ,#
+b0 h"
+b10 a"
+b1 j"
+1,
 #2880
-0|#
-09
+0,
 #2960
-1|#
-19
+b101000 u
+b101000 ]"
+b101000 e"
+b101000 2#
+b101000 ^
+b101000 |"
+b101000 '#
+b101000 .#
+b11 a"
+b10 j"
+b1 h"
+b1011 $#
+b1010 ,#
+b1001 *#
+1,
 #3040
-0|#
-09
+0,
 #3120
-1|#
-19
+b101000 ^
+b101000 |"
+b101000 '#
+b101000 .#
+b101000 u
+b101000 ]"
+b101000 e"
+b101000 2#
+b1010 *#
+b1100 $#
+b1011 ,#
+b10 h"
+b100 a"
+b11 j"
+1,
 #3200
-0|#
-09
+0,
 #3280
-1|#
-19
+b101000 u
+b101000 ]"
+b101000 e"
+b101000 2#
+b101000 ^
+b101000 |"
+b101000 '#
+b101000 .#
+b1 a"
+b0 j"
+b11 h"
+b1101 $#
+b1100 ,#
+b1011 *#
+1,
 #3360
-0|#
-09
+0,
 #3440
-1|#
-19
+b101000 ^
+b101000 |"
+b101000 '#
+b101000 .#
+b101000 u
+b101000 ]"
+b101000 e"
+b101000 2#
+b1100 *#
+b1110 $#
+b1101 ,#
+b0 h"
+b10 a"
+b1 j"
+1,
 #3520
-0|#
-09
+0,
 #3600
-1|#
-19
+b101000 u
+b101000 ]"
+b101000 e"
+b101000 2#
+b101000 ^
+b101000 |"
+b101000 '#
+b101000 .#
+b11 a"
+b10 j"
+b1 h"
+b1111 $#
+b1110 ,#
+b1101 *#
+1,
 #3680
-0|#
-09
+0,
 #3760
-1|#
-19
+b101000 ^
+b101000 |"
+b101000 '#
+b101000 .#
+b101000 u
+b101000 ]"
+b101000 e"
+b101000 2#
+b1110 *#
+b10000 $#
+b1111 ,#
+b10 h"
+b100 a"
+b11 j"
+1,
 #3840
-0|#
-09
+0,
 #3920
-1|#
-19
+b101000 u
+b101000 ]"
+b101000 e"
+b101000 2#
+b101000 ^
+b101000 |"
+b101000 '#
+b101000 .#
+b1 a"
+b0 j"
+b11 h"
+b1 $#
+b0 ,#
+b1111 *#
+1,
 #4000
-0|#
-09
+0,
 #4080
-1|#
-19
+b101000 ^
+b101000 |"
+b101000 '#
+b101000 .#
+b101000 u
+b101000 ]"
+b101000 e"
+b101000 2#
+b0 *#
+b10 $#
+b1 ,#
+b0 h"
+b10 a"
+b1 j"
+1,
 #4160
-0|#
-09
+0,
 #4240
-1|#
-19
+b101000 u
+b101000 ]"
+b101000 e"
+b101000 2#
+b101000 ^
+b101000 |"
+b101000 '#
+b101000 .#
+b11 a"
+b10 j"
+b1 h"
+b11 $#
+b10 ,#
+b1 *#
+1,
 #4320
-0|#
-09
+0,
 #4400
-1|#
-19
+b101000 ^
+b101000 |"
+b101000 '#
+b101000 .#
+b101000 u
+b101000 ]"
+b101000 e"
+b101000 2#
+b10 *#
+b100 $#
+b11 ,#
+b10 h"
+b100 a"
+b11 j"
+1,
