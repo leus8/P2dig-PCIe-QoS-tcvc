@@ -1,15 +1,3 @@
-`include "Main.v"
-`include "VC0.v"
-`include "VC1.v"
-`include "D0.v"
-`include "D1.v"
-`include "fifo_main_pop.v"
-`include "pop_delay_vc0.v"
-`include "demux_dest.v"
-`include "demux_vc_id.v"
-`include "mux.v"
-`include "fifo.v"
-`include "fifo16.v"
 
 module interconnect (
 
@@ -27,25 +15,38 @@ module interconnect (
     output Main_error_output,
     output Main_empty,
 	output Main_full,
+	output UmbralMF_HIGH_cond[(LEN4-1):0],
+	output UmbralMF_LOW_cond[(LEN4-1):0],
 
     // FIFO: VC0
     output VC0_error_output,
     output VC0_empty,
+	output UmbralV0_HIGH_cond[(LEN16-1):0],
+	output UmbralV0_LOW_cond[(LEN16-1):0],
+
 
     // FIFO: VC1
     output VC1_error_output,
     output VC1_empty,
+	output UmbralV1_HIGH_cond[(LEN16-1):0],
+	output UmbralV1_LOW_cond[(LEN16-1):0],
 
     // FIFO: D0
     output D0_error_output,
     output D0_empty,
+	output UmbralD0_LOW_cond[(LEN4-1):0],
+	output UmbralD0_HIGH_cond[(LEN4-1):0],
 
     // FIFO: D1
     output D1_error_output,
-    output D1_empty
+    output D1_empty,
+	output UmbralD1_LOW_cond[(LEN4-1):0],
+	output UmbralD1_HIGH_cond[(LEN4-1):0],
 );
 
 	// PARAMS
+	parameter LEN4= 4;
+	parameter LEN16= 4;
     parameter BW=6;
     parameter BW4 = 6;
     parameter BW16 = 6;
