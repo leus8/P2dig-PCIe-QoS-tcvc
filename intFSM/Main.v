@@ -8,6 +8,8 @@ parameter TOL = 1)
 	input				Main_wr,
 	input	 [(BW-1):0]	Main_data_in,
 	input				Main_rd,
+	input 	[(LEN-1):0]	UmbralMF_LOW_cond,
+	input 	[(LEN-1):0] UmbralMF_HIGH_cond,
 	output	[(BW-1):0]	Main_data_out,
 	output  			Main_error_output,
 	output   				Main_full,
@@ -29,7 +31,7 @@ fifo #(.BW(BW), .LEN(LEN), .TOL(TOL)) Main  (
 	 .fifo_wr			(Main_wr),
 	 .umbral_bajo		(UmbralMF_LOW_cond[(LEN-1):0]),
 	 .umbral_alto		(UmbralMF_HIGH_cond[(LEN-1):0]),
-	 .fifo_data_in			(Main_data_in[(BW4-1):0]),
+	 .fifo_data_in		(Main_data_in[(BW4-1):0]),
 	 .fifo_rd			(Main_rd)) ;
 
 endmodule
