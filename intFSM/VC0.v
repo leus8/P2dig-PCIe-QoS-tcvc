@@ -27,6 +27,8 @@ fifo16 #(.BW(BW16), .LEN(LEN), .TOL(TOL)) VC0  (
 	 .clk				(clk),
 	 .reset_L			(reset_L),
 	 .fifo_wr			(valid_in_vc0),
+	 .umbral_bajo		(UmbralV0_LOW_cond[(LEN-1):0]),
+	 .umbral_alto		(UmbralV0_HIGH_cond[(LEN-1):0]),
 	 .fifo_data_in			(data_in_vc0[(BW16-1):0]),
 	 .fifo_rd			(VC0_rd)) ;
 
