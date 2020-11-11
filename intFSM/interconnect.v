@@ -1,14 +1,4 @@
-`include "Main.v"
-`include "VC0.v"
-`include "VC1.v"
-`include "D0.v"
-`include "D1.v"
-`include "fifo_main_pop.v"
-`include "pop_delay_vc0.v"
-`include "demux_dest.v"
-`include "demux_vc_id.v"
-`include "mux.v"
-`include "fifo.v"
+
 
 module interconnect (
 

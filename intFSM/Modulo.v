@@ -9,10 +9,10 @@
 `include "demux_vc_id.v"
 `include "mux.v"
 `include "fifo.v"
-`include "maquina_estados_cond"
-`include "interconnect"
+`include "maquina_estados_cond.v"
+`include "interconnect.v"
 
-module Module (    
+module Modulo (    
     input clk,
     input reset_L,
     input Main_wr,
@@ -37,41 +37,46 @@ module Module (
     output reg [4:0] error_full_cond);
     
     parameter BW=6;
+	parameter LEN4=4;
+	parameter LEN16=16;
 
-interconnect intern0(/*AUTOINST*/
+	wire [4:0] FIFO_EMPTIES;
+	wire [4:0] FIFO_ERRORS;
+
+interconnect intern0(
 		     // Outputs
 		     .D0_data_out	(D0_data_out[(BW-1):0]),
 		     .D1_data_out	(D1_data_out[(BW-1):0]),
-		     .Main_error_output	(Main_error_output),
-		     .Main_empty	(Main_empty),
+		     .Main_error_output	(FIFO_ERRORS[0]),
+		     .Main_empty	(FIFO_EMPTIES[0]),
 		     .Main_full		(Main_full),
-		     .UmbralMF_HIGH_cond(UmbralMF_HIGH_cond),
-		     .UmbralMF_LOW_cond	(UmbralMF_LOW_cond),
-		     .VC0_error_output	(VC0_error_output),
-		     .VC0_empty		(VC0_empty),
-		     .UmbralV0_HIGH_cond(UmbralV0_HIGH_cond),
-		     .UmbralV0_LOW_cond	(UmbralV0_LOW_cond),
-		     .VC1_error_output	(VC1_error_output),
-		     .VC1_empty		(VC1_empty),
-		     .UmbralV1_HIGH_cond(UmbralV1_HIGH_cond),
-		     .UmbralV1_LOW_cond	(UmbralV1_LOW_cond),
-		     .D0_error_output	(D0_error_output),
-		     .D0_empty		(D0_empty),
-		     .UmbralD0_LOW_cond	(UmbralD0_LOW_cond),
-		     .UmbralD0_HIGH_cond(UmbralD0_HIGH_cond),
-		     .D1_error_output	(D1_error_output),
-		     .D1_empty		(D1_empty),
-		     .UmbralD1_LOW_cond	(UmbralD1_LOW_cond),
-		     .UmbralD1_HIGH_cond(UmbralD1_HIGH_cond),
+		     .VC0_error_output	(FIFO_ERRORS[1]),
+		     .VC0_empty		(FIFO_EMPTIES[1),
+		     .VC1_error_output	(FIFO_ERRORS[2]),
+		     .VC1_empty		(FIFO_EMPTIES[2),
+		     .D0_error_output	(FIFO_ERRORS[3]),
+		     .D0_empty		(FIFO_EMPTIES[3),
+		     .D1_error_output	(FIFO_ERRORS[4]),
+		     .D1_empty		(FIFO_EMPTIES[4),
 		     // Inputs
 		     .clk		(clk),
 		     .reset_L		(reset_L),
 		     .Main_wr		(Main_wr),
 		     .Main_data_in	(Main_data_in[(BW-1):0]),
 		     .D0_rd		(D0_rd),
-		     .D1_rd		(D1_rd));
+		     .D1_rd		(D1_rd),
+		     .UmbralMF_HIGH_cond(UmbralMF_HIGH_cond[(LEN4-1):0]),
+		     .UmbralMF_LOW_cond	(UmbralMF_LOW_cond[(LEN4-1):0]),
+		     .UmbralV0_HIGH_cond(UmbralV0_HIGH_cond[(LEN16-1):0]),
+		     .UmbralV0_LOW_cond	(UmbralV0_LOW_cond[(LEN16-1):0]),
+		     .UmbralV1_HIGH_cond(UmbralV1_HIGH_cond[(LEN16-1):0]),
+		     .UmbralV1_LOW_cond	(UmbralV1_LOW_cond[(LEN16-1):0]),
+		     .UmbralD0_LOW_cond	(UmbralD0_LOW_cond[(LEN4-1):0]),
+		     .UmbralD0_HIGH_cond(UmbralD0_HIGH_cond[(LEN4-1):0]),
+		     .UmbralD1_LOW_cond	(UmbralD1_LOW_cond[(LEN4-1):0]),
+		     .UmbralD1_HIGH_cond(UmbralD1_HIGH_cond[(LEN4-1):0]));
 
-maquina_estados_cond maquina(/*AUTOINST*/
+maquina_estados_cond maquina(
 			     // Outputs
 			     .error_out_cond	(error_out_cond),
 			     .active_out_cond	(active_out_cond),
