@@ -9,6 +9,7 @@
 `include "demux_vc_id.v"
 `include "mux.v"
 `include "fifo.v"
+`include "fifo16.v"
 `include "maquina_estados_cond.v"
 `include "interconnect.v"
 
@@ -51,13 +52,13 @@ interconnect intern0(
 		     .Main_empty	(FIFO_EMPTIES[0]),
 		     .Main_full		(Main_full),
 		     .VC0_error_output	(FIFO_ERRORS[1]),
-		     .VC0_empty		(FIFO_EMPTIES[1),
+		     .VC0_empty		(FIFO_EMPTIES[1]),
 		     .VC1_error_output	(FIFO_ERRORS[2]),
-		     .VC1_empty		(FIFO_EMPTIES[2),
+		     .VC1_empty		(FIFO_EMPTIES[2]),
 		     .D0_error_output	(FIFO_ERRORS[3]),
-		     .D0_empty		(FIFO_EMPTIES[3),
+		     .D0_empty		(FIFO_EMPTIES[3]),
 		     .D1_error_output	(FIFO_ERRORS[4]),
-		     .D1_empty		(FIFO_EMPTIES[4),
+		     .D1_empty		(FIFO_EMPTIES[4]),
 		     // Inputs
 		     .clk		(clk),
 		     .reset_L		(reset_L),

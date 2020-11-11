@@ -16,7 +16,6 @@ all: build run wave
 build:
 	mkdir -p dump
 	mkdir -p bin
-	emacs --batch interconnect.v -f verilog-batch-auto
 	emacs --batch testbench.v -f verilog-batch-auto
 	$(CC) -o $(BINDIR)/$(OUTFILE) testbench.v
 	

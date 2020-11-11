@@ -42,7 +42,7 @@ module interconnect (
     output D1_error_output,
     output D1_empty,
 	input [(LEN4-1):0] UmbralD1_LOW_cond,
-	input [(LEN4-1):0] UmbralD1_HIGH_cond,
+	input [(LEN4-1):0] UmbralD1_HIGH_cond
 );
 
 	// PARAMS
