@@ -1,6 +1,6 @@
 `timescale 1ns/100ps
 
-`include "interconnect.v"
+`include "Module.v"
 
 `include "probador.v"
 
