@@ -56,8 +56,8 @@ module interconnect (
 );
 
 	// PARAMS
-	parameter LEN4= 4;
-	parameter LEN16= 4;
+	parameter LEN4 = 4;
+	parameter LEN16 = 16;
     parameter BW=6;
 
     /*AUTOWIRE*/
@@ -111,7 +111,9 @@ module interconnect (
 		.reset_L		(reset_L),
 		.Main_wr		(Main_wr),
 		.Main_data_in		(Main_data_in[(BW-1):0]),
-		.Main_rd		(Main_rd));
+		.Main_rd		(Main_rd),
+		.UmbralMF_LOW_cond	(UmbralMF_LOW_cond[(LEN4-1):0]),
+		.UmbralMF_HIGH_cond	(UmbralMF_HIGH_cond[(LEN4-1):0]));
 
     fifo_main_pop pop_main(/*AUTOINST*/
 			   // Outputs
@@ -151,7 +153,9 @@ module interconnect (
 	      .reset_L			(reset_L),
 	      .valid_in_vc0		(valid_in_vc0),
 	      .data_in_vc0		(data_in_vc0[(BW-1):0]),
-	      .VC0_rd			(VC0_rd));
+	      .VC0_rd			(VC0_rd),
+	      .UmbralV0_LOW_cond	(UmbralV0_LOW_cond[(LEN16-1):0]),
+	      .UmbralV0_HIGH_cond	(UmbralV0_HIGH_cond[(LEN16-1):0]));
 
     VC1 f_vc1(/*AUTOINST*/
 	      // Outputs
@@ -166,7 +170,9 @@ module interconnect (
 	      .reset_L			(reset_L),
 	      .valid_in_vc1		(valid_in_vc1),
 	      .data_in_vc1		(data_in_vc1[(BW-1):0]),
-	      .VC1_rd			(VC1_rd));
+	      .VC1_rd			(VC1_rd),
+	      .UmbralV1_LOW_cond	(UmbralV1_LOW_cond[(LEN16-1):0]),
+	      .UmbralV1_HIGH_cond	(UmbralV1_HIGH_cond[(LEN16-1):0]));
 
     pop_delay_vc0 pop_vc0(/*AUTOINST*/
 			  // Outputs
@@ -219,7 +225,9 @@ module interconnect (
 	    .reset_L			(reset_L),
 	    .D0_wr			(D0_wr),
 	    .D0_data_in			(D0_data_in[(BW-1):0]),
-	    .D0_rd			(D0_rd));
+	    .D0_rd			(D0_rd),
+	    .UmbralD0_LOW_cond		(UmbralD0_LOW_cond[(LEN4-1):0]),
+	    .UmbralD0_HIGH_cond		(UmbralD0_HIGH_cond[(LEN4-1):0]));
 
     D1 f_d1(/*AUTOINST*/
 	    // Outputs
@@ -234,7 +242,9 @@ module interconnect (
 	    .reset_L			(reset_L),
 	    .D1_wr			(D1_wr),
 	    .D1_data_in			(D1_data_in[(BW-1):0]),
-	    .D1_rd			(D1_rd));
+	    .D1_rd			(D1_rd),
+	    .UmbralD1_LOW_cond		(UmbralD1_LOW_cond[(LEN4-1):0]),
+	    .UmbralD1_HIGH_cond		(UmbralD1_HIGH_cond[(LEN4-1):0]));
 
     
 
