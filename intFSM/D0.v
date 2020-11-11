@@ -1,21 +1,21 @@
 //`include "fifo.v"
 module D0 #(
-parameter		BW4=6,	// Byte/data width
+parameter		BW=6,	// Byte/data width
 parameter [5:0]	LEN=4,
 parameter TOL = 1)
     (
 	input				clk, reset_L,
 	input				D0_wr,
-	input	 [(BW4-1):0]	D0_data_in,
+	input	 [(BW-1):0]	D0_data_in,
 	input				D0_rd,
-	output	[(BW4-1):0]	D0_data_out,
+	output	[(BW-1):0]	D0_data_out,
 	output  			D0_error_output,
 	output   				D0_full,
 	output   				D0_empty,
 	output   				D0_almost_full,
 	output   				D0_almost_empty);
 
-fifo #(.BW(BW4), .LEN(LEN), .TOL(TOL)) D0  (
+fifo #(.BW(BW), .LEN(LEN), .TOL(TOL)) D0  (
 	 // Outputs
 	 .fifo_data_out			(D0_data_out[(BW4-1):0]),
 	 .error_output			(D0_error_output),

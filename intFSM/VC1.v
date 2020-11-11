@@ -1,21 +1,21 @@
 //`include "fifo.v"
 module VC1 #(
-parameter		BW16=6,	// Byte/data width
+parameter		BW=6,	// Byte/data width
 parameter [5:0]	LEN=16,
 parameter TOL = 1)
     (
 	input				clk, reset_L,
 	input				valid_in_vc1,
-	input	 [(BW16-1):0]	data_in_vc1,
+	input	 [(BW-1):0]	data_in_vc1,
 	input				VC1_rd,
-	output	[(BW16-1):0]	VC1_data_out,
+	output	[(BW-1):0]	VC1_data_out,
 	output  			VC1_error_output,
 	output   				VC1_full,
 	output   				VC1_empty,
 	output   				VC1_almost_full,
 	output   				VC1_almost_empty);
 
-fifo16 #(.BW(BW16), .LEN(LEN), .TOL(TOL)) VC1  (
+fifo16 #(.BW(BW), .LEN(LEN), .TOL(TOL)) VC1  (
 	 // Outputs
 	 .fifo_data_out			(VC1_data_out[(BW16-1):0]),
 	 .error_output			(VC1_error_output),
