@@ -1,20 +1,22 @@
 module fifo #(
 parameter		BW=6,	// Byte/data width
-parameter [5:0]	LEN=4,
+parameter [3:0]	LEN=4,
 parameter TOL = 1)
 
 (
 	
-	input	wire			clk, reset_L,
-	input	wire			fifo_wr,
-	input	wire [(BW-1):0]	fifo_data_in,
-	input	wire			fifo_rd,
-	output	reg [(BW-1):0]	fifo_data_out,
-	output  reg 			error_output,
-	output   				fifo_full,
-	output   				fifo_empty,
-	output   				fifo_almost_full,
-	output   				fifo_almost_empty);
+	input	wire					clk, reset_L,
+	input	wire					fifo_wr,
+	input	wire [(BW-1):0]			fifo_data_in,
+	input	wire					fifo_rd,
+	input 	wire [(LEN-1):0]		umbral_bajo,
+	input 	wire [(LEN-1):0]		umbral_alto,
+	output	reg [(BW-1):0]			fifo_data_out,
+	output  reg 					error_output,
+	output   						fifo_full,
+	output   						fifo_empty,
+	output   						fifo_almost_full,
+	output   						fifo_almost_empty);
 
 	reg	[(LEN-1):0] rdaddr, wraddr, o_fill;
 	reg	[(BW-1):0]	mem	[0:(LEN-1)];
@@ -99,26 +101,17 @@ parameter TOL = 1)
 		default: o_fill <= o_fill;	// Default, no change
 		endcase
 	end
-	// Porque esto no se puede poner en un assign is beyond me
+	
 	always @(*)begin
 		error_output = underrun | overrun;
 	end
-
-	always @(posedge clk) begin
-		if (fifo_almost_full) begin
-			
-		end
-
-	end
-
 
 	assign	nxtaddr = wraddr + 1'b1;
 	assign	full  = (o_fill == LEN);
 	assign	empty = (o_fill == 0);
 	assign  fifo_full = full;
 	assign  fifo_empty = empty;
-	assign 	fifo_almost_empty = (o_fill == 1);
-	assign 	fifo_almost_full = (o_fill == 4);
+	assign 	fifo_almost_empty = (o_fill == umbral_bajo);
+	assign 	fifo_almost_full = (o_fill == umbral_alto);
 	
-
 endmodule
