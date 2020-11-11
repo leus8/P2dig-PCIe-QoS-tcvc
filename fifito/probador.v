@@ -3,6 +3,8 @@ module probador (
     output reg clk,
     output reg fifo_wr,
     output reg fifo_rd,
+    output reg [(LEN-1):0] umbral_bajo,
+    output reg [(LEN-1):0] umbral_alto,
     output reg [(BW-1):0] fifo_data_in,
     input [(BW-1):0] fifo_data_out,
     input [(BW-1):0] fifo_data_out_estr,
@@ -16,7 +18,8 @@ module probador (
     input fifo_almost_empty,
     input fifo_almost_full_estr,
     input fifo_almost_empty_estr);
-    parameter BW=16;
+    parameter BW=6;
+    parameter LEN=4;
 
 initial begin
     $dumpfile("./dump/memory.vcd");
@@ -24,38 +27,81 @@ initial begin
 
     fifo_wr<=0;
     fifo_rd<=0;
+    umbral_bajo <= 1;
+    umbral_alto <= 3;
+
     fifo_data_in<=6'h00;
     reset_L<=0;
     @(posedge clk);
+
+
     @(posedge clk);
+
     reset_L<=1;
     @(posedge clk);
 
     fifo_data_in<=6'h0A;
     @(posedge clk);
+
     fifo_data_in<=6'h0B;
     @(posedge clk);
+
     fifo_data_in<=6'h0C;
     @(posedge clk);
+
     fifo_data_in<=6'h0D;
     @(posedge clk);
+
     fifo_data_in<=6'h0E;
     @(posedge clk);
+
     fifo_data_in<=6'h0F;
     @(posedge clk);
+
     fifo_data_in<=6'h09;
     @(posedge clk);
+
     fifo_data_in<=6'h00;
     @(posedge clk);
 
     fifo_rd<=1;
-    repeat (7) begin
-    @(posedge clk);
-    end
-    fifo_rd <=0;
     repeat (6) begin
     @(posedge clk);
     end
+    fifo_rd <=0;
+    @(posedge clk);
+
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+
+    umbral_bajo <= 2;
+    umbral_alto <= 3;
+
+    fifo_data_in<=6'h0A;
+    @(posedge clk);
+
+    fifo_data_in<=6'h0B;
+    @(posedge clk);
+
+    fifo_data_in<=6'h0C;
+    @(posedge clk);
+
+    fifo_data_in<=6'h0D;
+    @(posedge clk);
+
+    fifo_data_in<=6'h0E;
+    @(posedge clk);
+
+    fifo_data_in<=6'h0F;
+    @(posedge clk);
+
+    fifo_data_in<=6'h09;
+    @(posedge clk);
+
+    fifo_data_in<=6'h00;
+    @(posedge clk);
+
     fifo_rd <=1;
     repeat (6) begin
     @(posedge clk);
