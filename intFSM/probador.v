@@ -19,25 +19,37 @@ module probador (
     output reg [7:0] UmbralesDs_LOW,
     // FIFO: Main
     input Main_full,
+    input Main_full_estr,
 
 
     // FIFO: D0
     input D0_empty,
     input D0_error_output,
+    input D0_empty_estr,
+    input D0_error_output_estr,
 
     // FIFO: D1
     input D1_empty,
     input D1_error_output,
+    input D1_empty_estr,
+    input D1_error_output_estr,
 
     // DATA OUT
     input [(BW-1):0] D0_data_out,
     input [(BW-1):0] D1_data_out,
+    input [(BW-1):0] D0_data_out_estr,
+    input [(BW-1):0] D1_data_out_estr,
+
 
     //Maquinas de estados salida
-    input error_out_cond,
-    input active_out_cond,
-    input idle_out_cond,
-    input [4:0] error_full_cond);
+    input error_out,
+    input active_out,
+    input idle_out,
+    input [4:0] error_full,
+    input error_out_estr,
+    input active_out_estr,
+    input idle_out_estr,
+    input [4:0] error_full_estr);
 
     parameter BW = 6;
     parameter LEN4=4;

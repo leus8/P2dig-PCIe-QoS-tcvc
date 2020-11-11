@@ -16,6 +16,9 @@ module testbench;
 
 	/*AUTOWIRE*/
 	// Beginning of automatic wires (for undeclared instantiated-module outputs)
+	wire		active_out_estr;	// From md_str of Modulo_estr.v
+	// End of automatics
+	// Beginning of automatic wires (for undeclared instantiated-module outputs)
 	wire [(BW-1):0]	D0_data_out;		// From md_cond of Modulo_cond.v, ..., Couldn't Merge
 	wire		D0_empty;		// From md_cond of Modulo_cond.v, ...
 	wire		D0_error_output;	// From md_cond of Modulo_cond.v, ...
@@ -40,7 +43,18 @@ module testbench;
 	wire		idle_out;		// From md_cond of Modulo_cond.v, ...
 	wire		init;			// From prb of probador.v
 	wire		reset_L;		// From prb of probador.v
-	// End of automatics
+	// End oftomatics
+	wire [5:0] D0_data_out_estr;
+	wire D0_empty_estr;
+	wire D0_error_output_estr;
+	wire [5:0] D1_data_out_estr;
+	wire D1_empty_estr;
+	wire D1_error_output_estr;
+	wire Main_full_estr;
+	wire active_ou_estrt;
+	wire [4:0] error_full_estr;
+	wire error_out_estr;
+	wire idle_out_estr;
 
     Modulo_cond md_cond (/*AUTOINST*/
 			 // Outputs
@@ -69,19 +83,20 @@ module testbench;
 			 .UmbralesVCs_LOW	(UmbralesVCs_LOW[31:0]),
 			 .UmbralesDs_HIGH	(UmbralesDs_HIGH[7:0]),
 			 .UmbralesDs_LOW	(UmbralesDs_LOW[7:0]));
-	Modulo_estr md_str (/*AUTOINST*/
+	Modulo_estr md_str (
 			    // Outputs
-			    .D0_data_out	(D0_data_out[5:0]),
-			    .D0_empty		(D0_empty),
-			    .D0_error_output	(D0_error_output),
-			    .D1_data_out	(D1_data_out[5:0]),
-			    .D1_empty		(D1_empty),
-			    .D1_error_output	(D1_error_output),
-			    .Main_full		(Main_full),
-			    .active_out		(active_out),
-			    .error_full		(error_full[4:0]),
-			    .error_out		(error_out),
-			    .idle_out		(idle_out),
+			    .D0_data_out	(D0_data_out_estr[5:0]),
+			    .D0_empty		(D0_empty_estr),
+			    .D0_error_output	(D0_error_output_estr),
+			    .D1_data_out	(D1_data_out_estr[5:0]),
+			    .D1_empty		(D1_empty_estr),
+			    .D1_error_output	(D1_error_output_estr),
+			    .Main_full		(Main_full_estr),
+			    .active_out		(active_out_estr),
+			    .error_full		(error_full_estr[4:0]),
+			    .error_out		(error_out_estr),
+			    .idle_out		(idle_out_estr),
+				/*AUTOINST*/
 			    // Inputs
 			    .D0_rd		(D0_rd),
 			    .D1_rd		(D1_rd),
@@ -113,16 +128,27 @@ module testbench;
 		 .UmbralesDs_LOW	(UmbralesDs_LOW[7:0]),
 		 // Inputs
 		 .Main_full		(Main_full),
+		 .Main_full_estr	(Main_full_estr),
 		 .D0_empty		(D0_empty),
 		 .D0_error_output	(D0_error_output),
+		 .D0_empty_estr		(D0_empty_estr),
+		 .D0_error_output_estr	(D0_error_output_estr),
 		 .D1_empty		(D1_empty),
 		 .D1_error_output	(D1_error_output),
+		 .D1_empty_estr		(D1_empty_estr),
+		 .D1_error_output_estr	(D1_error_output_estr),
 		 .D0_data_out		(D0_data_out[(BW-1):0]),
 		 .D1_data_out		(D1_data_out[(BW-1):0]),
-		 .error_out_cond	(error_out_cond),
-		 .active_out_cond	(active_out_cond),
-		 .idle_out_cond		(idle_out_cond),
-		 .error_full_cond	(error_full_cond[4:0]));
+		 .D0_data_out_estr	(D0_data_out_estr[(BW-1):0]),
+		 .D1_data_out_estr	(D1_data_out_estr[(BW-1):0]),
+		 .error_out		(error_out),
+		 .active_out		(active_out),
+		 .idle_out		(idle_out),
+		 .error_full		(error_full[4:0]),
+		 .error_out_estr	(error_out_estr),
+		 .active_out_estr	(active_out_estr),
+		 .idle_out_estr		(idle_out_estr),
+		 .error_full_estr	(error_full_estr[4:0]));
 
 
 endmodule
