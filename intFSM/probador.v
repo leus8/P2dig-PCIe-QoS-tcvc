@@ -20,9 +20,6 @@ module probador (
     // FIFO: Main
     input Main_full,
 
-    // FIFO: VC0
-    input VC0_empty,
-    input VC0_error_output,
 
     // FIFO: D0
     input D0_empty,

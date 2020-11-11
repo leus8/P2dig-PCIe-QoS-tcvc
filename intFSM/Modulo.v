@@ -58,29 +58,40 @@ module Modulo (
 	wire [(LEN4-1):0] UmbralD0_LOW_cond;
 	wire [(LEN4-1):0] UmbralD1_HIGH_cond;
 	wire [(LEN4-1):0] UmbralD1_LOW_cond;
+ 
 
-	wire D0_empty;
-	wire D0_error_wire;
-	wire D1_empty;
-	wire D1_error_wire;
-	wire Main_full;
+	assign	FIFO_EMPTIES[0] = Main_empty;
+	assign	FIFO_ERRORS[0] = Main_error_output;
+
+	assign	FIFO_EMPTIES[1] = VC0_empty;
+	assign	FIFO_ERRORS[1] = VC0_error_output;
+
+	assign	FIFO_EMPTIES[2] = VC1_empty;
+	assign	FIFO_ERRORS[2] = VC1_error_output;
+
+	assign	FIFO_EMPTIES[3] = D0_empty;
+	assign	FIFO_ERRORS[3] = D0_error_output;
+
+	assign	FIFO_EMPTIES[4] = D1_empty;
+	assign	FIFO_ERRORS[4] = D1_error_output;
+	
 	
 
 interconnect intern0(
 		     // Outputs
 		     .D0_data_out	(D0_data_out[(BW-1):0]),
 		     .D1_data_out	(D1_data_out[(BW-1):0]),
-		     .Main_error_output	(FIFO_ERRORS[0]),
-		     .Main_empty	(FIFO_EMPTIES[0]),
+		     .Main_error_output	(Main_error_output),
+		     .Main_empty	(Main_empty),
 		     .Main_full		(Main_full),
-		     .VC0_error_output	(FIFO_ERRORS[1]),
-		     .VC0_empty		(FIFO_EMPTIES[1]),
-		     .VC1_error_output	(FIFO_ERRORS[2]),
-		     .VC1_empty		(FIFO_EMPTIES[2]),
-		     .D0_error_output	(FIFO_ERRORS[3]),
-		     .D0_empty		(FIFO_EMPTIES[3]),
-		     .D1_error_output	(FIFO_ERRORS[4]),
-		     .D1_empty		(FIFO_EMPTIES[4]),
+		     .VC0_error_output	(VC0_error_output),
+		     .VC0_empty		(VC0_empty),
+		     .VC1_error_output	(VC1_error_output),
+		     .VC1_empty		(VC1_empty),
+		     .D0_error_output	(D0_error_output),
+		     .D0_empty		(D0_empty),
+		     .D1_error_output	(D1_error_output),
+		     .D1_empty		(D1_empty),
 		     // Inputs
 		     .clk		(clk),
 		     .reset_L		(reset_L),

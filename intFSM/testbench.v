@@ -84,8 +84,6 @@ module testbench;
 		 .UmbralesDs_LOW	(UmbralesDs_LOW[7:0]),
 		 // Inputs
 		 .Main_full		(Main_full),
-		 .VC0_empty		(VC0_empty),
-		 .VC0_error_output	(VC0_error_output),
 		 .D0_empty		(D0_empty),
 		 .D0_error_output	(D0_error_output),
 		 .D1_empty		(D1_empty),
