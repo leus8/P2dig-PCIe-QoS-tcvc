@@ -69,8 +69,9 @@ initial begin
     Main_data_in<=0;
     Main_wr<=0;
     reset_L<=0;
+    init<=0;
     @(posedge clk);
-    
+    init<=1;
     reset_L<=1;
     Main_data_in<=6'b00_0101;
     @(posedge clk);
