@@ -118,7 +118,7 @@ parameter TOL = 1)
 	assign  fifo_full = full;
 	assign  fifo_empty = empty;
 	assign 	fifo_almost_empty = (o_fill == 1);
-	assign 	fifo_almost_full = (o_fill == 3);
+	assign 	fifo_almost_full = (o_fill == 4);
 	
 
 endmodule
