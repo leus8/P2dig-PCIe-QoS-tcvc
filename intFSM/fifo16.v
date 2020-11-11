@@ -1,6 +1,6 @@
 module fifo16 #(
 parameter		BW=6,	// Byte/data width
-parameter [5:0]	LEN=4,
+parameter [15:0]	LEN=16,
 parameter TOL = 1)
 
 (
