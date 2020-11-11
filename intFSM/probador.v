@@ -58,7 +58,14 @@ initial begin
     $dumpvars;
 
     // 6'b01_0001;
-
+    UmbralesMFs_HIGH<=3;
+    UmbralesMFs_LOW<=0;
+    //VF
+    UmbralesVCs_HIGH<=255;
+    UmbralesVCs_LOW<=255;
+    //DF
+    UmbralesDs_HIGH<=15;
+    UmbralesDs_LOW<=15;
     Main_data_in<=0;
     Main_wr<=0;
     reset_L<=0;
