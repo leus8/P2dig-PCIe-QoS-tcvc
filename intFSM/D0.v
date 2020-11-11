@@ -8,6 +8,8 @@ parameter TOL = 1)
 	input				D0_wr,
 	input	 [(BW-1):0]	D0_data_in,
 	input				D0_rd,
+	input [(LEN-1):0] UmbralD0_LOW_cond,
+	input [(LEN-1):0] UmbralD0_HIGH_cond,
 	output	[(BW-1):0]	D0_data_out,
 	output  			D0_error_output,
 	output   				D0_full,

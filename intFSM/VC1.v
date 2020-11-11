@@ -8,6 +8,8 @@ parameter TOL = 1)
 	input				valid_in_vc1,
 	input	 [(BW-1):0]	data_in_vc1,
 	input				VC1_rd,
+	input [(LEN-1):0] UmbralV1_LOW_cond,
+	input [(LEN-1):0] UmbralV1_HIGH_cond,
 	output	[(BW-1):0]	VC1_data_out,
 	output  			VC1_error_output,
 	output   				VC1_full,
