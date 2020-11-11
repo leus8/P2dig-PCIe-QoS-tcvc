@@ -43,6 +43,17 @@ module Modulo (
 
 	wire [4:0] FIFO_EMPTIES;
 	wire [4:0] FIFO_ERRORS;
+	wire [(LEN4-1):0] UmbralMF_HIGH_cond;
+	wire [(LEN4-1):0] UmbralMF_LOW_cond;
+	wire [(LEN16-1):0] UmbralV0_HIGH_cond;
+	wire [(LEN16-1):0] UmbralV0_LOW_cond;
+	wire [(LEN16-1):0] UmbralV1_HIGH_cond;
+	wire [(LEN16-1):0] UmbralV1_LOW_cond;
+	wire [(LEN4-1):0] UmbralD0_HIGH_cond;
+	wire [(LEN4-1):0] UmbralD0_LOW_cond;
+	wire [(LEN4-1):0] UmbralD1_HIGH_cond;
+	wire [(LEN4-1):0] UmbralD1_LOW_cond;
+	
 
 interconnect intern0(
 		     // Outputs
