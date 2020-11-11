@@ -8,8 +8,8 @@ parameter TOL = 1)
 	input				D1_wr,
 	input	 [(BW-1):0]	D1_data_in,
 	input				D1_rd,
-	input [(LEN4-1):0] UmbralD1_LOW_cond,
-	input [(LEN4-1):0] UmbralD1_HIGH_cond,
+	input [(LEN4-1):0] UmbralD1_LOW,
+	input [(LEN4-1):0] UmbralD1_HIGH,
 	output	[(BW-1):0]	D1_data_out,
 	output  			D1_error_output,
 	output   				D1_full,
@@ -29,8 +29,8 @@ fifo #(.BW(BW), .LEN(LEN4), .TOL(TOL)) D1  (
 	 .clk				(clk),
 	 .reset_L			(reset_L),
 	 .fifo_wr			(D1_wr),
-	 .umbral_bajo		(UmbralD1_LOW_cond[(LEN4-1):0]),
-	 .umbral_alto		(UmbralD1_HIGH_cond[(LEN4-1):0]),
+	 .umbral_bajo		(UmbralD1_LOW[(LEN4-1):0]),
+	 .umbral_alto		(UmbralD1_HIGH[(LEN4-1):0]),
 	 .fifo_data_in			(D1_data_in[(BW-1):0]),
 	 .fifo_rd			(D1_rd)) ;
 

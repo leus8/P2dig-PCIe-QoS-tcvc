@@ -10,7 +10,7 @@
 `include "mux.v"
 `include "fifo.v"
 `include "fifo16.v"
-`include "maquina_estados_cond.v"
+`include "maquina_estados.v"
 `include "interconnect.v"
 
 module Modulo (    
@@ -32,15 +32,15 @@ module Modulo (
     //DF
     input [7:0] UmbralesDs_HIGH,
     input [7:0] UmbralesDs_LOW,
-    output error_out_cond,
-    output active_out_cond,
-    output idle_out_cond,
+    output error_out,
+    output active_out,
+    output idle_out,
 	output D0_empty,
 	output D0_error_output,
 	output D1_empty,
 	output D1_error_output,
 	output Main_full,
-    output [4:0] error_full_cond);
+    output [4:0] error_full);
     
     parameter BW=6;
 	parameter LEN4=4;
@@ -48,16 +48,16 @@ module Modulo (
 
 	wire [4:0] FIFO_EMPTIES;
 	wire [4:0] FIFO_ERRORS;
-	wire [(LEN4-1):0] UmbralMF_HIGH_cond;
-	wire [(LEN4-1):0] UmbralMF_LOW_cond;
-	wire [(LEN16-1):0] UmbralV0_HIGH_cond;
-	wire [(LEN16-1):0] UmbralV0_LOW_cond;
-	wire [(LEN16-1):0] UmbralV1_HIGH_cond;
-	wire [(LEN16-1):0] UmbralV1_LOW_cond;
-	wire [(LEN4-1):0] UmbralD0_HIGH_cond;
-	wire [(LEN4-1):0] UmbralD0_LOW_cond;
-	wire [(LEN4-1):0] UmbralD1_HIGH_cond;
-	wire [(LEN4-1):0] UmbralD1_LOW_cond;
+	wire [(LEN4-1):0] UmbralMF_HIGH;
+	wire [(LEN4-1):0] UmbralMF_LOW;
+	wire [(LEN16-1):0] UmbralV0_HIGH;
+	wire [(LEN16-1):0] UmbralV0_LOW;
+	wire [(LEN16-1):0] UmbralV1_HIGH;
+	wire [(LEN16-1):0] UmbralV1_LOW;
+	wire [(LEN4-1):0] UmbralD0_HIGH;
+	wire [(LEN4-1):0] UmbralD0_LOW;
+	wire [(LEN4-1):0] UmbralD1_HIGH;
+	wire [(LEN4-1):0] UmbralD1_LOW;
  
 
 	assign	FIFO_EMPTIES[0] = Main_empty;
@@ -99,33 +99,33 @@ interconnect intern0(
 		     .Main_data_in	(Main_data_in[(BW-1):0]),
 		     .D0_rd		(D0_rd),
 		     .D1_rd		(D1_rd),
-		     .UmbralMF_HIGH_cond(UmbralMF_HIGH_cond[(LEN4-1):0]),
-		     .UmbralMF_LOW_cond	(UmbralMF_LOW_cond[(LEN4-1):0]),
-		     .UmbralV0_HIGH_cond(UmbralV0_HIGH_cond[(LEN16-1):0]),
-		     .UmbralV0_LOW_cond	(UmbralV0_LOW_cond[(LEN16-1):0]),
-		     .UmbralV1_HIGH_cond(UmbralV1_HIGH_cond[(LEN16-1):0]),
-		     .UmbralV1_LOW_cond	(UmbralV1_LOW_cond[(LEN16-1):0]),
-		     .UmbralD0_LOW_cond	(UmbralD0_LOW_cond[(LEN4-1):0]),
-		     .UmbralD0_HIGH_cond(UmbralD0_HIGH_cond[(LEN4-1):0]),
-		     .UmbralD1_LOW_cond	(UmbralD1_LOW_cond[(LEN4-1):0]),
-		     .UmbralD1_HIGH_cond(UmbralD1_HIGH_cond[(LEN4-1):0]));
+		     .UmbralMF_HIGH(UmbralMF_HIGH[(LEN4-1):0]),
+		     .UmbralMF_LOW	(UmbralMF_LOW[(LEN4-1):0]),
+		     .UmbralV0_HIGH(UmbralV0_HIGH[(LEN16-1):0]),
+		     .UmbralV0_LOW	(UmbralV0_LOW[(LEN16-1):0]),
+		     .UmbralV1_HIGH(UmbralV1_HIGH[(LEN16-1):0]),
+		     .UmbralV1_LOW	(UmbralV1_LOW[(LEN16-1):0]),
+		     .UmbralD0_LOW	(UmbralD0_LOW[(LEN4-1):0]),
+		     .UmbralD0_HIGH(UmbralD0_HIGH[(LEN4-1):0]),
+		     .UmbralD1_LOW	(UmbralD1_LOW[(LEN4-1):0]),
+		     .UmbralD1_HIGH(UmbralD1_HIGH[(LEN4-1):0]));
 
-maquina_estados_cond maquina(
+maquina_estados maquina(
 			     // Outputs
-			     .error_out_cond	(error_out_cond),
-			     .active_out_cond	(active_out_cond),
-			     .idle_out_cond	(idle_out_cond),
-			     .UmbralMF_HIGH_cond(UmbralMF_HIGH_cond[(LEN4-1):0]),
-			     .UmbralMF_LOW_cond	(UmbralMF_LOW_cond[(LEN4-1):0]),
-			     .UmbralV0_HIGH_cond(UmbralV0_HIGH_cond[(LEN16-1):0]),
-			     .UmbralV0_LOW_cond	(UmbralV0_LOW_cond[(LEN16-1):0]),
-			     .UmbralV1_HIGH_cond(UmbralV1_HIGH_cond[(LEN16-1):0]),
-			     .UmbralV1_LOW_cond	(UmbralV1_LOW_cond[(LEN16-1):0]),
-			     .UmbralD0_HIGH_cond(UmbralD0_HIGH_cond[(LEN4-1):0]),
-			     .UmbralD0_LOW_cond	(UmbralD0_LOW_cond[(LEN4-1):0]),
-			     .UmbralD1_HIGH_cond(UmbralD1_HIGH_cond[(LEN4-1):0]),
-			     .UmbralD1_LOW_cond	(UmbralD1_LOW_cond[(LEN4-1):0]),
-			     .error_full_cond	(error_full_cond[4:0]),
+			     .error_out	(error_out),
+			     .active_out	(active_out),
+			     .idle_out	(idle_out),
+			     .UmbralMF_HIGH(UmbralMF_HIGH[(LEN4-1):0]),
+			     .UmbralMF_LOW	(UmbralMF_LOW[(LEN4-1):0]),
+			     .UmbralV0_HIGH(UmbralV0_HIGH[(LEN16-1):0]),
+			     .UmbralV0_LOW	(UmbralV0_LOW[(LEN16-1):0]),
+			     .UmbralV1_HIGH(UmbralV1_HIGH[(LEN16-1):0]),
+			     .UmbralV1_LOW	(UmbralV1_LOW[(LEN16-1):0]),
+			     .UmbralD0_HIGH(UmbralD0_HIGH[(LEN4-1):0]),
+			     .UmbralD0_LOW	(UmbralD0_LOW[(LEN4-1):0]),
+			     .UmbralD1_HIGH(UmbralD1_HIGH[(LEN4-1):0]),
+			     .UmbralD1_LOW	(UmbralD1_LOW[(LEN4-1):0]),
+			     .error_full	(error_full[4:0]),
 			     // Inputs
 			     .clk		(clk),
 			     .init		(init),

@@ -16,33 +16,33 @@ module interconnect (
     output Main_error_output,
     output Main_empty,
 	output Main_full,
-	input [(LEN4-1):0] UmbralMF_HIGH_cond,
-	input [(LEN4-1):0] UmbralMF_LOW_cond,
+	input [(LEN4-1):0] UmbralMF_HIGH,
+	input [(LEN4-1):0] UmbralMF_LOW,
 
     // FIFO: VC0
     output VC0_error_output,
     output VC0_empty,
-	input [(LEN16-1):0] UmbralV0_HIGH_cond,
-	input [(LEN16-1):0] UmbralV0_LOW_cond,
+	input [(LEN16-1):0] UmbralV0_HIGH,
+	input [(LEN16-1):0] UmbralV0_LOW,
 
 
     // FIFO: VC1
     output VC1_error_output,
     output VC1_empty,
-	input [(LEN16-1):0] UmbralV1_HIGH_cond,
-	input [(LEN16-1):0] UmbralV1_LOW_cond,
+	input [(LEN16-1):0] UmbralV1_HIGH,
+	input [(LEN16-1):0] UmbralV1_LOW,
 
     // FIFO: D0
     output D0_error_output,
     output D0_empty,
-	input [(LEN4-1):0] UmbralD0_LOW_cond,
-	input [(LEN4-1):0] UmbralD0_HIGH_cond,
+	input [(LEN4-1):0] UmbralD0_LOW,
+	input [(LEN4-1):0] UmbralD0_HIGH,
 
     // FIFO: D1
     output D1_error_output,
     output D1_empty,
-	input [(LEN4-1):0] UmbralD1_LOW_cond,
-	input [(LEN4-1):0] UmbralD1_HIGH_cond
+	input [(LEN4-1):0] UmbralD1_LOW,
+	input [(LEN4-1):0] UmbralD1_HIGH
 );
 
 	// PARAMS
@@ -102,8 +102,8 @@ module interconnect (
 		.Main_wr		(Main_wr),
 		.Main_data_in		(Main_data_in[(BW-1):0]),
 		.Main_rd		(Main_rd),
-		.UmbralMF_LOW_cond	(UmbralMF_LOW_cond[(LEN4-1):0]),
-		.UmbralMF_HIGH_cond	(UmbralMF_HIGH_cond[(LEN4-1):0]));
+		.UmbralMF_LOW	(UmbralMF_LOW[(LEN4-1):0]),
+		.UmbralMF_HIGH	(UmbralMF_HIGH[(LEN4-1):0]));
 
     fifo_main_pop pop_main(/*AUTOINST*/
 			   // Outputs
@@ -144,8 +144,8 @@ module interconnect (
 	      .valid_in_vc0		(valid_in_vc0),
 	      .data_in_vc0		(data_in_vc0[(BW-1):0]),
 	      .VC0_rd			(VC0_rd),
-	      .UmbralV0_LOW_cond	(UmbralV0_LOW_cond[(LEN16-1):0]),
-	      .UmbralV0_HIGH_cond	(UmbralV0_HIGH_cond[(LEN16-1):0]));
+	      .UmbralV0_LOW	(UmbralV0_LOW[(LEN16-1):0]),
+	      .UmbralV0_HIGH	(UmbralV0_HIGH[(LEN16-1):0]));
 
     VC1 f_vc1(/*AUTOINST*/
 	      // Outputs
@@ -161,8 +161,8 @@ module interconnect (
 	      .valid_in_vc1		(valid_in_vc1),
 	      .data_in_vc1		(data_in_vc1[(BW-1):0]),
 	      .VC1_rd			(VC1_rd),
-	      .UmbralV1_LOW_cond	(UmbralV1_LOW_cond[(LEN16-1):0]),
-	      .UmbralV1_HIGH_cond	(UmbralV1_HIGH_cond[(LEN16-1):0]));
+	      .UmbralV1_LOW	(UmbralV1_LOW[(LEN16-1):0]),
+	      .UmbralV1_HIGH	(UmbralV1_HIGH[(LEN16-1):0]));
 
     pop_delay_vc0 pop_vc0(/*AUTOINST*/
 			  // Outputs
@@ -216,8 +216,8 @@ module interconnect (
 	    .D0_wr			(D0_wr),
 	    .D0_data_in			(D0_data_in[(BW-1):0]),
 	    .D0_rd			(D0_rd),
-	    .UmbralD0_LOW_cond		(UmbralD0_LOW_cond[(LEN4-1):0]),
-	    .UmbralD0_HIGH_cond		(UmbralD0_HIGH_cond[(LEN4-1):0]));
+	    .UmbralD0_LOW		(UmbralD0_LOW[(LEN4-1):0]),
+	    .UmbralD0_HIGH		(UmbralD0_HIGH[(LEN4-1):0]));
 
     D1 f_d1(/*AUTOINST*/
 	    // Outputs
@@ -233,8 +233,8 @@ module interconnect (
 	    .D1_wr			(D1_wr),
 	    .D1_data_in			(D1_data_in[(BW-1):0]),
 	    .D1_rd			(D1_rd),
-	    .UmbralD1_LOW_cond		(UmbralD1_LOW_cond[(LEN4-1):0]),
-	    .UmbralD1_HIGH_cond		(UmbralD1_HIGH_cond[(LEN4-1):0]));
+	    .UmbralD1_LOW		(UmbralD1_LOW[(LEN4-1):0]),
+	    .UmbralD1_HIGH		(UmbralD1_HIGH[(LEN4-1):0]));
 
     
 
