@@ -11,7 +11,7 @@ OUTFILE=output
 # Compiler options and flags
 iFLAGS=
 
-all: build run wave
+all: yosys sed build run wave
 
 build:
 	mkdir -p dump
@@ -31,10 +31,25 @@ wave:
 
 yosys:
 
-	yosys -s ./ys/fifo.ys
+	yosys -s ./ys/Modulo.ys
 	
 sed:
-	sed -i 's/module fifo/module fifo_estr/' fifo_estr.v
+
+	sed -i 's/Modulo/Modulo_estr/' Modulo_estr.v
+	sed -i 's/interconnect/interconnect_estr/' Modulo_estr.v
+	sed -i 's/maquina_estados/maquina_estados_estr/' Modulo_estr.v
+	sed -i 's/D0/D0_estr/' Modulo_estr.v
+	sed -i 's/D1/D1_estr/' Modulo_estr.v
+	sed -i 's/VC0/VC0_estr/' Modulo_estr.v
+	sed -i 's/VC1/VC1_estr/' Modulo_estr.v
+	sed -i 's/Main/Main_estr/' Modulo_estr.v
+	sed -i 's/fifo/fifo_estr/' Modulo_estr.v
+	sed -i 's/fifo16/fifo16_estr/' Modulo_estr.v
+	sed -i 's/demux_dest/demux_dest_estr/' Modulo_estr.v
+	sed -i 's/demux_vc_id/demux_vc_id_estr/' Modulo_estr.v
+	sed -i 's/fifo_main_pop/fifo_main_pop_estr/' Modulo_estr.v
+	sed -i 's/pop_delay_vc0/pop_delay_vc0_estr/' Modulo_estr.v
+	sed -i 's/mux/mux_estr/' Modulo_estr.v
 
 autoinst:
 # To use autoinst call make target autoinst as follows:

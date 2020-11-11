@@ -1,6 +1,6 @@
-read_verilog fifo.v
+read_verilog Modulo.v
 
-hierarchy -check -top fifo
+hierarchy -check -top Modulo
 
 proc; opt; fsm; opt; memory; opt
 
@@ -12,4 +12,4 @@ abc -liberty ./lib/cmos_cells.lib
 
 clean
 
-write_verilog ./fifo_estr.v
+write_verilog ./Modulo_estr.v

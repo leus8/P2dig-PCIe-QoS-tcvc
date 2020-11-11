@@ -1,6 +1,9 @@
 `timescale 1ns/100ps
 
 `include "Modulo.v"
+`include "Modulo_estr.v"
+
+`include "cmos_cells.v"
 
 `include "probador.v"
 
@@ -30,11 +33,11 @@ module testbench;
 	wire [3:0]	UmbralesMFs_LOW;	// From prb of probador.v
 	wire [31:0]	UmbralesVCs_HIGH;	// From prb of probador.v
 	wire [31:0]	UmbralesVCs_LOW;	// From prb of probador.v
-	wire		active_out_cond;	// From md of Modulo.v
+	wire		active_out;		// From md of Modulo.v
 	wire		clk;			// From prb of probador.v
-	wire [4:0]	error_full_cond;	// From md of Modulo.v
-	wire		error_out_cond;		// From md of Modulo.v
-	wire		idle_out_cond;		// From md of Modulo.v
+	wire [4:0]	error_full;		// From md of Modulo.v
+	wire		error_out;		// From md of Modulo.v
+	wire		idle_out;		// From md of Modulo.v
 	wire		init;			// From prb of probador.v
 	wire		reset_L;		// From prb of probador.v
 	// End of automatics
@@ -43,15 +46,15 @@ module testbench;
 	       // Outputs
 	       .D0_data_out		(D0_data_out[(BW-1):0]),
 	       .D1_data_out		(D1_data_out[(BW-1):0]),
-	       .error_out_cond		(error_out_cond),
-	       .active_out_cond		(active_out_cond),
-	       .idle_out_cond		(idle_out_cond),
+	       .error_out		(error_out),
+	       .active_out		(active_out),
+	       .idle_out		(idle_out),
 	       .D0_empty		(D0_empty),
 	       .D0_error_output		(D0_error_output),
 	       .D1_empty		(D1_empty),
 	       .D1_error_output		(D1_error_output),
 	       .Main_full		(Main_full),
-	       .error_full_cond		(error_full_cond[4:0]),
+	       .error_full		(error_full[4:0]),
 	       // Inputs
 	       .clk			(clk),
 	       .reset_L			(reset_L),
