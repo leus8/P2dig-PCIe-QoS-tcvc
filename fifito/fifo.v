@@ -1,6 +1,6 @@
 module fifo #(
-parameter		BW=4,	// Byte/data width
-parameter [3:0]	LEN=6,
+parameter		BW=6,	// Byte/data width
+parameter [3:0]	LEN=4,
 parameter TOL = 1)
 
 (
@@ -101,18 +101,10 @@ parameter TOL = 1)
 		default: o_fill <= o_fill;	// Default, no change
 		endcase
 	end
-	// Porque esto no se puede poner en un assign is beyond me
+	
 	always @(*)begin
 		error_output = underrun | overrun;
 	end
-
-	always @(posedge clk) begin
-		if (fifo_almost_full) begin
-			
-		end
-
-	end
-
 
 	assign	nxtaddr = wraddr + 1'b1;
 	assign	full  = (o_fill == LEN);

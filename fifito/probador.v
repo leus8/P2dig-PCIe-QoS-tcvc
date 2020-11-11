@@ -52,20 +52,11 @@ initial begin
     fifo_data_in<=6'h0D;
     @(posedge clk);
 
-    fifo_data_in<=6'h0E;
-    @(posedge clk);
-
-    fifo_data_in<=6'h0F;
-    @(posedge clk);
-
-    fifo_data_in<=6'h09;
-    @(posedge clk);
-
     fifo_data_in<=6'h00;
     @(posedge clk);
 
     fifo_rd<=1;
-    repeat (6) begin
+    repeat (4) begin
     @(posedge clk);
     end
     fifo_rd <=0;
@@ -90,20 +81,11 @@ initial begin
     fifo_data_in<=6'h0D;
     @(posedge clk);
 
-    fifo_data_in<=6'h0E;
-    @(posedge clk);
-
-    fifo_data_in<=6'h0F;
-    @(posedge clk);
-
-    fifo_data_in<=6'h09;
-    @(posedge clk);
-
     fifo_data_in<=6'h00;
     @(posedge clk);
 
     fifo_rd <=1;
-    repeat (6) begin
+    repeat (4) begin
     @(posedge clk);
     end
 
