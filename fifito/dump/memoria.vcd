@@ -1,0 +1,340 @@
+$date
+	Sat Oct 24 19:19:05 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module testbench $end
+$var wire 1 ! error_output_estr $end
+$var wire 1 " fifo_almost_empty_estr $end
+$var wire 1 # fifo_almost_full_estr $end
+$var wire 1 $ fifo_empty_estr $end
+$var wire 1 % fifo_full_estr $end
+$var wire 1 & reset_L $end
+$var wire 1 ' fifo_wr $end
+$var wire 1 ( fifo_rd $end
+$var wire 1 ) fifo_full $end
+$var wire 1 * fifo_empty $end
+$var wire 4 + fifo_data_out [3:0] $end
+$var wire 4 , fifo_data_in [3:0] $end
+$var wire 1 - fifo_almost_full $end
+$var wire 1 . fifo_almost_empty $end
+$var wire 1 / error_output $end
+$var wire 1 0 clk $end
+$scope module fifo_cond $end
+$var wire 1 * fifo_empty $end
+$var wire 1 ) fifo_full $end
+$var wire 1 & reset_L $end
+$var wire 6 1 nxtaddr [5:0] $end
+$var wire 1 2 full $end
+$var wire 1 ' fifo_wr $end
+$var wire 1 ( fifo_rd $end
+$var wire 4 3 fifo_data_in [3:0] $end
+$var wire 1 - fifo_almost_full $end
+$var wire 1 . fifo_almost_empty $end
+$var wire 1 4 empty $end
+$var wire 1 0 clk $end
+$var reg 1 / error_output $end
+$var reg 4 5 fifo_data_out [3:0] $end
+$var reg 6 6 o_fill [5:0] $end
+$var reg 1 7 overrun $end
+$var reg 6 8 rdaddr [5:0] $end
+$var reg 1 9 underrun $end
+$var reg 6 : wraddr [5:0] $end
+$upscope $end
+$scope module prb $end
+$var wire 1 / error_output $end
+$var wire 1 ! error_output_estr $end
+$var wire 1 . fifo_almost_empty $end
+$var wire 1 " fifo_almost_empty_estr $end
+$var wire 1 - fifo_almost_full $end
+$var wire 1 # fifo_almost_full_estr $end
+$var wire 4 ; fifo_data_out [3:0] $end
+$var wire 1 * fifo_empty $end
+$var wire 1 $ fifo_empty_estr $end
+$var wire 1 ) fifo_full $end
+$var wire 1 % fifo_full_estr $end
+$var reg 1 0 clk $end
+$var reg 4 < fifo_data_in [3:0] $end
+$var reg 1 ( fifo_rd $end
+$var reg 1 ' fifo_wr $end
+$var reg 1 & reset_L $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 <
+b0 ;
+bx :
+x9
+bx 8
+x7
+bx 6
+b0 5
+x4
+b0 3
+x2
+bx 1
+00
+x/
+x.
+x-
+b0 ,
+b0 +
+x*
+x)
+0(
+0'
+0&
+z%
+z$
+z#
+z"
+z!
+$end
+#80
+0/
+07
+b1 1
+b0 :
+09
+b0 8
+0)
+02
+1*
+14
+0.
+0-
+b0 6
+10
+#160
+00
+#240
+1&
+10
+#320
+00
+#400
+1'
+b101 ,
+b101 3
+b101 <
+10
+#480
+00
+#560
+b1111 ,
+b1111 3
+b1111 <
+0*
+04
+1.
+b1 6
+b10 1
+b1 :
+10
+#640
+00
+#720
+b11 1
+b10 :
+0.
+b10 6
+b1100 ,
+b1100 3
+b1100 <
+10
+#800
+00
+#880
+b1 ,
+b1 3
+b1 <
+b11 6
+b100 1
+b11 :
+10
+#960
+00
+#1040
+b101 1
+b100 :
+b100 6
+b10 ,
+b10 3
+b10 <
+10
+#1120
+00
+#1200
+b11 ,
+b11 3
+b11 <
+1-
+b101 6
+b110 1
+b101 :
+10
+#1280
+00
+#1360
+b1 1
+b0 :
+1)
+12
+b110 6
+b100 ,
+b100 3
+b100 <
+10
+#1440
+00
+#1520
+1/
+b101 ,
+b101 3
+b101 <
+17
+10
+#1600
+00
+#1680
+b110 ,
+b110 3
+b110 <
+10
+#1760
+00
+#1840
+b111 ,
+b111 3
+b111 <
+10
+#1920
+00
+#2000
+b111 +
+b111 5
+b111 ;
+1(
+0'
+10
+#2080
+00
+#2160
+b1111 +
+b1111 5
+b1111 ;
+0)
+02
+b101 6
+b1 8
+10
+#2240
+00
+#2320
+b1100 +
+b1100 5
+b1100 ;
+b10 8
+0-
+b100 6
+10
+#2400
+00
+#2480
+b1 +
+b1 5
+b1 ;
+b11 6
+b11 8
+10
+#2560
+00
+#2640
+b10 +
+b10 5
+b10 ;
+b100 8
+b10 6
+10
+#2720
+00
+#2800
+b0 +
+b0 5
+b0 ;
+0(
+1.
+b1 6
+b101 8
+10
+#2880
+00
+#2960
+10
+#3040
+00
+#3120
+10
+#3200
+00
+#3280
+10
+#3360
+00
+#3440
+10
+#3520
+00
+#3600
+b11 +
+b11 5
+b11 ;
+1(
+10
+#3680
+00
+#3760
+b111 +
+b111 5
+b111 ;
+1*
+14
+0.
+b0 6
+b0 8
+10
+#3840
+00
+#3920
+19
+10
+#4000
+00
+#4080
+10
+#4160
+00
+#4240
+10
+#4320
+00
+#4400
+10
+#4480
+00
+#4560
+10
+#4640
+00
+#4720
+10
+#4800
+00
+#4880
+10
