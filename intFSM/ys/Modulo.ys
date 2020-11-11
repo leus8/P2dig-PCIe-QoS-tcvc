@@ -1,6 +1,6 @@
-read_verilog Modulo.v
+read_verilog Modulo_cond.v
 
-hierarchy -check -top Modulo
+hierarchy -check -top Modulo_cond
 
 proc; opt; fsm; opt; memory; opt
 

@@ -1,4 +1,4 @@
-module fifo16 #(
+module fifo16_cond #(
 parameter		BW=6,	// Byte/data width
 parameter [15:0]	LEN=16,
 parameter TOL = 1)

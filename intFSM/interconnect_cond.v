@@ -1,6 +1,6 @@
 
 
-module interconnect (
+module interconnect_cond (
 
     // basic I-O (probador)
     input clk,
@@ -88,7 +88,7 @@ module interconnect (
     // End of automatics
 
 
-    Main f_main(/*AUTOINST*/
+    Main_cond f_main(/*AUTOINST*/
 		// Outputs
 		.Main_data_out		(Main_data_out[(BW-1):0]),
 		.Main_error_output	(Main_error_output),
@@ -105,7 +105,7 @@ module interconnect (
 		.UmbralMF_LOW	(UmbralMF_LOW[(LEN4-1):0]),
 		.UmbralMF_HIGH	(UmbralMF_HIGH[(LEN4-1):0]));
 
-    fifo_main_pop pop_main(/*AUTOINST*/
+    fifo_main_pop_cond pop_main(/*AUTOINST*/
 			   // Outputs
 			   .demux_vcid_in	(demux_vcid_in[5:0]),
 			   .demux_vcid_valid_in	(demux_vcid_valid_in),
@@ -118,7 +118,7 @@ module interconnect (
 			   .Main_empty		(Main_empty),
 			   .Main_data_out	(Main_data_out[5:0]));
 
-    demux_vc_id d_vcid(/*AUTOINST*/
+    demux_vc_id_cond d_vcid(/*AUTOINST*/
 		       // Outputs
 		       .data_in_vc0	(data_in_vc0[BW-1:0]),
 		       .valid_in_vc0	(valid_in_vc0),
@@ -130,7 +130,7 @@ module interconnect (
 		       .demux_vcid_valid_in(demux_vcid_valid_in),
 		       .demux_vcid_in	(demux_vcid_in[BW-1:0]));
 
-    VC0 f_vc0(/*AUTOINST*/
+    VC0_cond f_vc0(/*AUTOINST*/
 	      // Outputs
 	      .VC0_data_out		(VC0_data_out[(BW-1):0]),
 	      .VC0_error_output		(VC0_error_output),
@@ -147,7 +147,7 @@ module interconnect (
 	      .UmbralV0_LOW	(UmbralV0_LOW[(LEN16-1):0]),
 	      .UmbralV0_HIGH	(UmbralV0_HIGH[(LEN16-1):0]));
 
-    VC1 f_vc1(/*AUTOINST*/
+    VC1_cond f_vc1(/*AUTOINST*/
 	      // Outputs
 	      .VC1_data_out		(VC1_data_out[(BW-1):0]),
 	      .VC1_error_output		(VC1_error_output),
@@ -164,7 +164,7 @@ module interconnect (
 	      .UmbralV1_LOW	(UmbralV1_LOW[(LEN16-1):0]),
 	      .UmbralV1_HIGH	(UmbralV1_HIGH[(LEN16-1):0]));
 
-    pop_delay_vc0 pop_vc0(/*AUTOINST*/
+    pop_delay_vc0_cond pop_vc0(/*AUTOINST*/
 			  // Outputs
 			  .vc0_delay		(vc0_delay),
 			  .VC0_rd		(VC0_rd),
@@ -177,7 +177,7 @@ module interconnect (
 			  .VC0_empty		(VC0_empty),
 			  .VC1_empty		(VC1_empty));
 
-    mux mux1(/*AUTOINST*/
+    mux_cond mux1(/*AUTOINST*/
 	     // Outputs
 	     .demux_dest_valid_in	(demux_dest_valid_in),
 	     .demux_dest_data_in	(demux_dest_data_in[5:0]),
@@ -190,7 +190,7 @@ module interconnect (
 	     .VC1_data_out		(VC1_data_out[5:0]),
 	     .VC1_rd			(VC1_rd));
 
-	demux_dest d_dest(/*AUTOINST*/
+	demux_dest_cond d_dest(/*AUTOINST*/
 			  // Outputs
 			  .D0_data_in		(D0_data_in[BW-1:0]),
 			  .D0_wr		(D0_wr),
@@ -202,7 +202,7 @@ module interconnect (
 			  .demux_dest_valid_in	(demux_dest_valid_in),
 			  .demux_dest_data_in	(demux_dest_data_in[BW-1:0]));
 
-    D0 f_d0(/*AUTOINST*/
+    D0_cond f_d0(/*AUTOINST*/
 	    // Outputs
 	    .D0_data_out		(D0_data_out[(BW-1):0]),
 	    .D0_error_output		(D0_error_output),
@@ -219,7 +219,7 @@ module interconnect (
 	    .UmbralD0_LOW		(UmbralD0_LOW[(LEN4-1):0]),
 	    .UmbralD0_HIGH		(UmbralD0_HIGH[(LEN4-1):0]));
 
-    D1 f_d1(/*AUTOINST*/
+    D1_cond f_d1(/*AUTOINST*/
 	    // Outputs
 	    .D1_data_out		(D1_data_out[(BW-1):0]),
 	    .D1_error_output		(D1_error_output),

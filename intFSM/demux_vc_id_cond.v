@@ -1,4 +1,4 @@
-module demux_vc_id #(  
+module demux_vc_id_cond #(  
                             parameter BW = 6
 )
 

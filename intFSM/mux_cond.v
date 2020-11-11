@@ -1,4 +1,4 @@
-module mux (  
+module mux_cond (  
     input clk,
     input reset_L,
     input vc0_delay, // selector

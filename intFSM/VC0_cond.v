@@ -1,5 +1,5 @@
 //`include "fifo.v"
-module VC0 #(
+module VC0_cond #(
 parameter		BW=6,	// Byte/data width
 parameter [5:0]	LEN16=16,
 parameter TOL = 1)
@@ -17,7 +17,7 @@ parameter TOL = 1)
 	output   				VC0_almost_full,
 	output   				VC0_almost_empty);
 
-fifo16 #(.BW(BW), .LEN(LEN16), .TOL(TOL)) VC0  (
+fifo16_cond #(.BW(BW), .LEN(LEN16), .TOL(TOL)) VC0  (
 	 // Outputs
 	 .fifo_data_out			(VC0_data_out[(BW-1):0]),
 	 .error_output			(VC0_error_output),

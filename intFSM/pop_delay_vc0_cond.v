@@ -1,4 +1,4 @@
-module pop_delay_vc0(
+module pop_delay_vc0_cond(
     input clk,
     input reset_L,
     input D0_full,

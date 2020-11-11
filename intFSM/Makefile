@@ -35,21 +35,21 @@ yosys:
 	
 sed:
 
-	sed -i 's/Modulo/Modulo_estr/' Modulo_estr.v
-	sed -i 's/interconnect/interconnect_estr/' Modulo_estr.v
-	sed -i 's/maquina_estados/maquina_estados_estr/' Modulo_estr.v
-	sed -i 's/D0/D0_estr/' Modulo_estr.v
-	sed -i 's/D1/D1_estr/' Modulo_estr.v
-	sed -i 's/VC0/VC0_estr/' Modulo_estr.v
-	sed -i 's/VC1/VC1_estr/' Modulo_estr.v
-	sed -i 's/Main/Main_estr/' Modulo_estr.v
-	sed -i 's/fifo/fifo_estr/' Modulo_estr.v
-	sed -i 's/fifo16/fifo16_estr/' Modulo_estr.v
-	sed -i 's/demux_dest/demux_dest_estr/' Modulo_estr.v
-	sed -i 's/demux_vc_id/demux_vc_id_estr/' Modulo_estr.v
-	sed -i 's/fifo_main_pop/fifo_main_pop_estr/' Modulo_estr.v
-	sed -i 's/pop_delay_vc0/pop_delay_vc0_estr/' Modulo_estr.v
-	sed -i 's/mux/mux_estr/' Modulo_estr.v
+	sed -i 's/Modulo_cond/Modulo_estr/' Modulo_estr.v
+	sed -i 's/interconnect_cond/interconnect_estr/' Modulo_estr.v
+	sed -i 's/maquina_estados_cond/maquina_estados_estr/' Modulo_estr.v
+	sed -i 's/D0_cond/D0_estr/' Modulo_estr.v
+	sed -i 's/D1_cond/D1_estr/' Modulo_estr.v
+	sed -i 's/VC0_cond/VC0_estr/' Modulo_estr.v
+	sed -i 's/VC1_cond/VC1_estr/' Modulo_estr.v
+	sed -i 's/Main_cond/Main_estr/' Modulo_estr.v
+	sed -i 's/fifo_cond/fifo_estr/' Modulo_estr.v
+	sed -i 's/fifo16_cond/fifo16_estr/' Modulo_estr.v
+	sed -i 's/demux_dest_cond/demux_dest_estr/' Modulo_estr.v
+	sed -i 's/demux_vc_id_cond/demux_vc_id_estr/' Modulo_estr.v
+	sed -i 's/fifo_main_pop_cond/fifo_main_pop_estr/' Modulo_estr.v
+	sed -i 's/pop_delay_vc0_cond/pop_delay_vc0_estr/' Modulo_estr.v
+	sed -i 's/mux_cond/mux_estr/' Modulo_estr.v
 
 autoinst:
 # To use autoinst call make target autoinst as follows:

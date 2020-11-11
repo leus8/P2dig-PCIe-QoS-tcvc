@@ -1,4 +1,4 @@
-module fifo_main_pop (
+module fifo_main_pop_cond (
     input clk,
     input VC0_almost_full,
     input reset_L,

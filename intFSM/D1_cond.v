@@ -1,5 +1,5 @@
 //`include "fifo.v"
-module D1 #(
+module D1_cond #(
 parameter		BW=6,	// Byte/data width
 parameter [5:0]	LEN4=4,
 parameter TOL = 1)
@@ -17,7 +17,7 @@ parameter TOL = 1)
 	output   				D1_almost_full,
 	output   				D1_almost_empty);
 
-fifo #(.BW(BW), .LEN(LEN4), .TOL(TOL)) D1  (
+fifo_cond #(.BW(BW), .LEN(LEN4), .TOL(TOL)) D1  (
 	 // Outputs
 	 .fifo_data_out			(D1_data_out[(BW-1):0]),
 	 .error_output			(D1_error_output),

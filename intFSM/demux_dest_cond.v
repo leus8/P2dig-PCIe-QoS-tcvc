@@ -1,4 +1,4 @@
-module demux_dest #(  
+module demux_dest_cond #(  
         parameter BW = 6
     )
 

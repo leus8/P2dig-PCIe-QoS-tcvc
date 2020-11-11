@@ -1,19 +1,19 @@
-`include "Main.v"
-`include "VC0.v"
-`include "VC1.v"
-`include "D0.v"
-`include "D1.v"
-`include "fifo_main_pop.v"
-`include "pop_delay_vc0.v"
-`include "demux_dest.v"
-`include "demux_vc_id.v"
-`include "mux.v"
-`include "fifo.v"
-`include "fifo16.v"
-`include "maquina_estados.v"
-`include "interconnect.v"
+`include "Main_cond.v"
+`include "VC0_cond.v"
+`include "VC1_cond.v"
+`include "D0_cond.v"
+`include "D1_cond.v"
+`include "fifo_main_pop_cond.v"
+`include "pop_delay_vc0_cond.v"
+`include "demux_dest_cond.v"
+`include "demux_vc_id_cond.v"
+`include "mux_cond.v"
+`include "fifo_cond.v"
+`include "fifo16_cond.v"
+`include "maquina_estados_cond.v"
+`include "interconnect_cond.v"
 
-module Modulo (    
+module Modulo_cond (    
     input clk,
     input reset_L,
     input Main_wr,
@@ -77,7 +77,7 @@ module Modulo (
 	
 	
 
-interconnect intern0(
+interconnect_cond intern0(
 		     // Outputs
 		     .D0_data_out	(D0_data_out[(BW-1):0]),
 		     .D1_data_out	(D1_data_out[(BW-1):0]),
@@ -110,7 +110,7 @@ interconnect intern0(
 		     .UmbralD1_LOW	(UmbralD1_LOW[(LEN4-1):0]),
 		     .UmbralD1_HIGH(UmbralD1_HIGH[(LEN4-1):0]));
 
-maquina_estados maquina(
+maquina_estados_cond maquina(
 			     // Outputs
 			     .error_out	(error_out),
 			     .active_out	(active_out),

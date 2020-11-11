@@ -1,4 +1,4 @@
-module maquina_estados
+module maquina_estados_cond
    (//ENTRADAS   
     input clk,
     input init,
