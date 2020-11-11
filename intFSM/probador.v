@@ -59,13 +59,13 @@ initial begin
 
     // 6'b01_0001;
     UmbralesMFs_HIGH<=3;
-    UmbralesMFs_LOW<=0;
+    UmbralesMFs_LOW<=1;
     //VF
-    UmbralesVCs_HIGH<=255;
-    UmbralesVCs_LOW<=255;
+    UmbralesVCs_HIGH<=32'hFFFFFFFF;
+    UmbralesVCs_LOW<=32'h1;
     //DF
-    UmbralesDs_HIGH<=15;
-    UmbralesDs_LOW<=15;
+    UmbralesDs_HIGH<=16'hFFFF;
+    UmbralesDs_LOW<=16'h1;
     Main_data_in<=0;
     Main_wr<=0;
     reset_L<=0;
