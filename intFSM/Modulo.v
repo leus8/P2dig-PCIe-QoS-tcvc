@@ -32,10 +32,10 @@ module Modulo (
     //DF
     input [7:0] UmbralesDs_HIGH,
     input [7:0] UmbralesDs_LOW,
-    output reg error_out_cond,
-    output reg active_out_cond,
-    output reg idle_out_cond,
-    output reg [4:0] error_full_cond);
+    output error_out_cond,
+    output active_out_cond,
+    output idle_out_cond,
+    output [4:0] error_full_cond);
     
     parameter BW=6;
 	parameter LEN4=4;
@@ -82,16 +82,16 @@ maquina_estados_cond maquina(
 			     .error_out_cond	(error_out_cond),
 			     .active_out_cond	(active_out_cond),
 			     .idle_out_cond	(idle_out_cond),
-			     .UmbralMF_HIGH_cond(UmbralMF_HIGH_cond[3:0]),
-			     .UmbralMF_LOW_cond	(UmbralMF_LOW_cond[3:0]),
-			     .UmbralV0_HIGH_cond(UmbralV0_HIGH_cond[15:0]),
-			     .UmbralV0_LOW_cond	(UmbralV0_LOW_cond[15:0]),
-			     .UmbralV1_HIGH_cond(UmbralV1_HIGH_cond[15:0]),
-			     .UmbralV1_LOW_cond	(UmbralV1_LOW_cond[15:0]),
-			     .UmbralD0_HIGH_cond(UmbralD0_HIGH_cond[3:0]),
-			     .UmbralD0_LOW_cond	(UmbralD0_LOW_cond[3:0]),
-			     .UmbralD1_HIGH_cond(UmbralD1_HIGH_cond[3:0]),
-			     .UmbralD1_LOW_cond	(UmbralD1_LOW_cond[3:0]),
+			     .UmbralMF_HIGH_cond(UmbralMF_HIGH_cond[(LEN4-1):0]),
+			     .UmbralMF_LOW_cond	(UmbralMF_LOW_cond[(LEN4-1):0]),
+			     .UmbralV0_HIGH_cond(UmbralV0_HIGH_cond[(LEN16-1):0]),
+			     .UmbralV0_LOW_cond	(UmbralV0_LOW_cond[(LEN16-1):0]),
+			     .UmbralV1_HIGH_cond(UmbralV1_HIGH_cond[(LEN16-1):0]),
+			     .UmbralV1_LOW_cond	(UmbralV1_LOW_cond[(LEN16-1):0]),
+			     .UmbralD0_HIGH_cond(UmbralD0_HIGH_cond[(LEN4-1):0]),
+			     .UmbralD0_LOW_cond	(UmbralD0_LOW_cond[(LEN4-1):0]),
+			     .UmbralD1_HIGH_cond(UmbralD1_HIGH_cond[(LEN4-1):0]),
+			     .UmbralD1_LOW_cond	(UmbralD1_LOW_cond[(LEN4-1):0]),
 			     .error_full_cond	(error_full_cond[4:0]),
 			     // Inputs
 			     .clk		(clk),
