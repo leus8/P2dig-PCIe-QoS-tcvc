@@ -26,10 +26,7 @@ module fifo_main_pop_cond (
         end
     end
 
-    
 
-
-/*
     always @(posedge clk) begin
         if (reset_L == 1) begin
             if(!(VC0_almost_full || VC1_almost_full) && !(Main_empty)) begin
@@ -44,7 +41,7 @@ module fifo_main_pop_cond (
             demux_vcid_valid_in <= 0;
         end
     end
-*/
+
 
 /*
     always @(*) begin
