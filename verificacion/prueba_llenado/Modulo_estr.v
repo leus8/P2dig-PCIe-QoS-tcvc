@@ -14002,7 +14002,7 @@ module pop_delay_vc0_estr(clk, reset_L, D0_full, D1_full, VC0_empty, VC1_empty, 
     .A(D1_full),
     .Y(_03_)
   );
-  NOR _07_ (
+  NAND _07_ (
     .A(_03_),
     .B(_02_),
     .Y(_04_)

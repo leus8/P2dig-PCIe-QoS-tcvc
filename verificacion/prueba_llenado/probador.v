@@ -83,8 +83,39 @@ initial begin
     @(posedge clk);
 
     init<=1;
+    repeat (8) begin
+        @(posedge clk);
+    end
+
+    Main_data_in<=6'b00_0001;
     @(posedge clk);
 
+    Main_data_in<=6'b01_0111;
+    @(posedge clk);
+
+    Main_data_in<=6'b00_1100;
+    @(posedge clk);
+
+    Main_data_in<=6'b01_0101;
+    @(posedge clk);
+
+
+    Main_data_in<=6'b00_0001;
+    @(posedge clk);
+
+    Main_data_in<=6'b01_0100;
+    @(posedge clk);
+
+    Main_data_in<=6'b10_1000;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_1100;
+    @(posedge clk);
+
+    @(posedge clk);
+    
+
+/*
     // se llena D0
     Main_data_in<=6'b00_0001;
     @(posedge clk);
@@ -110,6 +141,7 @@ initial begin
 
     Main_data_in<=6'b11_1100;
     @(posedge clk);
+*/
 
     // se llena V0
     Main_data_in<=6'b00_0001;
@@ -209,6 +241,10 @@ initial begin
     @(posedge clk);
 
     Main_data_in<=6'b11_1100;
+    @(posedge clk);
+
+    @(posedge clk);
+    @(posedge clk);
     @(posedge clk);
 
 
