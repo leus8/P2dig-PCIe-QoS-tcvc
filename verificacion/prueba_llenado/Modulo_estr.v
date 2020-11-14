@@ -9029,6 +9029,8 @@ module \$paramod\fifo_estr\BW=6\LEN=6'000100\TOL=1 (clk, reset_L, fifo_wr, fifo_
   wire _291_;
   wire _292_;
   wire _293_;
+  (* src = "fifo_estr.v:24" *)
+  wire almost_full;
   (* src = "fifo_estr.v:8" *)
   input clk;
   (* src = "fifo_estr.v:24" *)
@@ -10783,6 +10785,7 @@ module \$paramod\fifo_estr\BW=6\LEN=6'000100\TOL=1 (clk, reset_L, fifo_wr, fifo_
     .D(_001_),
     .Q(overrun)
   );
+  assign almost_full = fifo_almost_full;
   assign empty = fifo_empty;
   assign full = fifo_full;
 endmodule

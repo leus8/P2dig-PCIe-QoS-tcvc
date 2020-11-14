@@ -21,7 +21,7 @@ parameter TOL = 1)
 	reg	[(LEN-1):0] rdaddr, wraddr, o_fill;
 	reg	[(BW-1):0]	mem	[0:(LEN-1)];
 	reg overrun, underrun;
-	wire full, empty;
+	wire full, empty, almost_full;
 	wire [(LEN-1):0] nxtaddr;
 
 
@@ -112,6 +112,7 @@ parameter TOL = 1)
 	assign  fifo_full = full;
 	assign  fifo_empty = empty;
 	assign 	fifo_almost_empty = (o_fill == umbral_bajo);
-	assign 	fifo_almost_full = (o_fill >= umbral_alto);
+	assign 	almost_full = (o_fill >= umbral_alto);
+	assign 	fifo_almost_full = almost_full;
 	
 endmodule

@@ -113,6 +113,10 @@ initial begin
     @(posedge clk);
 
     @(posedge clk);
+    @(posedge clk);
+
+
+
     
 
 /*
