@@ -64,41 +64,181 @@ initial begin
     UmbralesMFs_HIGH<=3;
     UmbralesMFs_LOW<=1;
     //VF
-    UmbralesVCs_HIGH<=32'hFFFFFFFF;
-    UmbralesVCs_LOW<=32'h1;
+    UmbralesVCs_HIGH<=32'b00000000000011110000000000001111; // 15 y 15
+    UmbralesVCs_LOW<=32'b00000000000000010000000000000001; // 1 y 1
     //DF
-    UmbralesDs_HIGH<=16'hFFFF;
-    UmbralesDs_LOW<=16'h1;
+    UmbralesDs_HIGH<=8'b00110011; // 3 y 3
+    UmbralesDs_LOW<=16'b00010001; // 1 y 1
     Main_data_in<=0;
-    Main_wr<=0;
+    //Main_wr<=0;
+
+    D0_rd = 0;
+    D1_rd = 0;
+
     reset_L<=0;
     init<=0;
     @(posedge clk);
-    init<=1;
+
     reset_L<=1;
-    Main_data_in<=6'b00_0101;
     @(posedge clk);
 
-    Main_data_in<=6'b01_0111;
+    init<=1;
     @(posedge clk);
 
-    Main_data_in<=6'b01_1100;
-    @(posedge clk);
-
+    // se llena D0
     Main_data_in<=6'b00_0001;
     @(posedge clk);
 
-    Main_data_in<=6'b10_0110;
+    Main_data_in<=6'b00_0111;
+    @(posedge clk);
+
+    Main_data_in<=6'b00_1100;
+    @(posedge clk);
+
+    Main_data_in<=6'b00_0101;
+    @(posedge clk);
+
+    // se llena D1
+    Main_data_in<=6'b01_0001;
     @(posedge clk);
 
     Main_data_in<=6'b01_0100;
     @(posedge clk);
 
-    Main_data_in<=6'b10_1000;
+    Main_data_in<=6'b11_1000;
     @(posedge clk);
 
-    repeat (20) begin
+    Main_data_in<=6'b11_1100;
     @(posedge clk);
+
+    // se llena V0
+    Main_data_in<=6'b00_0001;
+    @(posedge clk);
+
+    Main_data_in<=6'b00_0111;
+    @(posedge clk);
+
+    Main_data_in<=6'b00_1100;
+    @(posedge clk);
+
+    Main_data_in<=6'b00_1101;
+    @(posedge clk);
+
+    Main_data_in<=6'b01_0110;
+    @(posedge clk);
+
+    Main_data_in<=6'b01_0100;
+    @(posedge clk);
+
+    Main_data_in<=6'b01_1000;
+    @(posedge clk);
+
+    Main_data_in<=6'b01_1100;
+    @(posedge clk);
+
+    Main_data_in<=6'b00_0101;
+    @(posedge clk);
+
+    Main_data_in<=6'b00_0111;
+    @(posedge clk);
+
+    Main_data_in<=6'b00_1100;
+    @(posedge clk);
+
+    Main_data_in<=6'b00_0101;
+    @(posedge clk);
+
+    Main_data_in<=6'b01_0110;
+    @(posedge clk);
+
+    Main_data_in<=6'b01_0100;
+    @(posedge clk);
+
+    Main_data_in<=6'b01_1000;
+    @(posedge clk);
+
+    Main_data_in<=6'b01_1100;
+    @(posedge clk);
+
+
+    // se llena V1
+
+    Main_data_in<=6'b10_0001;
+    @(posedge clk);
+
+    Main_data_in<=6'b10_0111;
+    @(posedge clk);
+
+    Main_data_in<=6'b10_1100;
+    @(posedge clk);
+
+    Main_data_in<=6'b10_0001;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_0110;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_0100;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_1000;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_1100;
+    @(posedge clk);
+
+    Main_data_in<=6'b10_0101;
+    @(posedge clk);
+
+    Main_data_in<=6'b10_0111;
+    @(posedge clk);
+
+    Main_data_in<=6'b10_1100;
+    @(posedge clk);
+
+    Main_data_in<=6'b10_0101;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_0110;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_0100;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_1000;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_1100;
+    @(posedge clk);
+
+
+    // se llena Main
+
+    Main_data_in<=6'b10_0001;
+    @(posedge clk);
+
+    Main_data_in<=6'b10_0111;
+    @(posedge clk);
+
+    Main_data_in<=6'b10_1100;
+    @(posedge clk);
+
+    Main_data_in<=6'b10_0101;
+    @(posedge clk);
+
+    Main_data_in<=0;
+    @(posedge clk);
+    
+    repeat (45) begin
+        @(posedge clk);
+    end
+
+
+    // se hace push de D0 y D1
+    repeat (45) begin
+        D0_rd = 1;
+        D1_rd = 1;
+        @(posedge clk);
     end
 
     $finish;
@@ -116,6 +256,7 @@ end
         end
     end
 
+/*
     // read D0
     always @ (*) begin
         if (reset_L && ~D0_empty && ~D0_error_output) begin
@@ -139,6 +280,7 @@ end
             @(posedge clk);
         end
     end
+*/
 
 initial clk <= 0; 
 always #8 clk <= ~clk;
