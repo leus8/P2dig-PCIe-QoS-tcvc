@@ -20,7 +20,7 @@ module pop_delay_vc0_cond(
     
     // and de d0 y d1
     always @(*) begin
-        if (D0_full || D1_full) begin
+        if (D0_full && D1_full) begin
             and_d0d1 = 1;
         end else begin
             and_d0d1 = 0;

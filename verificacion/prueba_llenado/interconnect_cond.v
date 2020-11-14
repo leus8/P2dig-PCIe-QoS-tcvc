@@ -172,8 +172,8 @@ module interconnect_cond (
 			  // Inputs
 			  .clk			(clk),
 			  .reset_L		(reset_L),
-			  .D0_full		(D0_full),
-			  .D1_full		(D1_full),
+			  .D0_full		(D0_almost_full),
+			  .D1_full		(D1_almost_full),
 			  .VC0_empty		(VC0_empty),
 			  .VC1_empty		(VC1_empty));
 
