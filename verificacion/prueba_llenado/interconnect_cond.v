@@ -112,9 +112,9 @@ module interconnect_cond (
 			   .Main_rd		(Main_rd),
 			   // Inputs
 			   .clk			(clk),
-			   .VC0_almost_full	(VC0_full),
+			   .VC0_almost_full	(VC0_almost_full),
 			   .reset_L		(reset_L),
-			   .VC1_almost_full	(VC1_full),
+			   .VC1_almost_full	(VC1_almost_full),
 			   .Main_empty		(Main_empty),
 			   .Main_data_out	(Main_data_out[5:0]));
 
@@ -128,7 +128,7 @@ module interconnect_cond (
 		       .clk		(clk),
 		       .reset_L		(reset_L),
 		       .demux_vcid_valid_in(demux_vcid_valid_in),
-		       .demux_vcid_in	(demux_vcid_in[BW-1:0]));
+		       .demux_vcid_in	(Main_data_out[(BW-1):0]));
 
     VC0_cond f_vc0(/*AUTOINST*/
 	      // Outputs

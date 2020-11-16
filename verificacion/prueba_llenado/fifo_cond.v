@@ -32,7 +32,7 @@ parameter TOL = 1)
 
 	always @(*) begin
 		fifo_data_out = 0;
-		if (fifo_rd) begin
+		if (fifo_rd && !empty) begin
 			fifo_data_out = mem[rdaddr];
 		end
 	end

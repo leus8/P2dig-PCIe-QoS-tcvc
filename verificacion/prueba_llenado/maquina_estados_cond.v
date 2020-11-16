@@ -162,10 +162,12 @@ always @(*) begin
                 estado_prox=INIT;
             else if(FIFO_ERRORS!=4'b0)
                 estado_prox=ERROR;
-            else if(FIFO_EMPTIES==4'b0)
+            else if(FIFO_EMPTIES==4'b1111)
                 estado_prox= IDLE;
+            else if(FIFO_EMPTIES!=4'b1111)
+                estado_prox= ACTIVE;    
             else
-                estado_prox = INIT;
+                estado_prox = IDLE;
         end
         IDLE: begin
             error_out=0;
@@ -176,7 +178,7 @@ always @(*) begin
                 estado_prox=RESET_L;
             else if(FIFO_ERRORS!=4'b0)
                 estado_prox=ERROR;
-            else if(FIFO_EMPTIES!=4'b0)
+            else if(FIFO_EMPTIES!=4'b1111)
                 estado_prox=ACTIVE;
             else
                 estado_prox=IDLE;
@@ -204,7 +206,7 @@ always @(*) begin
                 estado_prox=INIT;
             else if(FIFO_ERRORS!=4'b0)
                 estado_prox=ERROR;
-            else if(FIFO_EMPTIES==4'b0)
+            else if(FIFO_EMPTIES==4'b1111)
                 estado_prox= IDLE;
             else
                 estado_prox=ACTIVE;
