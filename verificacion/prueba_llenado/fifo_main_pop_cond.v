@@ -28,16 +28,16 @@ module fifo_main_pop_cond (
     end
 
 
-    always @(*) begin
+    always @(posedge clk) begin
         if (reset_L == 1) begin
-                demux_vcid_in = data_out_recordar; 
-                demux_vcid_valid_in = demux_vcid_valid_in_recordar;
-                Main_rd = Main_rd_recordar;
+                demux_vcid_in <= data_out_recordar; 
+                demux_vcid_valid_in <= demux_vcid_valid_in_recordar;
+                Main_rd <= Main_rd_recordar;
             end
         else begin
-            demux_vcid_in = 0; 
-            demux_vcid_valid_in = 0;
-            Main_rd = 0;
+            demux_vcid_in <= 0; 
+            demux_vcid_valid_in <= 0;
+            Main_rd <= 0;
         end
     end
 

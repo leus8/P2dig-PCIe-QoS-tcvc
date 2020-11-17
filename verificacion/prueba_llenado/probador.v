@@ -72,14 +72,16 @@ initial begin
     Main_data_in<=0;
     //Main_wr<=0;
 
-    D0_rd = 0;
-    D1_rd = 0;
+    D0_rd <= 0;
+    D1_rd <= 0;
 
     reset_L<=0;
     init<=0;
     @(posedge clk);
 
     reset_L<=1;
+    @(posedge clk);
+    @(posedge clk);
     @(posedge clk);
 
     // se llenan D0 y D1 casi lleno
@@ -116,7 +118,7 @@ initial begin
     Main_data_in<=6'b00_1100;
     @(posedge clk);
 
-    Main_data_in<=6'b11_1101; // 2
+    Main_data_in<=6'b11_0010; // 2
     @(posedge clk);
 
     Main_data_in<=6'b00_0110;
@@ -219,30 +221,37 @@ initial begin
     Main_data_in<=0;
     @(posedge clk);
     
-    repeat (30) begin
+    repeat (10) begin
         @(posedge clk);
     end
 
     // pop del DO y D1
     repeat (3) begin
-        D0_rd = 1;
-        D1_rd = 1;
+        D0_rd <= 1;
+        D1_rd <= 1;
         @(posedge clk);
     end
-    D0_rd = 1;
-    D1_rd = 0;
+
+    D0_rd <= 1;
+    D1_rd <= 0;
     @(posedge clk);
 
     // pop del V0 y V1
     repeat (16) begin
-        D0_rd = 1;
-        D1_rd = 1;
+        D0_rd <= 1;
+        D1_rd <= 1;
         @(posedge clk);
     end
 
-    repeat (4) begin
-        D0_rd = 1;
-        D1_rd = 0;
+    repeat (15) begin
+        D0_rd <= 1;
+        D1_rd <= 1;
+        @(posedge clk);
+    end
+
+    repeat (6) begin
+        D0_rd <= 1;
+        D1_rd <= 1;
         @(posedge clk);
     end
 

@@ -112,9 +112,9 @@ module interconnect_cond (
 			   .Main_rd		(Main_rd),
 			   // Inputs
 			   .clk			(clk),
-			   .VC0_almost_full	(VC0_full),
+			   .VC0_almost_full	(VC0_almost_full),
 			   .reset_L		(reset_L),
-			   .VC1_almost_full	(VC1_full),
+			   .VC1_almost_full	(VC1_almost_full),
 			   .Main_empty		(Main_empty),
 			   .Main_data_out	(Main_data_out[5:0]));
 
