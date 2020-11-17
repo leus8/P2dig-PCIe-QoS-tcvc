@@ -61,16 +61,16 @@ initial begin
     $dumpvars;
 
     // 6'b01_0001;
-    UmbralesMFs_HIGH<=3;
+    UmbralesMFs_HIGH<=2;
     UmbralesMFs_LOW<=1;
     //VF
-    UmbralesVCs_HIGH<=32'b00000000000011110000000000001111; // 15 y 15
-    UmbralesVCs_LOW<=32'b00000000000000010000000000000001; // 1 y 1
+    UmbralesVCs_HIGH<=32'b00000000000011100000000000001110; // 14 y 14
+    UmbralesVCs_LOW<=32'b00000000000000100000000000000010; // 2 y 2
     //DF
     UmbralesDs_HIGH<=8'b00110011; // 3 y 3
-    UmbralesDs_LOW<=16'b00010001; // 1 y 1
+    UmbralesDs_LOW<=16'b00100010; // 2 y 2
     Main_data_in<=0;
-    //Main_wr<=0;
+
 
     D0_rd <= 0;
     D1_rd <= 0;
@@ -191,18 +191,8 @@ initial begin
     Main_data_in<=6'b00_1100;
     @(posedge clk);
 
-    Main_data_in<=6'b11_0101; // 14
+    Main_data_in<=6'b11_1110; // 14
     @(posedge clk);
-
-    Main_data_in<=6'b00_0110;
-    @(posedge clk);
-
-    Main_data_in<=6'b11_0111; // 15
-    @(posedge clk);
-
-    Main_data_in<=6'b00_1100; // 16 VC0
-    @(posedge clk);
-    
 
     // se llena Main
 
@@ -210,12 +200,6 @@ initial begin
     @(posedge clk);
 
     Main_data_in<=6'b10_0111;
-    @(posedge clk);
-
-    Main_data_in<=6'b10_1100;
-    @(posedge clk);
-
-    Main_data_in<=6'b10_0101;
     @(posedge clk);
 
     Main_data_in<=0;
@@ -237,19 +221,19 @@ initial begin
     @(posedge clk);
 
     // pop del V0 y V1
-    repeat (16) begin
+    repeat (14) begin
         D0_rd <= 1;
         D1_rd <= 1;
         @(posedge clk);
     end
 
-    repeat (15) begin
+    repeat (13) begin
         D0_rd <= 1;
         D1_rd <= 1;
         @(posedge clk);
     end
 
-    repeat (6) begin
+    repeat (4) begin
         D0_rd <= 1;
         D1_rd <= 1;
         @(posedge clk);
