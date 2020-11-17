@@ -1,0 +1,15 @@
+read_verilog Modulo_cond.v
+
+hierarchy -check -top Modulo_cond
+
+proc; opt; fsm; opt; memory; opt
+
+techmap; opt
+
+dfflibmap -liberty ./lib/cmos_cells.lib
+
+abc -liberty ./lib/cmos_cells.lib
+
+clean
+
+write_verilog ./Modulo_estr.v
