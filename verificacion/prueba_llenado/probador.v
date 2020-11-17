@@ -82,39 +82,170 @@ initial begin
     reset_L<=1;
     @(posedge clk);
 
-    // se llenan D0 y D1
+    // se llenan D0 y D1 casi lleno
 
-    Main_data_in<=6'b00_0001;
+    Main_data_in<=6'b10_0001;
     @(posedge clk);
 
     Main_data_in<=6'b11_1111;
     @(posedge clk);
 
-    Main_data_in<=6'b00_1100;
+    Main_data_in<=6'b10_1100;
     @(posedge clk);
 
     Main_data_in<=6'b11_0101;
     @(posedge clk);
 
-
-    Main_data_in<=6'b00_0001;
+    Main_data_in<=6'b10_0001;
     @(posedge clk);
 
     Main_data_in<=6'b11_1111;
     @(posedge clk);
 
+    Main_data_in<=6'b10_1100;
+    @(posedge clk);
+
+
+    // se llena V0 y V1 casi lleno
+    Main_data_in<=6'b00_0001; 
+    @(posedge clk);
+
+    Main_data_in<=6'b11_1101; // 1
+    @(posedge clk);
+
     Main_data_in<=6'b00_1100;
     @(posedge clk);
 
-    Main_data_in<=6'b11_0101;
+    Main_data_in<=6'b11_1101; // 2
+    @(posedge clk);
+
+    Main_data_in<=6'b00_0110;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_0100; // 3
+    @(posedge clk);
+
+    Main_data_in<=6'b00_1000;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_1100; // 4
+    @(posedge clk);
+
+    Main_data_in<=6'b00_0101;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_0111; // 5
+    @(posedge clk);
+
+    Main_data_in<=6'b00_1100;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_0101; // 6
+    @(posedge clk);
+
+    Main_data_in<=6'b00_0110;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_0100; // 7
+    @(posedge clk);
+
+    Main_data_in<=6'b00_1000;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_1100; // 8
+    @(posedge clk);
+
+
+    Main_data_in<=6'b00_0111;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_0111; // 9
+    @(posedge clk);
+
+    Main_data_in<=6'b00_1100;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_0001; // 10
+    @(posedge clk);
+
+    Main_data_in<=6'b00_0110;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_0100; // 11
+    @(posedge clk);
+
+    Main_data_in<=6'b00_1000;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_1100; // 12
+    @(posedge clk);
+
+    Main_data_in<=6'b00_0101;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_0111; // 13
+    @(posedge clk);
+
+    Main_data_in<=6'b00_1100;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_0101; // 14
+    @(posedge clk);
+
+    Main_data_in<=6'b00_0110;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_0111; // 15
+    @(posedge clk);
+
+    Main_data_in<=6'b00_1100; // 16 VC0
+    @(posedge clk);
+    
+
+    // se llena Main
+
+    Main_data_in<=6'b10_0001;
+    @(posedge clk);
+
+    Main_data_in<=6'b10_0111;
+    @(posedge clk);
+
+    Main_data_in<=6'b10_1100;
+    @(posedge clk);
+
+    Main_data_in<=6'b10_0101;
     @(posedge clk);
 
     Main_data_in<=0;
-    repeat(40) begin
     @(posedge clk);
+    
+    repeat (30) begin
+        @(posedge clk);
     end
 
-   
+    // pop del DO y D1
+    repeat (3) begin
+        D0_rd = 1;
+        D1_rd = 1;
+        @(posedge clk);
+    end
+    D0_rd = 1;
+    D1_rd = 0;
+    @(posedge clk);
+
+    // pop del V0 y V1
+    repeat (16) begin
+        D0_rd = 1;
+        D1_rd = 1;
+        @(posedge clk);
+    end
+
+    repeat (4) begin
+        D0_rd = 1;
+        D1_rd = 0;
+        @(posedge clk);
+    end
+
 
     $finish;
 end

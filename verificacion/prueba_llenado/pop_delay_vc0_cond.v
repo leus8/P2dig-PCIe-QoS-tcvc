@@ -45,28 +45,45 @@ module pop_delay_vc0_cond(
         end
     end
 
+    always @(*) begin
+        if(reset_L==1) begin
+            if (and_vc0_0 == 1) begin
+                vc0_delay = 0;
+                VC0_rd = 1;
+                VC1_rd = 0;
+            end 
+            else if (and_vc0_1 && !(and_vc0_0)) begin
+                vc0_delay = 1;
+                VC0_rd = 0;
+                VC1_rd = 1;
+            end else begin
+                vc0_delay = 0;
+                VC0_rd = 0;
+                VC1_rd = 0;
+            end
+        end else begin
+            vc0_delay = 0;
+            VC0_rd = 0;
+            VC1_rd = 0;
+        end
+    end
+
   
 
 
     
     always @(posedge clk) begin
         if(reset_L==1) begin
-
             if (and_vc0_0 == 1) begin
-            vc0_delay <= 0;
-            VC0_rd <= 1;
-            VC1_rd <= 0;
-        end 
-        else if (and_vc0_1 && !(and_vc0_0)) begin
-            vc0_delay <= 1;
-            VC0_rd <= 0;
-            VC1_rd <= 1;
-        end else begin
-            vc0_delay <= 0;
-            VC0_rd <= 0;
-            VC1_rd <= 0;
-        end
-        
+                vc0_delay <= 0;
+                VC0_rd <= 1;
+                VC1_rd <= 0;
+            end 
+            else if (and_vc0_1 && !(and_vc0_0)) begin
+                vc0_delay <= 1;
+                VC0_rd <= 0;
+                VC1_rd <= 1;
+            end
         end else begin
             vc0_delay <= 0;
             VC0_rd <= 0;

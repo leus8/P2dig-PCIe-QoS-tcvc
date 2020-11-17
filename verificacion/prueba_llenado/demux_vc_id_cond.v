@@ -2,15 +2,15 @@ module demux_vc_id_cond #(
                             parameter BW = 6
 )
 
-                        (   input clk,
-                            input reset_L,
-                            output reg [BW-1:0] data_in_vc0,
-                            output reg valid_in_vc0,
-                            output reg[BW-1:0] data_in_vc1,
-                            output reg valid_in_vc1,
-                            input demux_vcid_valid_in,
-                            input [BW-1:0] demux_vcid_in
-                        );
+    (   input clk,
+        input reset_L,
+        output reg [BW-1:0] data_in_vc0,
+        output reg valid_in_vc0,
+        output reg[BW-1:0] data_in_vc1,
+        output reg valid_in_vc1,
+        input demux_vcid_valid_in,
+        input [BW-1:0] demux_vcid_in
+    );
 
                         
     reg [BW-1:0] data_recordar0;
