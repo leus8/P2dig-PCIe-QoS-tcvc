@@ -1,5 +1,5 @@
 $date
-	Tue Nov 17 19:01:06 2020
+	Tue Nov 17 20:23:40 2020
 $end
 $version
 	Icarus Verilog
@@ -402,8 +402,8 @@ $var reg 1 l demux_dest_valid_in $end
 $var reg 1 E# valid_in_recordar $end
 $upscope $end
 $scope module pop_main $end
+$var wire 1 *" Main_almost_empty $end
 $var wire 6 F# Main_data_out [5:0] $end
-$var wire 1 *" Main_empty $end
 $var wire 1 x VC0_almost_full $end
 $var wire 1 s VC1_almost_full $end
 $var wire 1 ( reset_L $end
@@ -25497,8 +25497,8 @@ $var reg 1 Se Q $end
 $upscope $end
 $upscope $end
 $scope module pop_main $end
+$var wire 1 L$ Main_almost_empty $end
 $var wire 6 Te Main_data_out [5:0] $end
-$var wire 1 L$ Main_empty $end
 $var wire 1 <$ VC0_almost_full $end
 $var wire 1 7$ VC1_almost_full $end
 $var wire 1 .$ demux_vcid_valid_in $end

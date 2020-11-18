@@ -3,7 +3,7 @@ module fifo_main_pop_cond (
     input VC0_almost_full,
     input reset_L,
     input VC1_almost_full,
-    input Main_empty,
+    input Main_almost_empty,
     input [5:0] Main_data_out,
     output reg [5:0] demux_vcid_in,
     output reg demux_vcid_valid_in,
@@ -16,7 +16,7 @@ module fifo_main_pop_cond (
     reg VC0_almost_full_retardado, VC1_almost_full_retardado;
 
     always @(*) begin
-        if ( (!(VC0_almost_full || VC1_almost_full)) && !(Main_empty) ) begin
+        if ( (!(VC0_almost_full || VC1_almost_full)) && !(Main_almost_empty) ) begin
             data_out_recordar = Main_data_out;
             demux_vcid_valid_in_recordar = 1; 
             Main_rd_recordar = 1;

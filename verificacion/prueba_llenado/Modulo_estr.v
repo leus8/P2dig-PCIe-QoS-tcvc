@@ -12048,7 +12048,7 @@ module demux_vc_id_estr(clk, reset_L, data_in_vc0, valid_in_vc0, data_in_vc1, va
 endmodule
 
 (* src = "fifo_main_pop_estr.v:1" *)
-module fifo_main_pop_estr(clk, VC0_almost_full, reset_L, VC1_almost_full, Main_empty, Main_data_out, demux_vcid_in, demux_vcid_valid_in, Main_rd);
+module fifo_main_pop_estr(clk, VC0_almost_full, reset_L, VC1_almost_full, Main_almost_empty, Main_data_out, demux_vcid_in, demux_vcid_valid_in, Main_rd);
   (* src = "fifo_main_pop_estr.v:31" *)
   wire _00_;
   (* src = "fifo_main_pop_estr.v:31" *)
@@ -12066,10 +12066,10 @@ module fifo_main_pop_estr(clk, VC0_almost_full, reset_L, VC1_almost_full, Main_e
   wire _12_;
   wire _13_;
   wire _14_;
+  (* src = "fifo_main_pop_estr.v:6" *)
+  input Main_almost_empty;
   (* src = "fifo_main_pop_estr.v:7" *)
   input [5:0] Main_data_out;
-  (* src = "fifo_main_pop_estr.v:6" *)
-  input Main_empty;
   (* src = "fifo_main_pop_estr.v:10" *)
   output Main_rd;
   (* src = "fifo_main_pop_estr.v:3" *)
@@ -12090,7 +12090,7 @@ module fifo_main_pop_estr(clk, VC0_almost_full, reset_L, VC1_almost_full, Main_e
   );
   NOR _16_ (
     .A(VC0_almost_full),
-    .B(Main_empty),
+    .B(Main_almost_empty),
     .Y(_03_)
   );
   NOT _17_ (
@@ -12465,8 +12465,8 @@ module interconnect_estr(clk, reset_L, Main_wr, Main_data_in, D0_rd, D1_rd, D0_d
   );
   (* src = "interconnect_estr.v:108" *)
   fifo_main_pop_estr pop_main (
+    .Main_almost_empty(Main_almost_empty),
     .Main_data_out(Main_data_out),
-    .Main_empty(Main_almost_empty),
     .Main_rd(Main_rd),
     .VC0_almost_full(VC0_almost_full),
     .VC1_almost_full(VC1_almost_full),
