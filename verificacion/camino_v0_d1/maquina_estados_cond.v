@@ -160,11 +160,11 @@ always @(*) begin
                 estado_prox=RESET_L;
             else if(init==1)
                 estado_prox=INIT;
-            else if(FIFO_ERRORS!=4'b0)
+            else if(FIFO_ERRORS!=5'b000000)
                 estado_prox=ERROR;
-            else if(FIFO_EMPTIES==4'b1111)
+            else if(FIFO_EMPTIES==5'b11111)
                 estado_prox= IDLE;
-            else if(FIFO_EMPTIES!=4'b1111)
+            else if(FIFO_EMPTIES!=5'b11111)
                 estado_prox= ACTIVE;    
             else
                 estado_prox = IDLE;
@@ -176,9 +176,9 @@ always @(*) begin
             error_full=0;
             if(reset_L==0)
                 estado_prox=RESET_L;
-            else if(FIFO_ERRORS!=4'b0)
+            else if(FIFO_ERRORS!=5'b00000)
                 estado_prox=ERROR;
-            else if(FIFO_EMPTIES!=4'b1111)
+            else if(FIFO_EMPTIES!=5'b11111)
                 estado_prox=ACTIVE;
             else
                 estado_prox=IDLE;
@@ -204,9 +204,9 @@ always @(*) begin
                 estado_prox=RESET_L;
             else if(init==1)
                 estado_prox=INIT;
-            else if(FIFO_ERRORS!=4'b0000)
+            else if(FIFO_ERRORS!=5'b00000)
                 estado_prox=ERROR;
-            else if(FIFO_EMPTIES==4'b1111)
+            else if(FIFO_EMPTIES==5'b11111)
                 estado_prox= IDLE;
             else
                 estado_prox=ACTIVE;
