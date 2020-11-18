@@ -57,7 +57,7 @@ module probador (
 
 
 initial begin
-    $dumpfile("./dump/interconexion.vcd");
+    $dumpfile("./dump/error_d.vcd");
     $dumpvars;
 
     // 6'b01_0001;

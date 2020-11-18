@@ -111,7 +111,7 @@ parameter TOL = 1)
 	assign	empty = (o_fill == 0);
 	assign  fifo_full = full;
 	assign  fifo_empty = empty;
-	assign 	fifo_almost_empty = (o_fill == umbral_bajo);
+	assign 	fifo_almost_empty = (o_fill <= umbral_bajo);
 	assign 	almost_full = (o_fill >= umbral_alto);
 	assign 	fifo_almost_full = almost_full;
 

@@ -27,7 +27,7 @@ run:
 	vvp $(BINDIR)/$(OUTFILE)
 	
 wave:
-	gtkwave $(DUMPDIR)/interconexion.vcd
+	gtkwave $(DUMPDIR)/prueba_umbrales.vcd
 
 yosys:
 

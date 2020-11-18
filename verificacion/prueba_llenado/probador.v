@@ -57,7 +57,7 @@ module probador (
 
 
 initial begin
-    $dumpfile("./dump/interconexion.vcd");
+    $dumpfile("./dump/prueba_llenado.vcd");
     $dumpvars;
 
     // 6'b01_0001;
@@ -236,25 +236,35 @@ initial begin
     D1_rd <= 0;
     @(posedge clk);
 
+    D0_rd <= 0;
+    D1_rd <= 0;
+    @(posedge clk);
+
     // pop del V0 y V1
     repeat (16) begin
         D0_rd <= 1;
-        D1_rd <= 1;
+        D1_rd <= 0;
         @(posedge clk);
     end
 
     repeat (15) begin
-        D0_rd <= 1;
+        D0_rd <= 0;
         D1_rd <= 1;
         @(posedge clk);
     end
 
-    repeat (6) begin
+    repeat (4) begin
         D0_rd <= 1;
-        D1_rd <= 1;
+        D1_rd <= 0;
         @(posedge clk);
     end
 
+    D0_rd <= 0;
+    D1_rd <= 0;
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
 
     $finish;
 end
