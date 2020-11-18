@@ -27,7 +27,7 @@ run:
 	vvp $(BINDIR)/$(OUTFILE)
 	
 wave:
-	gtkwave $(DUMPDIR)/interconexion.vcd
+	gtkwave $(DUMPDIR)/camino_v0_d1.vcd
 
 yosys:
 

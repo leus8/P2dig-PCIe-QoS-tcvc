@@ -57,7 +57,7 @@ module probador (
 
 
 initial begin
-    $dumpfile("./dump/interconexion.vcd");
+    $dumpfile("./dump/camino_v0_d0.vcd");
     $dumpvars;
 
     // 6'b01_0001;
