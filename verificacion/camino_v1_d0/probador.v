@@ -106,12 +106,12 @@ initial begin
 
     Main_data_in<=6'b10_1100;
     @(posedge clk);
-    D0_rd <= 1;
-    D1_rd <= 0;
-
+    
     Main_data_in<=6'b10_0001;
     @(posedge clk);
 
+    D0_rd <= 1;
+    D1_rd <= 0;
     Main_data_in<=6'b10_1111;
     @(posedge clk);
 
@@ -125,6 +125,17 @@ initial begin
     @(posedge clk);
 
     Main_data_in<=6'b10_1111;
+    @(posedge clk);
+
+    Main_data_in<=0;
+    @(posedge clk);
+
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
     @(posedge clk);
 
 
