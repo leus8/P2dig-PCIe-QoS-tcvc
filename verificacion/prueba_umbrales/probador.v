@@ -194,6 +194,9 @@ initial begin
     Main_data_in<=6'b11_1110; // 14
     @(posedge clk);
 
+    Main_data_in<=6'b00_1101; // 15 VC0
+    @(posedge clk);
+
     // se llena Main
 
     Main_data_in<=6'b10_0001;

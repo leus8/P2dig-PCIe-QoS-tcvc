@@ -115,7 +115,7 @@ module interconnect_cond (
 			   .VC0_almost_full	(VC0_almost_full),
 			   .reset_L		(reset_L),
 			   .VC1_almost_full	(VC1_almost_full),
-			   .Main_empty		(Main_empty),
+			   .Main_empty		(Main_almost_empty),
 			   .Main_data_out	(Main_data_out[5:0]));
 
     demux_vc_id_cond d_vcid(/*AUTOINST*/
