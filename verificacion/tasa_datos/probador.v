@@ -57,7 +57,7 @@ module probador (
 
 
 initial begin
-    $dumpfile("./dump/interconexion.vcd");
+    $dumpfile("./dump/tasa_datos.vcd");
     $dumpvars;
 
     // 6'b01_0001;
@@ -86,47 +86,61 @@ initial begin
 
     // se llenan D0 y D1 casi lleno
 
-    Main_data_in<=6'b00_0001;
+    Main_data_in<=6'b11_0001;
     @(posedge clk);
 
-    Main_data_in<=6'b00_1111;
+    Main_data_in<=6'b11_1111;
     @(posedge clk);
 
-    Main_data_in<=6'b00_1100;
+    Main_data_in<=6'b11_1100;
     @(posedge clk);
 
-    Main_data_in<=6'b00_0101;
+    Main_data_in<=6'b11_0101;
     @(posedge clk);
 
-    Main_data_in<=6'b00_0001;
+    Main_data_in<=6'b11_0001;
     @(posedge clk);
 
-    Main_data_in<=6'b00_1111;
+    Main_data_in<=6'b11_1111;
     @(posedge clk);
 
-    Main_data_in<=6'b00_1100;
+    Main_data_in<=6'b11_1100;
     @(posedge clk);
-    D0_rd <= 1;
+    
+    Main_data_in<=6'b11_0001;
+    @(posedge clk);
+
+    D0_rd <= 0;
+    D1_rd <= 1;
+    Main_data_in<=6'b11_1111;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_1100;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_0101;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_0001;
+    @(posedge clk);
+
+    Main_data_in<=6'b11_1111;
+    @(posedge clk);
+
+    Main_data_in<=0;
+    @(posedge clk);
+
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+
+    D0_rd <= 0;
     D1_rd <= 0;
-
-     Main_data_in<=6'b00_0001;
     @(posedge clk);
-
-    Main_data_in<=6'b00_1111;
-    @(posedge clk);
-
-    Main_data_in<=6'b00_1100;
-    @(posedge clk);
-
-    Main_data_in<=6'b00_0101;
-    @(posedge clk);
-
-    Main_data_in<=6'b00_0001;
-    @(posedge clk);
-
-    Main_data_in<=6'b00_1111;
-    @(posedge clk);
-
 
 
     $finish;
@@ -144,31 +158,6 @@ end
         end
     end
 
-/*
-    // read D0
-    always @ (*) begin
-        if (reset_L && ~D0_empty && ~D0_error_output) begin
-            D0_rd = 1;
-            @(posedge clk);
-        end
-        else begin
-            D0_rd = 0;
-            @(posedge clk);
-        end
-    end
-
-    // read D1
-    always @ (*) begin
-        if (reset_L && ~D1_empty && ~D1_error_output) begin
-            D1_rd = 1;
-            @(posedge clk);
-        end
-        else begin
-            D1_rd = 0;
-            @(posedge clk);
-        end
-    end
-*/
 
 initial clk <= 0; 
 always #8 clk <= ~clk;
