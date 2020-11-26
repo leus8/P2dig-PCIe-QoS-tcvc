@@ -46,4 +46,4 @@ Una vez verificadas y aprobadas las pruebas se considerará el proyecto como lis
 
 ## Bitácora <a name="bitacora"></a>
 
-La bitácora del proyecto se puede observar en el [CHANGELOG](./CHANGELOG.md)
+La bitácora del proyecto está albergada en nuestro repositorio y se puede observar en el [CHANGELOG](./CHANGELOG.md).
