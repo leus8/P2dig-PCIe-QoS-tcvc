@@ -6,9 +6,10 @@
 * Daniel Vargas Díaz
 
 ## Tabla de contenidos:
-1. [Descripción](#descripcion)
-2. [Plan de Pruebas](#planPruebas)
-2. [Correr el proyecto](#correrProyecto)
+1. [Correr el proyecto](#correrProyecto)
+2. [Descripción](#descripcion)
+3. [Plan de Pruebas](#planPruebas)
+
 
 ## Correr el proyecto:
 
