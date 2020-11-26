@@ -20,7 +20,7 @@ Desarrollo de FIFO y dual-port memory. Se debe debatir aspectos que aunque no da
   - Memoria FIFO estructural (dual-port_memory/fifo_estr.v).
   - Probador que interactúa con la señal fifo_full de la memoria FIFO (dual-port_memory/probador.v).
   
-  ## v1.1.0 - Nov. 4, 2020
+  ## v1.2.0 - Nov. 4, 2020
   
   Se trabaja en la clasificación, enrutamiento, control de flujo, máquina de estados de la arquitectura. Se trabajan en forma de cajas aisladas entre sí simulando mediante probadores externos las señales **en la forma que son 'sentidas/vistas' por las cajas**. Próximo trabajo será realizar la interconexión de ellas y los arreglos de los retardos que puedan encontrarse.
   
@@ -36,3 +36,29 @@ Desarrollo de FIFO y dual-port memory. Se debe debatir aspectos que aunque no da
   -Daniel Vargas:
     - Máquina de estados tanto conductual como estructural (FSM/maquina_estados_cond.v)(FSM/maquina_estados_estr.v).
     
+## v1.3.0 - Nov. 11, 2020
+  Esta semana se trabaja en la integración entre la interconexión y la máquina de estados.
+  
+  **Se agrega:**
+  
+  -Por los 2 integrantes:
+    - Todos los archivos en el directorio intFSM (intFSM/* )
+    
+## v1.4.0 - Nov. 17, 2020
+  Esta semana se trabaja en las pruebas de verificación de llenado, umbrales, caminos, errores y prueba de latencia. Se realizan mejoras considerables en la implementación y se obtiene unos resultados que se consideran bastante robustos. Aunque definimos quien iba a realizar cada prueba de verificación, **todos tuvimos participación en todas las pruebas dado la complejidad de las mismas**.
+  
+  **Se agrega:**
+  
+  -Leonardo Agüero:
+    - Prueba de llenado (verificacion/prueba_llenado).
+    - Prueba de umbrales (verificacion/prueba_umbrales).
+  
+  -Daniel Vargas:
+    - Prueba de caminos (verificación/camino_v0_d0).
+    - Prueba de caminos (verificación/camino_v0_d1).
+    - Prueba de caminos (verificación/camino_v1_d0).
+    - Prueba de caminos (verificación/camino_v1_d1).
+    - Prueba de error de los FIFO D (verificación/error_d).
+    - Prueba de error de los FIFO Main (verificación/error_main).
+    - Prueba de error de los FIFO Main (verificación/tasa_datos).
+  
