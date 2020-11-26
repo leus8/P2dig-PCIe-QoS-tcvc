@@ -41,7 +41,7 @@ Desarrollo de FIFO y dual-port memory. Se debe debatir aspectos que aunque no da
   
   **Se agrega:**
   
-  -Por los 2 integrantes:
+  - Por los 2 integrantes:
     - Todos los archivos en el directorio intFSM (intFSM/* ).
     
 ## v1.4.0 - Nov. 17, 2020
