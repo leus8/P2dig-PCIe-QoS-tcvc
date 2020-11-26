@@ -9,9 +9,10 @@
 1. [Correr el proyecto](#correrProyecto)
 2. [Descripción](#descripcion)
 3. [Plan de Pruebas](#planPruebas)
+4. [Bitácora](#bitacora)
 
 
-## Correr el proyecto:
+## Correr el proyecto: <a name="correrProyecto"></a>
 
 Para correr el proyecto basta con dar Make en cualquiera de los módulos, el proyecto completa se considera cualquiera dentro del directorio verificación y basta con escribir make en la terminal para correr el proyecto. Si se desea correr un módulo en específico se tiene que cambiar a su directorio respectivo y correr make.
 
@@ -42,3 +43,7 @@ La interconexión será un módulo por aparte (probador y testbench) donde se re
 - Medir la latencia y tasa de salida de datos.
 
 Una vez verificadas y aprobadas las pruebas se considerará el proyecto como listo.
+
+## Bitácora <a name="bitacora"></a>
+
+La bitácora del proyecto se puede observar en el [CHANGELOG](./CHANGELOG.md)
