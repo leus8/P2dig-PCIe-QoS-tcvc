@@ -42,18 +42,17 @@ Desarrollo de FIFO y dual-port memory. Se debe debatir aspectos que aunque no da
   **Se agrega:**
   
   -Por los 2 integrantes:
-    - Todos los archivos en el directorio intFSM (intFSM/* )
+    - Todos los archivos en el directorio intFSM (intFSM/* ).
     
 ## v1.4.0 - Nov. 17, 2020
   Esta semana se trabaja en las pruebas de verificación de llenado, umbrales, caminos, errores y prueba de latencia. Se realizan mejoras considerables en la implementación y se obtiene unos resultados que se consideran bastante robustos. Aunque definimos quien iba a realizar cada prueba de verificación, **todos tuvimos participación en todas las pruebas dado la complejidad de las mismas**.
   
   **Se agrega:**
-  
-  -Leonardo Agüero:
+  - Leonardo Agüero:
     - Prueba de llenado (verificacion/prueba_llenado).
     - Prueba de umbrales (verificacion/prueba_umbrales).
   
-  -Daniel Vargas:
+  - Daniel Vargas:
     - Prueba de caminos (verificación/camino_v0_d0).
     - Prueba de caminos (verificación/camino_v0_d1).
     - Prueba de caminos (verificación/camino_v1_d0).
