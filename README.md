@@ -14,7 +14,7 @@
 
 ## Correr el proyecto: <a name="correrProyecto"></a>
 
-Para correr el proyecto basta con dar Make en cualquiera de los módulos, el proyecto completa se considera cualquiera dentro del directorio [verificación](Proyecto2Dig/verificacion)  y basta con escribir make en la terminal para correr el proyecto. Si se desea correr un módulo en específico se tiene que cambiar a su directorio respectivo y correr make.
+Para correr el proyecto basta con dar Make en cualquiera de los módulos, el proyecto completa se considera cualquiera dentro del directorio [verificación](./verificacion)  y basta con escribir make en la terminal para correr el proyecto. Si se desea correr un módulo en específico se tiene que cambiar a su directorio respectivo y correr make.
 
 ## Descripción: <a name="descripcion"></a>
 
